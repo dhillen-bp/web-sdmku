@@ -18,5 +18,8 @@ Route::get('/', function () {
 });
 
 Route::get('/home', function () {
-    return view('home');
+    return view('pages.home');
+});
+Route::get('/visi-misi', function () {
+    return view('pages.visi-misi');
 });
