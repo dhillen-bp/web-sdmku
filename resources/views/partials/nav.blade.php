@@ -1,31 +1,43 @@
 <nav class="navbar fixed left-0 right-0 top-0 z-50 bg-primary bg-opacity-30 px-6 shadow-sm lg:px-16" id="header">
     <div class="flex-1">
-        <a class="inline-flex cursor-pointer text-xl font-bold">
+        <a class="inline-flex cursor-pointer text-xl font-bold text-slate-100">
             <img src="{{ asset('images/company.png') }}" alt="School Logo" class="mr-3 h-7 w-7">
-            SD MUHKU
+            SD MKU
         </a>
     </div>
     <div class="flex-none">
         {{-- MOBILE NAV --}}
         <div class="dropdown-end dropdown-bottom dropdown lg:hidden">
-            <button class="btn btn-square btn-ghost">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                    class="inline-block h-5 w-5 stroke-current">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
-                    </path>
-                </svg>
-            </button>
+            <label class="swap-rotate btn btn-circle swap btn-sm">
+                <!-- this hidden checkbox controls the state -->
+                <input type="checkbox" />
 
-            <ul class="menu dropdown-content z-[1] bg-slate-100 px-1">
+                <!-- hamburger icon -->
+                <svg class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 512 512">
+                    <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
+                </svg>
+
+                <!-- close icon -->
+                <svg class="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 512 512">
+                    <polygon
+                        points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49" />
+                </svg>
+
+            </label>
+
+            <ul
+                class="-x-8 menu dropdown-content relative right-0 z-[1] w-screen translate-x-6 bg-primary text-slate-100">
                 <li><a href="/home">Home</a></li>
                 <li>
                     <details id="profileDropdown">
                         <summary>
                             Profile
                         </summary>
-                        <ul class="z-[2] w-max rounded-t-none bg-slate-100 p-2">
-                            <li><a href="/visi-misi">Visi & Misi</a></li>
-                            <li><a>Tentang Kami</a></li>
+                        <ul class="p-2">
+                            <li><a href="/profile/visi-misi">Visi & Misi</a></li>
+                            <li><a href="/profile/tentang-kami">Tentang Kami</a></li>
                         </ul>
                     </details>
                 </li>
@@ -34,9 +46,9 @@
                         <summary>
                             Akademis
                         </summary>
-                        <ul class="z-[2] w-max rounded-t-none bg-slate-100 p-2">
-                            <li><a>Guru & Staf</a></li>
-                            <li><a>Prestasi</a></li>
+                        <ul class="p-2">
+                            <li><a href="/akademis/guru-staf">Guru & Staf</a></li>
+                            <li><a href="/akademis/prestasi">Prestasi</a></li>
                         </ul>
                     </details>
                 </li>
@@ -45,10 +57,10 @@
                         <summary>
                             Non Akademis
                         </summary>
-                        <ul class="z-[2] w-max rounded-t-none bg-slate-100 p-2">
-                            <li><a>Berita</a></li>
-                            <li><a>Fasilitas</a></li>
-                            <li><a>Ekstrakurikuler</a></li>
+                        <ul class="p-2">
+                            <li><a href="/non-akademis/berita">Berita</a></li>
+                            <li><a href="/non-akademis/fasilitas">Fasilitas</a></li>
+                            <li><a href="/non-akademis/ekstrakurikuler">Ekstrakurikuler</a></li>
                         </ul>
                     </details>
                 </li>
@@ -64,8 +76,8 @@
                         Profile
                     </summary>
                     <ul class="z-[2] w-max rounded-t-none bg-slate-100 p-2">
-                        <li><a href="/visi-misi">Visi & Misi</a></li>
-                        <li><a>Tentang Kami</a></li>
+                        <li><a href="/profile/visi-misi">Visi & Misi</a></li>
+                        <li><a href="/profile/tentang-kami">Tentang Kami</a></li>
                     </ul>
                 </details>
             </li>
@@ -75,8 +87,8 @@
                         Akademis
                     </summary>
                     <ul class="z-[2] w-max rounded-t-none bg-slate-100 p-2">
-                        <li><a>Guru & Staf</a></li>
-                        <li><a>Prestasi</a></li>
+                        <li><a href="/akademis/guru-staf">Guru & Staf</a></li>
+                        <li><a href="/akademis/prestasi">Prestasi</a></li>
                     </ul>
                 </details>
             </li>
@@ -86,9 +98,9 @@
                         Non Akademis
                     </summary>
                     <ul class="z-[2] w-max rounded-t-none bg-slate-100 p-2">
-                        <li><a>Berita</a></li>
-                        <li><a>Fasilitas</a></li>
-                        <li><a>Ekstrakurikuler</a></li>
+                        <li><a href="/non-akademis/berita">Berita</a></li>
+                        <li><a href="/non-akademis/fasilitas">Fasilitas</a></li>
+                        <li><a href="/non-akademis/ekstrakurikuler">Ekstrakurikuler</a></li>
                     </ul>
                 </details>
             </li>

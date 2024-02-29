@@ -20,6 +20,34 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('pages.home');
 });
-Route::get('/visi-misi', function () {
-    return view('pages.visi-misi');
+
+Route::prefix('profile')->group(function () {
+    Route::get('/visi-misi', function () {
+        return view('pages.visi-misi');
+    });
+
+    Route::get('/tentang-kami', function () {
+        return view('pages.tentang-kami');
+    });
+});
+
+Route::prefix('akademis')->group(function () {
+    Route::get('/guru-staf', function () {
+        return view('pages.guru-staf');
+    });
+    Route::get('/prestasi', function () {
+        return view('pages.prestasi');
+    });
+});
+
+Route::prefix('non-akademis')->group(function () {
+    Route::get('/berita', function () {
+        return view('pages.berita');
+    });
+    Route::get('/fasilitas', function () {
+        return view('pages.fasilitas');
+    });
+    Route::get('/ekstrakurikuler', function () {
+        return view('pages.ekstrakurikuler');
+    });
 });
