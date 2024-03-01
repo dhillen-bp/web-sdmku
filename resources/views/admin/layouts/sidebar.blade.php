@@ -1,9 +1,9 @@
         <!-- ===== Sidebar Start ===== -->
         <aside :class="sidebarToggle ? 'translate-x-0' : '-translate-x-full'"
-            class="z-9999 w-72.5 dark:bg-boxdark absolute left-0 top-0 flex h-screen flex-col overflow-y-hidden bg-black duration-300 ease-linear lg:static lg:translate-x-0"
+            class="absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-black duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0"
             @click.outside="sidebarToggle = false">
             <!-- SIDEBAR HEADER -->
-            <div class="py-5.5 lg:py-6.5 flex items-center justify-between gap-2 px-6">
+            <div class="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
                 <a href="index.html" class="flex items-center justify-center gap-3">
                     <img src="{{ asset('images/company.png') }}" alt="Logo" class="h-10 w-10" />
                     <p class="text-xl font-bold text-white">SD MKU</p>
@@ -25,13 +25,16 @@
                 <nav class="mt-5 px-4 py-4 lg:mt-9 lg:px-6" x-data="{ selected: $persist('Dashboard') }">
                     <!-- Menu Group -->
                     <div>
-                        <h3 class="text-bodydark2 mb-4 ml-4 text-sm font-medium">MENU</h3>
+                        <h3 class="mb-4 ml-4 text-sm font-medium text-bodydark2">MENU</h3>
 
                         <ul class="mb-6 flex flex-col gap-1.5">
                             <li>
-                                <a class="text-bodydark1 hover:bg-graydark dark:hover:bg-meta-4 group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium duration-300 ease-in-out"
+                                <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
                                     href="/admin/home" @click="selected = (selected === 'Home' ? '':'Home')"
-                                    :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Home') && (page === 'home') }">
+                                    :class="{
+                                        'bg-graydark dark:bg-meta-4': (selected === 'Home') && (
+                                            page === 'Home')
+                                    }">
                                     <svg class="fill-current" width="18" height="18" viewBox="0 0 18 18"
                                         fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -44,11 +47,11 @@
                             </li>
 
                             <li>
-                                <a class="text-bodydark1 hover:bg-graydark dark:hover:bg-meta-4 group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium duration-300 ease-in-out"
-                                    href="#" @click.prevent="selected = (selected === 'Home' ? '':'Home')"
+                                <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
+                                    href="#" @click.prevent="selected = (selected === 'Profile' ? '':'Profile')"
                                     :class="{
-                                        'bg-graydark dark:bg-meta-4': (selected === 'Home') || (
-                                            page === 'profile' || page === 'visi-misi' || page === 'tentang-kami')
+                                        'bg-graydark dark:bg-meta-4': (selected === 'Profile') || (
+                                            page === 'profile' || page === 'visiMisi' || page === 'tentangKami')
                                     }">
                                     <svg class="fill-current" width="18" height="18" viewBox="0 0 18 18"
                                         fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -69,7 +72,7 @@
                                     Profile
 
                                     <svg class="absolute right-4 top-1/2 -translate-y-1/2 fill-current"
-                                        :class="{ 'rotate-180': (selected === 'Home') }" width="20"
+                                        :class="{ 'rotate-180': (selected === 'Profile') }" width="20"
                                         height="20" viewBox="0 0 20 20" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -80,18 +83,19 @@
 
                                 <!-- Dropdown Menu Start -->
                                 <div class="translate transform overflow-hidden"
-                                    :class="(selected === 'Home') ? 'block' : 'hidden'">
+                                    :class="(selected === 'Profile') ? 'block' : 'hidden'">
                                     <ul class="mb-5.5 mt-4 flex flex-col gap-2.5 pl-6">
                                         <li>
-                                            <a class="text-bodydark2 group relative flex items-center gap-2.5 rounded-md px-4 font-medium duration-300 ease-in-out hover:text-white"
-                                                href="index.html" :class="page === 'visi-misi' && '!text-white'">Visi &
+                                            <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
+                                                href="/admin/profile/visi-misi"
+                                                :class="page === 'visiMisi' && '!text-white'">Visi &
                                                 Misi
                                             </a>
                                         </li>
                                         <li>
-                                            <a class="text-bodydark2 group relative flex items-center gap-2.5 rounded-md px-4 font-medium duration-300 ease-in-out hover:text-white"
-                                                href="index.html"
-                                                :class="page === 'tentang-kami' && '!text-white'">Tentang
+                                            <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
+                                                href="/admin/profile/tentang-kami"
+                                                :class="page === 'tentangKami' && '!text-white'">Tentang
                                                 Kami
                                             </a>
                                         </li>
@@ -101,11 +105,11 @@
                             </li>
 
                             <li>
-                                <a class="text-bodydark1 hover:bg-graydark dark:hover:bg-meta-4 group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium duration-300 ease-in-out"
+                                <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
                                     href="#" @click.prevent="selected = (selected === 'Akademis' ? '':'Akademis')"
                                     :class="{
                                         'bg-graydark dark:bg-meta-4': (selected === 'Akademis') || (
-                                            page === 'akademis' || page === 'guru-staf' || page === 'prestasi')
+                                            page === 'akademis' || page === 'guruStaf' || page === 'prestasi')
                                     }">
                                     <svg class="fill-current" width="18" height="18" viewBox="0 0 18 18"
                                         fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -140,14 +144,15 @@
                                     :class="(selected === 'Akademis') ? 'block' : 'hidden'">
                                     <ul class="mb-5.5 mt-4 flex flex-col gap-2.5 pl-6">
                                         <li>
-                                            <a class="text-bodydark2 group relative flex items-center gap-2.5 rounded-md px-4 font-medium duration-300 ease-in-out hover:text-white"
-                                                href="index.html" :class="page === 'guru-staf' && '!text-white'">Guru
+                                            <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
+                                                href="/admin/akademis/guru-staf"
+                                                :class="page === 'guruStaf' && '!text-white'">Guru
                                                 & Staf
                                             </a>
                                         </li>
                                         <li>
-                                            <a class="text-bodydark2 group relative flex items-center gap-2.5 rounded-md px-4 font-medium duration-300 ease-in-out hover:text-white"
-                                                href="index.html"
+                                            <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
+                                                href="/admin/akademis/prestasi"
                                                 :class="page === 'prestasi' && '!text-white'">Prestasi
                                             </a>
                                         </li>
@@ -157,7 +162,7 @@
                             </li>
 
                             <li>
-                                <a class="text-bodydark1 hover:bg-graydark dark:hover:bg-meta-4 group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium duration-300 ease-in-out"
+                                <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
                                     href="#"
                                     @click.prevent="selected = (selected === 'Non-Akademis' ? '':'Non-Akademis')"
                                     :class="{
@@ -196,20 +201,20 @@
                                     :class="(selected === 'Non-Akademis') ? 'block' : 'hidden'">
                                     <ul class="mb-5.5 mt-4 flex flex-col gap-2.5 pl-6">
                                         <li>
-                                            <a class="text-bodydark2 group relative flex items-center gap-2.5 rounded-md px-4 font-medium duration-300 ease-in-out hover:text-white"
-                                                href="index.html"
+                                            <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
+                                                href="/admin/non-akademis/berita"
                                                 :class="page === 'berita' && '!text-white'">Berita
                                             </a>
                                         </li>
                                         <li>
-                                            <a class="text-bodydark2 group relative flex items-center gap-2.5 rounded-md px-4 font-medium duration-300 ease-in-out hover:text-white"
-                                                href="index.html"
+                                            <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
+                                                href="/admin/non-akademis/fasilitas"
                                                 :class="page === 'fasilitas' && '!text-white'">Fasilitas
                                             </a>
                                         </li>
                                         <li>
-                                            <a class="text-bodydark2 group relative flex items-center gap-2.5 rounded-md px-4 font-medium duration-300 ease-in-out hover:text-white"
-                                                href="index.html"
+                                            <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
+                                                href="/admin/non-akademis/ekstrakurikuler"
                                                 :class="page === 'ekstrakurikuler' && '!text-white'">Ekstrakurikuler
                                             </a>
                                         </li>

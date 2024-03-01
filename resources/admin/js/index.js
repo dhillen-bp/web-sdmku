@@ -1,3 +1,7 @@
+import jQuery from 'jquery';
+window.$ = jQuery;
+
+
 import "jsvectormap/dist/css/jsvectormap.css";
 import "flatpickr/dist/flatpickr.min.css";
 import "../css/satoshi.css";

@@ -1,12 +1,12 @@
 <!-- ===== Header Start ===== -->
-<header class="z-999 drop-shadow-1 dark:bg-boxdark sticky top-0 flex w-full bg-white dark:drop-shadow-none">
-    <div class="shadow-2 flex flex-grow items-center justify-between px-4 py-4 md:px-6 2xl:px-11">
+<header class="sticky top-0 z-999 flex w-full bg-white drop-shadow-1 dark:bg-boxdark dark:drop-shadow-none">
+    <div class="flex flex-grow items-center justify-between px-4 py-4 shadow-2 md:px-6 2xl:px-11">
         <div class="flex items-center gap-2 sm:gap-4 lg:hidden">
             <!-- Hamburger Toggle BTN -->
             <button
-                class="z-99999 border-stroke dark:border-strokedark dark:bg-boxdark block rounded-sm border bg-white p-1.5 shadow-sm lg:hidden"
+                class="z-99999 block rounded-sm border border-stroke bg-white p-1.5 shadow-sm dark:border-strokedark dark:bg-boxdark lg:hidden"
                 @click.stop="sidebarToggle = !sidebarToggle">
-                <span class="h-5.5 w-5.5 relative block cursor-pointer">
+                <span class="relative block h-5.5 w-5.5 cursor-pointer">
                     <span class="du-block absolute right-0 h-full w-full">
                         <span
                             class="relative left-0 top-0 my-1 block h-0.5 w-0 rounded-sm bg-black delay-[0] duration-200 ease-in-out dark:bg-white"
@@ -37,7 +37,7 @@
             <form action="https://formbold.com/s/unique_form_id" method="POST">
                 <div class="relative">
                     <button class="absolute left-0 top-1/2 -translate-y-1/2">
-                        <svg class="fill-body dark:fill-bodydark hover:fill-primary dark:hover:fill-primary"
+                        <svg class="fill-body hover:fill-primary dark:fill-bodydark dark:hover:fill-primary"
                             width="20" height="20" viewBox="0 0 20 20" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -50,21 +50,21 @@
                     </button>
 
                     <input type="text" placeholder="Type to search..."
-                        class="xl:w-125 w-full bg-transparent pl-9 pr-4 focus:outline-none" />
+                        class="w-full bg-transparent pl-9 pr-4 focus:outline-none xl:w-125" />
                 </div>
             </form>
         </div>
 
-        <div class="2xsm:gap-7 flex items-center gap-3">
-            <ul class="2xsm:gap-4 flex items-center gap-2">
+        <div class="flex items-center gap-3 2xsm:gap-7">
+            <ul class="flex items-center gap-2 2xsm:gap-4">
                 <li>
                     <!-- Dark Mode Toggler -->
                     <label :class="darkMode ? 'bg-primary' : 'bg-stroke'"
-                        class="h-7.5 relative m-0 block w-14 rounded-full">
+                        class="relative m-0 block h-7.5 w-14 rounded-full">
                         <input type="checkbox" :value="darkMode" @change="darkMode = !darkMode"
                             class="absolute top-0 z-50 m-0 h-full w-full cursor-pointer opacity-0" />
                         <span :class="darkMode && '!right-1 !translate-x-full'"
-                            class="shadow-switcher absolute left-1 top-1/2 flex h-6 w-6 -translate-y-1/2 translate-x-0 items-center justify-center rounded-full bg-white duration-75 ease-linear">
+                            class="absolute left-1 top-1/2 flex h-6 w-6 -translate-y-1/2 translate-x-0 items-center justify-center rounded-full bg-white shadow-switcher duration-75 ease-linear">
                             <span class="dark:hidden">
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -111,10 +111,10 @@
 
                 <!-- Dropdown Start -->
                 <div x-show="dropdownOpen"
-                    class="w-62.5 border-stroke shadow-default dark:border-strokedark dark:bg-boxdark absolute right-0 mt-4 flex flex-col rounded-sm border bg-white">
-                    <ul class="border-stroke py-7.5 dark:border-strokedark flex flex-col gap-5 border-b px-6">
+                    class="absolute right-0 mt-4 flex w-62.5 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+                    <ul class="flex flex-col gap-5 border-b border-stroke px-6 py-7.5 dark:border-strokedark">
                         <li>
-                            <a href="profile.html"
+                            <a href="/admin/profile"
                                 class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
                                 <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22"
                                     fill="none" xmlns="http://www.w3.org/2000/svg">

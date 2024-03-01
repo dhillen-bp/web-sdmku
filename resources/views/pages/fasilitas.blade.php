@@ -14,7 +14,7 @@
                         class="mb-2 w-full rounded-lg object-cover">
                     <div class="p-2">
                         <h3 class="mb-2 text-xl font-bold">Nama Fasilitas 1</h3>
-                        <p class="mb-2 text-gray-600">Deskripsi fasilitas 1 Lorem ipsum dolor sit amet consectetur
+                        <p class="text-gray-600 mb-2">Deskripsi fasilitas 1 Lorem ipsum dolor sit amet consectetur
                             adipisicing
                             elit.
                         </p>

@@ -6,4 +6,4 @@
 </title>
 <link rel="icon" href="favicon.ico">
 {{-- <link href="style.css" rel="stylesheet"> --}}
-@vite(['resources/admin/css/style.css', 'resources/admin/css/satoshi.css', 'resources/admin/js/bundle.js', 'resources/js/app.js'])
+@vite(['resources/admin/css/style.css', 'resources/admin/css/satoshi.css', 'resources/admin/js/index.js'])

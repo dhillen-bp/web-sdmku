@@ -1,5 +1,9 @@
 @extends('admin.layouts.app')
 
+@section('xdata-page')
+    'Home'
+@endsection
+
 @section('body')
     <main>
         <div class="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
@@ -20,12 +24,12 @@
                     </ol>
                 </nav>
             </div>
-            <div class="2xl:gap-7.5 grid grid-cols-1 gap-4 md:grid-cols-1 md:gap-6 xl:grid-cols-1">
+            <div class="grid grid-cols-1 gap-4 md:grid-cols-1 md:gap-6 xl:grid-cols-1 2xl:gap-7.5">
                 <!-- Card Item Start -->
                 <div
-                    class="border-stroke px-7.5 shadow-default dark:border-strokedark dark:bg-boxdark rounded-sm border bg-white py-6">
+                    class="rounded-sm border border-stroke bg-white px-7.5 py-6 shadow-default dark:border-strokedark dark:bg-boxdark">
                     <div
-                        class="border-stroke px-6.5 dark:border-strokedark flex items-center justify-between border-b py-4">
+                        class="flex items-center justify-between border-b border-stroke px-6.5 py-4 dark:border-strokedark">
                         <h3 class="font-medium text-black dark:text-white">
                             Hero Banner Edit
                         </h3>
@@ -40,11 +44,11 @@
                                     Upload Gambar
                                 </label>
                                 <input type="file"
-                                    class="border-stroke file:border-stroke file:bg-whiter disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:file:border-form-strokedark w-full cursor-pointer rounded-lg border-[1.5px] bg-transparent font-normal outline-none transition file:mr-5 file:border-collapse file:cursor-pointer file:border-0 file:border-r file:border-solid file:px-5 file:py-3 file:hover:bg-primary file:hover:bg-opacity-10 focus:border-primary active:border-primary disabled:cursor-default dark:file:bg-white/30 dark:file:text-white dark:focus:border-primary">
+                                    class="w-full cursor-pointer rounded-lg border-[1.5px] border-stroke bg-transparent font-normal outline-none transition file:mr-5 file:border-collapse file:cursor-pointer file:border-0 file:border-r file:border-solid file:border-stroke file:bg-whiter file:px-5 file:py-3 file:hover:bg-primary file:hover:bg-opacity-10 focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:file:border-form-strokedark dark:file:bg-white/30 dark:file:text-white dark:focus:border-primary">
                             </div>
 
                             <button
-                                class="text-gray flex w-full justify-center rounded bg-primary p-3 font-medium hover:bg-opacity-90">
+                                class="flex w-full justify-center rounded bg-primary p-3 font-medium text-gray hover:bg-opacity-90">
                                 Submit
                             </button>
                         </div>
@@ -54,18 +58,16 @@
 
             </div>
 
-            <div class="2xl:gap-7.5 grid grid-cols-1 gap-4 md:grid-cols-1 md:gap-6 xl:grid-cols-1">
+            <div class="mt-5 grid grid-cols-1 gap-4 md:grid-cols-1 md:gap-6 xl:grid-cols-1 2xl:gap-7.5">
                 <!-- Card Item Start -->
                 <div
-                    class="border-stroke px-7.5 shadow-default dark:border-strokedark dark:bg-boxdark rounded-sm border bg-white py-6">
+                    class="rounded-sm border border-stroke bg-white px-7.5 py-6 shadow-default dark:border-strokedark dark:bg-boxdark">
                     <div
-                        class="border-stroke px-6.5 dark:border-strokedark flex items-center justify-between border-b py-4">
-                        <h3 class="font-medium text-black dark:text-white">
+                        class="flex items-center justify-between border-b border-stroke px-6.5 py-4 dark:border-strokedark">
+                        <h3 class="font-bold text-black dark:text-white">
                             Hero Image Preview
                         </h3>
                     </div>
-
-
 
                     <div class="grid grid-cols-2 gap-2">
                         <div>
@@ -85,7 +87,6 @@
                                 src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="">
                         </div>
                     </div>
-
 
                 </div>
                 <!-- Card Item End -->
