@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->group(function () {
+    Route::get('/', function () {
+        return view('admin.pages.home.home');
+    });
+
     Route::get('/signin', function () {
         return view('admin.pages.signin');
     });
@@ -14,7 +18,7 @@ Route::prefix('admin')->group(function () {
         return view('admin.pages.home.hero-banner');
     });
 
-    Route::prefix('profile')->group(function () {
+    Route::prefix('profil')->group(function () {
         Route::get('/', function () {
             return view('admin.pages.profile.index');
         });
@@ -23,43 +27,51 @@ Route::prefix('admin')->group(function () {
             return view('admin.pages.profile.visi-misi');
         });
 
-        Route::get('/tentang-kami', function () {
+        Route::get('/sekolah', function () {
             return view('admin.pages.profile.tentang-kami');
         });
-    });
 
-    Route::prefix('akademis')->group(function () {
         Route::get('/guru-staf', function () {
-            return view('admin.pages.akademis.guru-staf');
+            return view('admin.pages.profil.guru-staf');
         });
 
         Route::get('/guru-staf/create', function () {
-            return view('admin.pages.akademis.guru-staf-create');
-        });
-
-        Route::get('/prestasi', function () {
-            return view('admin.pages.akademis.prestasi');
-        });
-
-        Route::get('/prestasi/create', function () {
-            return view('admin.pages.akademis.prestasi-create');
+            return view('admin.pages.profil.guru-staf-create');
         });
     });
 
-    Route::prefix('non-akademis')->group(function () {
-        Route::get('/berita', function () {
-            return view('admin.pages.non-akademis.berita');
+    Route::prefix('kegiatan')->group(function () {
+        Route::get('/ekstrakurikuler', function () {
+            return view('admin.pages.kegiatan.ekstrakurikuler');
         });
-        Route::get('/berita/create', function () {
-            return view('admin.pages.non-akademis.berita-create');
+    });
+
+    Route::prefix('prestasi')->group(function () {
+        Route::get('/', function () {
+            return view('admin.pages.prestasi.index');
+        });
+
+        Route::get('/create', function () {
+            return view('admin.pages.prestasi.prestasi-create');
+        });
+    });
+
+    Route::prefix('berita')->group(function () {
+        Route::get('/', function () {
+            return view('admin.pages.berita.index');
+        });
+        Route::get('/create', function () {
+            return view('admin.pages.berita.berita-create');
         });
 
         Route::get('/fasilitas', function () {
             return view('admin.pages.non-akademis.fasilitas');
         });
+    });
 
-        Route::get('/ekstrakurikuler', function () {
-            return view('admin.pages.non-akademis.ekstrakurikuler');
+    Route::prefix('galeri')->group(function () {
+        Route::get('/', function () {
+            return view('admin.pages.galeri.index');
         });
     });
 });

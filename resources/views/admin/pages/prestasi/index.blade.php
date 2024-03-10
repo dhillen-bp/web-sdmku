@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 
 @section('xdata-page')
-    'prestasi'
+    'Prestasi'
 @endsection
 
 @section('body')

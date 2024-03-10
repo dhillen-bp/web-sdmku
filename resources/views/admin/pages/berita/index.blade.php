@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 
 @section('xdata-page')
-    'berita'
+    'Berita'
 @endsection
 
 @section('body')
@@ -23,7 +23,7 @@
             </div>
 
             <div class="mb-6 mt-3 flex">
-                <a href="/non-akademis/berita" target="_blank"
+                <a href="/berita" target="_blank"
                     class="inline-flex w-full items-center justify-center gap-1 rounded-full bg-success px-5 py-2 text-center font-medium text-white hover:bg-opacity-90 lg:px-5 xl:px-6">
                     Lihat Berita
                 </a>
@@ -36,7 +36,7 @@
                         class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
                         <div class="border-b border-stroke px-6.5 py-4 dark:border-strokedark">
                             <div class="mt-2">
-                                <a href="/admin/non-akademis/berita/create"
+                                <a href="/admin/berita/create"
                                     class="inline-flex items-center justify-center gap-1 rounded-full bg-primary px-5 py-2 text-center font-medium text-white hover:bg-opacity-90 lg:px-5 xl:px-6">
                                     <span class="material-icons">add</span> Tambah Berita
                                 </a>

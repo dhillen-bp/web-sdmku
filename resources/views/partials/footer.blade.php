@@ -42,8 +42,8 @@
         </nav>
         <nav class="col-span-1 block space-y-2 py-2">
             <h6 class="footer-title">Kegiatan</h6>
-            <a class="link-hover link block">Kegiatan Ekstrakurikuler</a>
-            <a class="link-hover link block">Kegiatan Pendukung</a>
+            <a class="link-hover link block">Ekstrakurikuler</a>
+            <a class="link-hover link block">Pendukung</a>
         </nav>
         <nav class="col-span-1 block space-y-2 py-2">
             <h6 class="footer-title">Menu Lain</h6>
