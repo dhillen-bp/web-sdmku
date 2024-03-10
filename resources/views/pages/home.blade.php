@@ -47,7 +47,7 @@
                         class="text-blue-500">Kreatif</span>, dan
                     <span class="text-green-500">Berakhlak Mulia</span>!
                 </h1>
-                <p class="py-4 lg:py-6">SD Muhammadiyah Klaten Utara adalah sekolah unggulan dengan berbagai prestasi. Kami
+                <p class="py-4">SD Muhammadiyah Klaten Utara adalah sekolah unggulan dengan berbagai prestasi. Kami
                     memiliki sistem pembelajaran profesional, religius dan ceria dilengkapi fasilitas yang memadai.
                 </p>
                 <button class="btn btn-primary">Kontak Kami</button>
@@ -59,38 +59,29 @@
     <section class="space-y-4 px-6 py-8 lg:space-y-8 lg:px-16 lg:py-16">
         <h3 class="text-center text-xl font-bold lg:text-4xl">Mengapa Memilih Kami?</h3>
         <div class="flex flex-col items-center justify-around gap-4 lg:flex-row lg:gap-6">
-            <div class="h-full w-full rounded border border-primary p-4 shadow lg:w-1/3">
-                <img src="{{ asset('shapes/random-shapes.svg') }}" alt=""
-                    class="h-[300px] w-full border-b border-primary object-cover pb-1">
-                <h5 class="text-center text-base font-semibold lg:text-xl">Kurikulum</h5>
-                <p class="text-xs lg:text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime vero, quas
-                    molestias rerum tenetur sapiente.</p>
-                <button class="btn btn-primary btn-sm float-right mt-2">Lihat Kurikulum</button>
-            </div>
-            <div class="h-full w-full rounded border border-primary p-4 shadow lg:w-1/3">
-                <img src="{{ asset('shapes/random-shapes.svg') }}" alt=""
-                    class="h-[300px] w-full border-b border-primary object-cover">
-                <h5 class="text-center text-base font-semibold lg:text-xl">Ekstrakurikuler</h5>
-                <p class="text-xs lg:text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime vero, quas
-                    molestias rerum tenetur sapiente.</p>
-                <button class="btn btn-primary btn-sm float-right mt-2">Lihat Ekstrakurikuler</button>
-            </div>
-            <div class="h-full w-full rounded border border-primary p-4 shadow lg:w-1/3">
-                <img src="{{ asset('shapes/random-shapes.svg') }}" alt=""
-                    class="h-[300px] w-full border-b border-primary object-cover">
-                <h5 class="text-center text-base font-semibold lg:text-xl">Fasilitas</h5>
-                <p class="text-xs lg:text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime vero, quas
-                    molestias rerum tenetur sapiente.</p>
-                <button class="btn btn-primary btn-sm float-right mt-2">Lihat Fasilitas</button>
-            </div>
+            @for ($i = 0; $i < 3; $i++)
+                <div class="h-full w-full rounded border border-primary p-4 shadow lg:w-1/3">
+                    <img src="{{ asset('images/shapes/random-shapes.svg') }}" alt=""
+                        class="h-[300px] w-full border-b border-primary object-cover pb-1">
+                    <h5 class="text-center text-base font-semibold lg:text-xl">Kurikulum</h5>
+                    <p class="text-xs lg:text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime vero, quas
+                        molestias rerum tenetur sapiente.</p>
+                    <button class="btn btn-primary btn-sm float-right mt-2">Lihat Kurikulum</button>
+                </div>
+            @endfor
         </div>
     </section>
 
     {{-- PPDB SECTION --}}
-    <section class="bg-base-200 px-6 py-8 lg:px-16 lg:py-16">
+    <section class="space-y-4 bg-base-200 px-6 py-8 lg:px-16 lg:py-16">
         <h3 class="text-xl font-bold lg:text-4xl">PPDB</h3>
+        <h5 class="font-semibold">Mari bergabung di sekolah kami! Memberikan pendidikan berkualitas dan lingkungan belajar
+            yang menyenangkan untuk masa depan cerah anak Anda.</h5>
+        <p class="font-semibold">Ayo daftarkan putra/putri tercinta pada Penerimaan Peserta Didik Baru (PPDB) Sekolah Dasar.
+            Berikan mereka fondasi pendidikan terbaik untuk sukses di masa depan!</p>
         <button class="btn btn-primary">Info PPDB</button>
     </section>
+
 
     {{-- NEWS SECTION --}}
     <section class="px-6 py-8 lg:px-16 lg:py-16">

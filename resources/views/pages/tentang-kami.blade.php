@@ -3,23 +3,37 @@
 @section('body')
     <section class="bg-base-200">
         <div class="h-24 bg-cover bg-no-repeat py-24 opacity-90"
-            style="background-image: url({{ asset('shapes/low-poly-grid-haikei.svg') }});">
-            <h1 class="mt-4 text-center text-3xl font-bold text-slate-100">Tentang Kami</h1>
+            style="background-image: url({{ asset('images/shapes/low-poly-grid-haikei.svg') }});">
+            <h1 class="mt-4 text-center text-3xl font-bold text-slate-100">Profile Sekolah</h1>
         </div>
 
-        <div class="flex flex-col justify-between gap-6 px-6 py-16 lg:flex-row lg:px-16">
+        <div class="flex flex-col items-center justify-center gap-2 px-6 py-8 lg:px-16">
             <div class="flex-[1]">
-                <img class="rounded-md border border-slate-100 shadow-lg"
-                    src="https://source.unsplash.com/brown-and-white-concrete-building-BlCJi8walFQ" alt="School">
+                <img class="h-[400px] w-[400px] rounded-md border border-slate-100 shadow-lg"
+                    src="{{ asset('images/logo/logo_sdmku_compress.png') }}" alt="School">
             </div>
             <div class="flex-[1]">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi delectus eligendi placeat explicabo
-                    necessitatibus vero debitis, velit earum voluptatem tempore, at vitae asperiores. Tempore veritatis,
-                    eius officia illo doloribus aut.</p>
+                <p class="font-semibold">Logo SD Muhammadiyah Klaten Utara</p>
             </div>
         </div>
 
-        <div class="px-6 pb-16 lg:px-16">
+
+        <div class="px-6 py-8 lg:px-16">
+            <h2 class="mb-3 text-center text-2xl font-bold">Sambutan Kepala Sekolah</h2>
+            <div class="flex flex-col justify-between gap-6 lg:flex-row">
+                <div class="flex-[1]">
+                    <img class="rounded-md border border-slate-100 shadow-lg"
+                        src="https://source.unsplash.com/brown-and-white-concrete-building-BlCJi8walFQ" alt="School">
+                </div>
+                <div class="flex-[2]">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi delectus eligendi placeat explicabo
+                        necessitatibus vero debitis, velit earum voluptatem tempore, at vitae asperiores. Tempore veritatis,
+                        eius officia illo doloribus aut.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="px-6 pb-16 pt-8 lg:px-16">
             <h2 class="mb-6 text-center text-2xl font-bold">Lokasi</h2>
             <div class="flex flex-col justify-between gap-6 lg:flex-row">
                 <div class="w-full">

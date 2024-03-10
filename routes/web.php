@@ -36,14 +36,23 @@ Route::prefix('profil')->group(function () {
 });
 
 Route::prefix('kegiatan')->group(function () {
+    Route::get('/ekstrakurikuler', function () {
+        return view('pages.ekstrakurikuler');
+    });
 });
 
 Route::get('/prestasi', function () {
     return view('pages.prestasi');
 });
 
-Route::get('/berita', function () {
-    return view('pages.berita');
+Route::prefix('berita')->group(function () {
+    Route::get('/', function () {
+        return view('pages.berita');
+    });
+
+    Route::get('/slug', function () {
+        return view('pages.berita-detail');
+    });
 });
 
 Route::get('/galeri', function () {

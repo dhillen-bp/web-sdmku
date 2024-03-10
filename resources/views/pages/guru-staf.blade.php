@@ -3,16 +3,16 @@
 @section('body')
     <section class="bg-base-200">
         <div class="h-24 bg-cover bg-no-repeat py-24 opacity-90"
-            style="background-image: url({{ asset('shapes/low-poly-grid-haikei.svg') }});">
+            style="background-image: url({{ asset('images/shapes/low-poly-grid-haikei.svg') }});">
             <h1 class="mt-4 text-center text-3xl font-bold text-slate-100">Guru & Staf</h1>
         </div>
 
         <div class="grid grid-cols-2 justify-center gap-6 px-6 py-16 lg:grid-cols-5 lg:px-16">
 
             @for ($i = 0; $i < 9; $i++)
-                <div class="card card-compact col-span-1 bg-base-100 shadow-2xl">
+                <div class="card-compact card col-span-1 bg-base-100 shadow-2xl">
                     <figure><img src="https://source.unsplash.com/random/200x200?teacher" alt="Shoes"
-                            class="w-50 block w-full" />
+                            class="block w-full lg:w-50" />
                     </figure>
                     <div class="card-body items-center">
                         <h2 class="card-title">John Doe!</h2>

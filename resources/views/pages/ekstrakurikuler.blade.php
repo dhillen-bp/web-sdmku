@@ -3,7 +3,7 @@
 @section('body')
     <section class="bg-base-200">
         <div class="h-24 bg-cover bg-no-repeat py-24 opacity-90"
-            style="background-image: url({{ asset('shapes/low-poly-grid-haikei.svg') }});">
+            style="background-image: url({{ asset('images/shapes/low-poly-grid-haikei.svg') }});">
             <h1 class="mt-4 text-center text-3xl font-bold text-slate-100">Ekstrakurikuler</h1>
         </div>
 
@@ -16,7 +16,7 @@
                     </div>
                     <div class="p-2">
                         <h3 class="text-center text-xl font-bold">Ekstrakurikuler</h3>
-                        <p class="text-center text-gray-600">Deskripsi ekstrakurikuler Lorem ipsum dolor sit amet
+                        <p class="text-gray-600 text-center">Deskripsi ekstrakurikuler Lorem ipsum dolor sit amet
                             consectetur
                             adipisicing elit.</p>
                     </div>

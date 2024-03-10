@@ -3,8 +3,8 @@
 @section('body')
     <section class="bg-base-200">
         <div class="h-24 bg-cover bg-no-repeat py-24 opacity-90"
-            style="background-image: url({{ asset('shapes/low-poly-grid-haikei.svg') }});">
-            <h1 class="mt-4 text-center text-3xl font-bold text-slate-100">Galerry</h1>
+            style="background-image: url({{ asset('images/shapes/low-poly-grid-haikei.svg') }});">
+            <h1 class="mt-4 text-center text-3xl font-bold text-slate-100">Galeri</h1>
         </div>
 
         <div class="px-6 py-16 lg:px-16">

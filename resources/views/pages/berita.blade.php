@@ -3,7 +3,7 @@
 @section('body')
     <section class="bg-base-200">
         <div class="h-24 bg-cover bg-no-repeat py-24 opacity-90"
-            style="background-image: url({{ asset('shapes/low-poly-grid-haikei.svg') }});">
+            style="background-image: url({{ asset('images/shapes/low-poly-grid-haikei.svg') }});">
             <h1 class="mt-4 text-center text-3xl font-bold text-slate-100">Berita</h1>
         </div>
 
@@ -18,8 +18,9 @@
                             <div class="badge badge-primary badge-outline badge-sm py-[8px] text-sm">category</div>
                             <div class="badge badge-primary badge-outline badge-sm py-[8px] text-sm">category</div>
                         </div>
-                        <h3 class="my-2 font-semibold leading-tight sm:leading-normal">The Coldest Sunset lorem
-                            ipsum</h3>
+                        <a href="/berita/slug" class="my-2 font-semibold leading-tight sm:leading-normal">The Coldest Sunset
+                            lorem
+                            ipsum</a>
                         <div class="flex items-center text-sm">
                             <svg class="mr-2 opacity-75" xmlns="http://www.w3.org/2000/svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"

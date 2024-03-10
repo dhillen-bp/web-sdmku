@@ -55,11 +55,11 @@
                         </summary>
                         <ul class="p-2">
                             <li><a href="/kegiatan/ekstrakurikuler"
-                                    class="{{ Request::path() == 'kegiatan/ekstrakurikuler' ? 'active' : '' }}">Kegiatan
+                                    class="{{ Request::path() == 'kegiatan/ekstrakurikuler' ? 'active' : '' }}">
                                     Ekstrakurikuler</a>
                             </li>
                             <li><a href="/kegiatan/pendukung"
-                                    class="{{ Request::path() == 'kegiatan/pendukung' ? 'active' : '' }}">Kegiatan
+                                    class="{{ Request::path() == 'kegiatan/pendukung' ? 'active' : '' }}">
                                     Pendukung</a></li>
                         </ul>
                     </details>
@@ -106,11 +106,11 @@
                     </summary>
                     <ul class="z-[2] w-max rounded-t-none bg-slate-100 p-2">
                         <li><a href="/kegiatan/ekstrakurikuler"
-                                class="{{ Request::path() == 'kegiatan/ekstrakurikuler' ? 'active' : '' }}">Kegiatan
+                                class="{{ Request::path() == 'kegiatan/ekstrakurikuler' ? 'active' : '' }}">
                                 Ekstrakurikuler</a>
                         </li>
                         <li><a href="/kegiatan/pendukung"
-                                class="{{ Request::path() == 'kegiatan/pendukung' ? 'active' : '' }}">Kegiatan
+                                class="{{ Request::path() == 'kegiatan/pendukung' ? 'active' : '' }}">
                                 Pendukung</a></li>
                     </ul>
                 </details>
