@@ -33,24 +33,69 @@
     </section>
 
     {{-- WELCOME SECTION --}}
-    <section class="-mt-[5px] bg-base-200 py-16 lg:px-16">
+    <section class="-mt-[5px] bg-base-200 py-8 lg:px-16 lg:py-16">
         <div class="hero-content flex-col lg:flex-row-reverse lg:px-0">
-            <img src="https://source.unsplash.com/white-and-red-concrete-building-ZPkG0EdWQa8"
-                class="h-80 max-w-sm rounded-lg shadow-2xl lg:w-1/3" />
+            {{-- <img src="https://source.unsplash.com/white-and-red-concrete-building-ZPkG0EdWQa8"
+                class="h-80 max-w-sm rounded-lg shadow-2xl lg:w-1/3" /> --}}
+            <iframe class="h-[320px] w-[500px] px-6 lg:h-[245px] lg:w-[450px] lg:px-0"
+                src="https://www.youtube.com/embed/UDyCZdRIYBY?si=jaAnG3uMX9ZidG9H?modestbranding=1&rel=0&showinfo=0"
+                frameborder="0" allowfullscreen></iframe>
+
             <div class="px-6 lg:w-2/3 lg:px-0">
-                <h1 class="py-1 text-2xl font-semibold lg:text-5xl">Selamat Datang di SD Muhammadiyah Klaten Utara!</h1>
-                <p class="py-6">SD Muhammadiyah Klaten Utara adalah sekolah unggulan dengan berbagai prestasi. Kami
+                <h1 class="py-1 text-2xl font-semibold lg:text-5xl">SD Muhammadiyah Klaten Utara</h1>
+                <h1 class="text-2xl font-semibold lg:py-1 lg:text-4xl"><span class="text-yellow-500">Cerdas</span>, <span
+                        class="text-blue-500">Kreatif</span>, dan
+                    <span class="text-green-500">Berakhlak Mulia</span>!
+                </h1>
+                <p class="py-4 lg:py-6">SD Muhammadiyah Klaten Utara adalah sekolah unggulan dengan berbagai prestasi. Kami
                     memiliki sistem pembelajaran profesional, religius dan ceria dilengkapi fasilitas yang memadai.
                 </p>
-                <button class="btn btn-primary">Get Started</button>
+                <button class="btn btn-primary">Kontak Kami</button>
             </div>
         </div>
     </section>
 
+    {{-- OUR SERVICE SECTION --}}
+    <section class="space-y-4 px-6 py-8 lg:space-y-8 lg:px-16 lg:py-16">
+        <h3 class="text-center text-xl font-bold lg:text-4xl">Mengapa Memilih Kami?</h3>
+        <div class="flex flex-col items-center justify-around gap-4 lg:flex-row lg:gap-6">
+            <div class="h-full w-full rounded border border-primary p-4 shadow lg:w-1/3">
+                <img src="{{ asset('shapes/random-shapes.svg') }}" alt=""
+                    class="h-[300px] w-full border-b border-primary object-cover pb-1">
+                <h5 class="text-center text-base font-semibold lg:text-xl">Kurikulum</h5>
+                <p class="text-xs lg:text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime vero, quas
+                    molestias rerum tenetur sapiente.</p>
+                <button class="btn btn-primary btn-sm float-right mt-2">Lihat Kurikulum</button>
+            </div>
+            <div class="h-full w-full rounded border border-primary p-4 shadow lg:w-1/3">
+                <img src="{{ asset('shapes/random-shapes.svg') }}" alt=""
+                    class="h-[300px] w-full border-b border-primary object-cover">
+                <h5 class="text-center text-base font-semibold lg:text-xl">Ekstrakurikuler</h5>
+                <p class="text-xs lg:text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime vero, quas
+                    molestias rerum tenetur sapiente.</p>
+                <button class="btn btn-primary btn-sm float-right mt-2">Lihat Ekstrakurikuler</button>
+            </div>
+            <div class="h-full w-full rounded border border-primary p-4 shadow lg:w-1/3">
+                <img src="{{ asset('shapes/random-shapes.svg') }}" alt=""
+                    class="h-[300px] w-full border-b border-primary object-cover">
+                <h5 class="text-center text-base font-semibold lg:text-xl">Fasilitas</h5>
+                <p class="text-xs lg:text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime vero, quas
+                    molestias rerum tenetur sapiente.</p>
+                <button class="btn btn-primary btn-sm float-right mt-2">Lihat Fasilitas</button>
+            </div>
+        </div>
+    </section>
+
+    {{-- PPDB SECTION --}}
+    <section class="bg-base-200 px-6 py-8 lg:px-16 lg:py-16">
+        <h3 class="text-xl font-bold lg:text-4xl">PPDB</h3>
+        <button class="btn btn-primary">Info PPDB</button>
+    </section>
+
     {{-- NEWS SECTION --}}
-    <section class="mb-8 px-6 py-16 pb-8 lg:px-16">
+    <section class="px-6 py-8 lg:px-16 lg:py-16">
         <div class="mb-8 flex items-center justify-between">
-            <div class="text-xl font-bold lg:text-4xl">Berita Terbaru</div>
+            <h3 class="text-xl font-bold lg:text-4xl">Berita Terbaru</h3>
             <div class="flex items-center">
                 <a class="cursor-pointer hover:underline">Lihat Lainnya </a>
                 <span class="material-icons">keyboard_double_arrow_right</span>

@@ -1,8 +1,8 @@
 <nav class="navbar fixed left-0 right-0 top-0 z-50 bg-primary bg-opacity-30 px-6 shadow-sm lg:px-16" id="header">
     <div class="flex-1">
-        <a class="inline-flex cursor-pointer text-xl font-bold text-slate-100">
-            <img src="{{ asset('images/company.png') }}" alt="School Logo" class="mr-3 h-7 w-7">
-            SD MKU
+        <a class="inline-flex cursor-pointer items-center text-xl font-bold text-slate-100">
+            <img src="{{ asset('images/logo/logo_sdmku_compress.png') }}" alt="School Logo" class="mr-3 h-8 w-8">
+            <p>SD MKU</p>
         </a>
     </div>
     <div class="flex-none">
@@ -28,56 +28,51 @@
             </label>
 
             <ul
-                class="-x-8 dropdown-content menu relative right-0 z-[1] w-screen translate-x-6 bg-primary text-slate-100 sm:translate-x-8">
+                class="-x-8 menu dropdown-content relative right-0 z-[1] w-screen translate-x-6 bg-primary text-slate-100 sm:translate-x-8">
                 <li><a href="/home" class="{{ Request::path() == 'home' ? 'active' : '' }}">Home</a></li>
                 <li>
-                    <details id="profileDropdown" {{ Str::startsWith(Request::path(), 'profile/') ? 'open' : '' }}>
+                    <details id="profileDropdown" {{ Str::startsWith(Request::path(), 'profil/') ? 'open' : '' }}>
                         <summary>
-                            Profile
+                            Profil
                         </summary>
                         <ul class="p-2">
-                            <li><a href="/profile/visi-misi"
-                                    class="{{ Request::path() == 'profile/visi-misi' ? 'active' : '' }}">Visi & Misi</a>
+                            <li><a href="/profil/sekolah"
+                                    class="{{ Request::path() == 'profil/sekolah' ? 'active' : '' }}">Profil Sekolah</a>
                             </li>
-                            <li><a href="/profile/tentang-kami"
-                                    class="{{ Request::path() == 'profile/tentang-kami' ? 'active' : '' }}">Tentang
-                                    Kami</a></li>
-                        </ul>
-                    </details>
-                </li>
-                <li>
-                    <details id="akademisDropdown" {{ Str::startsWith(Request::path(), 'akademis/') ? 'open' : '' }}>
-                        <summary>
-                            Akademis
-                        </summary>
-                        <ul class="p-2">
-                            <li><a href="/akademis/guru-staf"
-                                    class="{{ Request::path() == 'akademis/guru-staf' ? 'active' : '' }}">Guru &
-                                    Staf</a></li>
-                            <li><a href="/akademis/prestasi"
-                                    class="{{ Request::path() == 'akademis/prestasi' ? 'active' : '' }}">Prestasi</a>
+                            <li><a href="/profil/visi-misi"
+                                    class="{{ Request::path() == 'profil/visi-misi' ? 'active' : '' }}">Visi & Misi</a>
+                            </li>
+                            <li><a href="/profil/guru-staf"
+                                    class="{{ Request::path() == 'profil/guru-staf' ? 'active' : '' }}">Guru & Staf</a>
                             </li>
                         </ul>
                     </details>
                 </li>
                 <li>
-                    <details id="nonAkademisDropdown"
-                        {{ Str::startsWith(Request::path(), 'non-akademis/') ? 'open' : '' }}>
-                        <summary>
-                            Non Akademis
+                    <details id="kegiatanDropdown" {{ Str::startsWith(Request::path(), 'kegiatan/') ? 'open' : '' }}>
+                        <summary class="text-slate-100">
+                            Kegiatan
                         </summary>
                         <ul class="p-2">
-                            <li><a href="/non-akademis/berita"
-                                    class="{{ Request::path() == 'non-akademis/berita' ? 'active' : '' }}">Berita</a>
+                            <li><a href="/kegiatan/ekstrakurikuler"
+                                    class="{{ Request::path() == 'kegiatan/ekstrakurikuler' ? 'active' : '' }}">Kegiatan
+                                    Ekstrakurikuler</a>
                             </li>
-                            <li><a href="/non-akademis/fasilitas"
-                                    class="{{ Request::path() == 'non-akademis/fasilitas' ? 'active' : '' }}">Fasilitas</a>
-                            </li>
-                            <li><a href="/non-akademis/ekstrakurikuler"
-                                    class="{{ Request::path() == 'non-akademis/ekstrakurikuler' ? 'active' : '' }}">Ekstrakurikuler</a>
-                            </li>
+                            <li><a href="/kegiatan/pendukung"
+                                    class="{{ Request::path() == 'kegiatan/pendukung' ? 'active' : '' }}">Kegiatan
+                                    Pendukung</a></li>
                         </ul>
                     </details>
+                </li>
+                <li><a href="/prestasi"
+                        class="{{ Request::path() == 'prestasi' ? 'active' : '' }} text-slate-100">Prestasi</a></li>
+                <li><a href="/berita" class="{{ Request::path() == 'berita' ? 'active' : '' }} text-slate-100">Berita &
+                        Artikel</a>
+                </li>
+                <li><a href="/galeri"
+                        class="{{ Request::path() == 'galeri' ? 'active' : '' }} text-slate-100">Galeri</a>
+                </li>
+                <li><a href="/ppdb" class="{{ Request::path() == 'ppdb' ? 'active' : '' }} text-slate-100">PPDB</a>
                 </li>
             </ul>
         </div>
@@ -86,53 +81,49 @@
         <ul class="menu menu-horizontal hidden px-1 lg:inline-flex">
             <li><a href="/home" class="{{ Request::path() == 'home' ? 'active' : '' }} text-slate-100">Home</a></li>
             <li>
-                <details id="profileDropdown" {{ Str::startsWith(Request::path(), 'profile/') ? 'open' : '' }}>
+                <details id="profileDropdown" {{ Str::startsWith(Request::path(), 'profil/') ? 'open' : '' }}>
                     <summary class="text-slate-100">
-                        Profile
+                        Profil
                     </summary>
                     <ul class="z-[2] w-max rounded-t-none bg-slate-100 p-2">
-                        <li><a href="/profile/visi-misi"
-                                class="{{ Request::path() == 'profile/visi-misi' ? 'active' : '' }}">Visi & Misi</a>
+                        <li><a href="/profil/sekolah"
+                                class="{{ Request::path() == 'profil/sekolah' ? 'active' : '' }}">Profil Sekolah</a>
                         </li>
-                        <li><a href="/profile/tentang-kami"
-                                class="{{ Request::path() == 'profile/tentang-kami' ? 'active' : '' }}">Tentang
-                                Kami</a>
+                        <li><a href="/profil/visi-misi"
+                                class="{{ Request::path() == 'profil/visi-misi' ? 'active' : '' }}">Visi & Misi</a>
+                        </li>
+                        <li><a href="/profil/guru-staf"
+                                class="{{ Request::path() == 'profil/guru-staf' ? 'active' : '' }}">Guru &
+                                Staf</a>
                         </li>
                     </ul>
                 </details>
             </li>
             <li>
-                <details id="akademisDropdown" {{ Str::startsWith(Request::path(), 'akademis/') ? 'open' : '' }}>
+                <details id="kegiatanDropdown" {{ Str::startsWith(Request::path(), 'kegiatan/') ? 'open' : '' }}>
                     <summary class="text-slate-100">
-                        Akademis
+                        Kegiatan
                     </summary>
                     <ul class="z-[2] w-max rounded-t-none bg-slate-100 p-2">
-                        <li><a href="/akademis/guru-staf"
-                                class="{{ Request::path() == 'akademis/guru-staf' ? 'active' : '' }}">Guru & Staf</a>
+                        <li><a href="/kegiatan/ekstrakurikuler"
+                                class="{{ Request::path() == 'kegiatan/ekstrakurikuler' ? 'active' : '' }}">Kegiatan
+                                Ekstrakurikuler</a>
                         </li>
-                        <li><a href="/akademis/prestasi"
-                                class="{{ Request::path() == 'akademis/prestasi' ? 'active' : '' }}">Prestasi</a></li>
+                        <li><a href="/kegiatan/pendukung"
+                                class="{{ Request::path() == 'kegiatan/pendukung' ? 'active' : '' }}">Kegiatan
+                                Pendukung</a></li>
                     </ul>
                 </details>
             </li>
-            <li>
-                <details id="nonAkademisDropdown"
-                    {{ Str::startsWith(Request::path(), 'non-akademis/') ? 'open' : '' }}>
-                    <summary class="text-slate-100">
-                        Non Akademis
-                    </summary>
-                    <ul class="z-[2] w-max rounded-t-none bg-slate-100 p-2">
-                        <li><a href="/non-akademis/berita"
-                                class="{{ Request::path() == 'non-akademis/berita' ? 'active' : '' }}">Berita</a></li>
-                        <li><a href="/non-akademis/fasilitas"
-                                class="{{ Request::path() == 'non-akademis/fasilitas' ? 'active' : '' }}">Fasilitas</a>
-                        </li>
-                        <li><a href="/non-akademis/ekstrakurikuler"
-                                {{ Request::path() == 'non-akademis/ekstrakurikuler' ? 'active' : '' }}>Ekstrakurikuler</a>
-                        </li>
-                    </ul>
-                </details>
+            <li><a href="/prestasi"
+                    class="{{ Request::path() == 'prestasi' ? 'active' : '' }} text-slate-100">Prestasi</a></li>
+            <li><a href="/berita" class="{{ Request::path() == 'berita' ? 'active' : '' }} text-slate-100">Berita &
+                    Artikel</a>
             </li>
+            <li><a href="/galeri" class="{{ Request::path() == 'galeri' ? 'active' : '' }} text-slate-100">Galeri</a>
+            </li>
+            <li><a href="/ppdb"
+                    class="{{ Request::path() == 'ppdb' ? 'active' : '' }} font-bold text-slate-100">PPDB</a></li>
         </ul>
     </div>
 </nav>

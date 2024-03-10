@@ -1,7 +1,8 @@
 <footer class="footer justify-between bg-slate-950 px-6 py-6 text-white lg:grid-cols-2 lg:px-16 lg:py-10">
     <aside class="col-span-1 grid items-center pt-4 lg:pt-0">
         <div class="flex items-center gap-2 lg:gap-5">
-            <img src="{{ asset('images/company.png') }}" alt="School Logo" class="w-2h-20 mr-3 h-20 lg:h-24 lg:w-24">
+            <img src="{{ asset('images/logo/logo_sdmku_compress.png') }}" alt="School Logo"
+                class="w-2h-20 mr-3 h-20 lg:h-24 lg:w-24">
             <div class="space-y-2">
                 <h2 class="text-lg font-bold lg:text-2xl">SD Muhammadiyah Klaten Utara</h2>
                 <div class="flex flex-[4] items-center">
@@ -34,22 +35,25 @@
     </aside>
     <div class="col-span-1 grid w-full grid-cols-2 justify-between gap-2 lg:flex lg:justify-around">
         <nav class="col-span-1 block space-y-2 py-2">
-            <h6 class="footer-title">Profile</h6>
+            <h6 class="footer-title">Profil</h6>
+            <a class="link-hover link block">Profil Sekolah</a>
             <a class="link-hover link block">Visi & Misi</a>
-            <a class="link-hover link block">Tentang Kami</a>
-        </nav>
-        <nav class="col-span-1 block space-y-2 py-2">
-            <h6 class="footer-title">Akademis</h6>
             <a class="link-hover link block">Guru & Staf</a>
-            <a class="link-hover link block">Prestasi</a>
         </nav>
         <nav class="col-span-1 block space-y-2 py-2">
-            <h6 class="footer-title">Non Akademis</h6>
-            <a class="link-hover link block">Fasilitas</a>
-            <a class="link-hover link block">Ekstrakurikuler</a>
+            <h6 class="footer-title">Kegiatan</h6>
+            <a class="link-hover link block">Kegiatan Ekstrakurikuler</a>
+            <a class="link-hover link block">Kegiatan Pendukung</a>
+        </nav>
+        <nav class="col-span-1 block space-y-2 py-2">
+            <h6 class="footer-title">Menu Lain</h6>
+            <a class="link-hover link block">Prestasi</a>
+            <a class="link-hover link block">Berita</a>
+            <a class="link-hover link block">Galeri</a>
+            <a class="link-hover link block">PPDB</a>
         </nav>
         <nav class="py-2">
-            <h6 class="footer-title">Social</h6>
+            <h6 class="footer-title">Media Sosial</h6>
             <div class="flex gap-4">
                 <a class="cursor-pointer rounded-full bg-gradient-to-tr p-2 hover:from-[#FF7806] hover:to-[#A20AD0]">
                     @include('partials.svg._instagram-svg')

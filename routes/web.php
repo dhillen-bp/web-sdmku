@@ -21,33 +21,31 @@ Route::get('/home', function () {
     return view('pages.home');
 });
 
-Route::prefix('profile')->group(function () {
+Route::prefix('profil')->group(function () {
     Route::get('/visi-misi', function () {
         return view('pages.visi-misi');
     });
 
-    Route::get('/tentang-kami', function () {
+    Route::get('/sekolah', function () {
         return view('pages.tentang-kami');
     });
-});
 
-Route::prefix('akademis')->group(function () {
     Route::get('/guru-staf', function () {
         return view('pages.guru-staf');
     });
-    Route::get('/prestasi', function () {
-        return view('pages.prestasi');
-    });
 });
 
-Route::prefix('non-akademis')->group(function () {
-    Route::get('/berita', function () {
-        return view('pages.berita');
-    });
-    Route::get('/fasilitas', function () {
-        return view('pages.fasilitas');
-    });
-    Route::get('/ekstrakurikuler', function () {
-        return view('pages.ekstrakurikuler');
-    });
+Route::prefix('kegiatan')->group(function () {
+});
+
+Route::get('/prestasi', function () {
+    return view('pages.prestasi');
+});
+
+Route::get('/berita', function () {
+    return view('pages.berita');
+});
+
+Route::get('/galeri', function () {
+    return view('pages.gallery');
 });
