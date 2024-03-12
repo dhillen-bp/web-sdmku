@@ -8,11 +8,10 @@
         </div>
 
         <div class="grid grid-cols-2 justify-center gap-6 px-6 py-16 lg:grid-cols-5 lg:px-16">
-
             @for ($i = 0; $i < 9; $i++)
-                <div class="card-compact card col-span-1 bg-base-100 shadow-2xl">
-                    <figure><img src="https://source.unsplash.com/random/200x200?teacher" alt="Shoes"
-                            class="block w-full lg:w-50" />
+                <div class="card card-compact col-span-1 bg-base-100 shadow-2xl">
+                    <figure class="m-0 p-0">
+                        <img src="https://source.unsplash.com/random/200x200?teacher" alt="Shoes" class="block w-full" />
                     </figure>
                     <div class="card-body items-center">
                         <h2 class="card-title">John Doe!</h2>
@@ -28,7 +27,6 @@
                     </div>
                 </div>
             @endfor
-
         </div>
 
     </section>

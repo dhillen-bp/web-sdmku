@@ -20,55 +20,19 @@
                     class="dark:bg-gray-900 mb-3 me-3 rounded-full border border-black bg-white px-5 py-2.5 text-center text-base font-medium text-black hover:bg-primary hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300">Fasilitas</button>
             </div>
             <div class="grid grid-cols-2 gap-4 md:grid-cols-3">
-                <div>
-                    <img class="h-auto max-w-full rounded-lg"
-                        src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
-                </div>
-                <div>
-                    <img class="h-auto max-w-full rounded-lg"
-                        src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="">
-                </div>
-                <div>
-                    <img class="h-auto max-w-full rounded-lg"
-                        src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="">
-                </div>
-                <div>
-                    <img class="h-auto max-w-full rounded-lg"
-                        src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="">
-                </div>
-                <div>
-                    <img class="h-auto max-w-full rounded-lg"
-                        src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="">
-                </div>
-                <div>
-                    <img class="h-auto max-w-full rounded-lg"
-                        src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" alt="">
-                </div>
-                <div>
-                    <img class="h-auto max-w-full rounded-lg"
-                        src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-6.jpg" alt="">
-                </div>
-                <div>
-                    <img class="h-auto max-w-full rounded-lg"
-                        src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-7.jpg" alt="">
-                </div>
-                <div>
-                    <img class="h-auto max-w-full rounded-lg"
-                        src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-8.jpg" alt="">
-                </div>
-                <div>
-                    <img class="h-auto max-w-full rounded-lg"
-                        src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-9.jpg" alt="">
-                </div>
-                <div>
-                    <img class="h-auto max-w-full rounded-lg"
-                        src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-10.jpg" alt="">
-                </div>
-                <div>
-                    <img class="h-auto max-w-full rounded-lg"
-                        src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-11.jpg" alt="">
-                </div>
+                @for ($i = 0; $i < 6; $i++)
+                    <div class="relative">
+                        <img class="h-56 w-full max-w-full rounded-lg object-cover"
+                            src="https://source.unsplash.com/random/{{ $i }}" alt="">
+                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-2 text-center text-white">
+                            <span class="text-sm font-semibold">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                In,
+                                mollitia.</span>
+                        </div>
+                    </div>
+                @endfor
             </div>
+
         </div>
 
     </section>

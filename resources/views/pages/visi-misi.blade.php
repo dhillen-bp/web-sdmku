@@ -12,13 +12,13 @@
                 <div class="card w-full bg-base-100 shadow-xl">
                     <div class="card-body">
                         <h2 class="card-title justify-center">Visi</h2>
-                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, modi?</p>
                     </div>
                 </div>
                 <div class="card w-full bg-base-100 shadow-xl">
                     <div class="card-body">
                         <h2 class="card-title justify-center">Misi</h2>
-                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, modi?</p>
                     </div>
                 </div>
             </div>

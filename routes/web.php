@@ -55,6 +55,10 @@ Route::prefix('berita')->group(function () {
     });
 });
 
+Route::get('/ppdb', function () {
+    return view('pages.ppdb');
+});
+
 Route::get('/galeri', function () {
     return view('pages.gallery');
 });

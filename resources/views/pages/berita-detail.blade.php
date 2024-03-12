@@ -18,7 +18,7 @@
         <div class="grid grid-cols-1 justify-center gap-6 px-6 py-16 lg:grid-cols-4 lg:px-16">
             <div class="col-span-4 space-y-4 rounded bg-white p-4 shadow lg:col-span-3">
                 <h4 class="mb-4 text-2xl font-bold">Main News Title</h4>
-                <img src="{{ asset('images/News-Default.png') }}" alt="News Image"
+                <img src="{{ asset('images/default/News-Default.png') }}" alt="News Image"
                     class="h-[400px] w-full object-cover object-top">
                 <div class="flex items-center text-sm">
                     <svg class="mr-2 opacity-75" xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +42,7 @@
                 <h3 class="text-xl font-bold">Berita Terbaru</h3>
                 @for ($i = 0; $i < 3; $i++)
                     <div class="bg-white p-2 shadow">
-                        <img src="{{ asset('images/News-Default.png') }}" alt="" class="h-[200px] w-full">
+                        <img src="{{ asset('images/default/News-Default.png') }}" alt="" class="h-[200px] w-full">
                         <div class="flex items-center text-sm">
                             <svg class="mr-2 opacity-75" xmlns="http://www.w3.org/2000/svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"

@@ -50,7 +50,7 @@
                 <p class="py-4">SD Muhammadiyah Klaten Utara adalah sekolah unggulan dengan berbagai prestasi. Kami
                     memiliki sistem pembelajaran profesional, religius dan ceria dilengkapi fasilitas yang memadai.
                 </p>
-                <button class="btn btn-primary">Kontak Kami</button>
+                <a href="/profil/sekolah" class="btn btn-primary">Profil Kami</a>
             </div>
         </div>
     </section>
@@ -73,13 +73,31 @@
     </section>
 
     {{-- PPDB SECTION --}}
-    <section class="space-y-4 bg-base-200 px-6 py-8 lg:px-16 lg:py-16">
-        <h3 class="text-xl font-bold lg:text-4xl">PPDB</h3>
-        <h5 class="font-semibold">Mari bergabung di sekolah kami! Memberikan pendidikan berkualitas dan lingkungan belajar
-            yang menyenangkan untuk masa depan cerah anak Anda.</h5>
-        <p class="font-semibold">Ayo daftarkan putra/putri tercinta pada Penerimaan Peserta Didik Baru (PPDB) Sekolah Dasar.
-            Berikan mereka fondasi pendidikan terbaik untuk sukses di masa depan!</p>
-        <button class="btn btn-primary">Info PPDB</button>
+    <section class="bg-base-200 px-6 py-8 lg:px-16 lg:py-16">
+        <div class="flex items-start justify-between gap-4 space-y-4">
+
+            <div class="w-2/3 space-y-4">
+                <h3 class="text-xl font-bold lg:text-4xl">PPDB</h3>
+                <h5 class="text-sm font-semibold lg:text-lg">Mari bergabung di sekolah kami! Memberikan pendidikan
+                    berkualitas
+                    dan lingkungan
+                    belajar
+                    yang menyenangkan untuk masa depan cerah anak Anda.</h5>
+                <p class="text-sm font-semibold lg:text-lg">Ayo daftarkan putra/putri tercinta pada Penerimaan Peserta Didik
+                    Baru (PPDB)
+                    Sekolah Dasar.
+                    Berikan mereka fondasi pendidikan terbaik untuk sukses di masa depan!</p>
+            </div>
+            <div class="flex w-1/3 flex-col items-center">
+                <img src="{{ asset('images/default/akreditasi.png') }}" alt="Akreditasi Image"
+                    class="h-[200px] w-[150px] object-cover">
+            </div>
+        </div>
+        <a class="btn btn-primary btn-sm w-full font-bold lg:btn-md lg:text-lg" href="/ppdb">Info PPDB</a>
+        <div class="mt-4">
+            <img src="{{ asset('images/default/PPDB.png') }}" alt="PPDB Info">
+        </div>
+
     </section>
 
 
@@ -93,7 +111,7 @@
             </div>
         </div>
         <div class="grid gap-4 md:grid-cols-2 lg:gap-8">
-            @for ($i = 0; $i < 3; $i++)
+            @for ($i = 0; $i < 4; $i++)
                 <div class="card card-side h-[180px] bg-primary bg-opacity-5 shadow-xl lg:h-[200px]">
                     <figure><img src="https://source.unsplash.com/black-wooden-writing-desk-chair-inside-room-IXTvnOOSTyU"
                             alt="Movie" class="w-[160px] object-contain lg:w-[250px]" />
