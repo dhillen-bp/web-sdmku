@@ -4,31 +4,19 @@
     {{-- HEADER & HERO --}}
     <section class="relative">
         <div class="carousel relative min-h-screen w-full object-cover md:h-[460px]">
-            <div id="slide1" class="carousel-item relative w-full">
-                <img src="https://source.unsplash.com/brown-wooden-table-and-chairs-PDRFeeDniCk" class="w-full" />
-                <div
-                    class="absolute left-6 right-6 top-1/2 flex -translate-y-1/2 transform justify-between lg:left-16 lg:right-16">
-                    <a href="#slide3" class="btn btn-circle">❮</a>
-                    <a href="#slide2" class="btn btn-circle">❯</a>
+            @foreach ($slides as $index => $image)
+                @php
+                    $jumlah = count($slides) - 1;
+                @endphp
+                <div id="slide{{ $index }}" class="carousel-item relative w-full">
+                    <img src="{{ $image }}" class="w-full" />
+                    <div
+                        class="absolute left-6 right-6 top-1/2 flex -translate-y-1/2 transform justify-between lg:left-16 lg:right-16">
+                        <a href="#slide{{ $index == 0 ? $jumlah : $index - 1 }}" class="btn btn-circle">❮</a>
+                        <a href="#slide{{ $index == $jumlah ? $jumlah - $jumlah : $index + 1 }}" class="btn btn-circle">❯</a>
+                    </div>
                 </div>
-            </div>
-            <div id="slide2" class="carousel-item relative w-full">
-                <img src="https://source.unsplash.com/man-and-woman-sitting-on-chairs-zFSo6bnZJTw" class="w-full" />
-                <div
-                    class="absolute left-6 right-6 top-1/2 flex -translate-y-1/2 transform justify-between lg:left-16 lg:right-16">
-                    <a href="#slide1" class="btn btn-circle">❮</a>
-                    <a href="#slide3" class="btn btn-circle">❯</a>
-                </div>
-            </div>
-            <div id="slide3" class="carousel-item relative w-full">
-                <img src="https://source.unsplash.com/group-of-fresh-graduates-students-throwing-their-academic-hat-in-the-air-8CqDvPuo_kI"
-                    class="w-full" />
-                <div
-                    class="absolute left-6 right-6 top-1/2 flex -translate-y-1/2 transform justify-between lg:left-16 lg:right-16">
-                    <a href="#slide2" class="btn btn-circle">❮</a>
-                    <a href="#slide1" class="btn btn-circle">❯</a>
-                </div>
-            </div>
+            @endforeach
         </div>
     </section>
 
@@ -62,16 +50,15 @@
     <section class="space-y-4 px-6 py-8 lg:space-y-8 lg:px-16 lg:py-16">
         <h3 class="text-center text-xl font-bold lg:text-4xl">Mengapa Memilih Kami?</h3>
         <div class="carousel flex flex-col items-center justify-around gap-4 lg:flex-row lg:gap-6">
-            @for ($i = 0; $i < 3; $i++)
+            @foreach ($services as $unggulan)
                 <div class="h-full w-full rounded border border-primary p-4 shadow lg:w-1/3">
-                    <img src="{{ asset('images/shapes/random-shapes.svg') }}" alt=""
-                        class="h-[300px] w-full border-b border-primary object-cover pb-1">
-                    <h5 class="text-center text-base font-semibold lg:text-xl">Kurikulum</h5>
-                    <p class="text-xs lg:text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime vero, quas
-                        molestias rerum tenetur sapiente.</p>
-                    <button class="btn btn-primary btn-sm float-right mt-2">Lihat Kurikulum</button>
+                    <img src="{{ $unggulan['image'] }}" alt=""
+                        class="h-[300px] w-full border-b border-primary object-cover py-1">
+                    <h5 class="mt-1 text-center text-base font-semibold lg:text-xl">{{ $unggulan['title'] }}</h5>
+                    <p class="text-xs lg:text-sm">{{ $unggulan['subtitle'] }}</p>
+                    <button class="btn btn-primary btn-sm float-right mt-2">Lihat {{ $unggulan['title'] }}</button>
                 </div>
-            @endfor
+            @endforeach
         </div>
     </section>
 

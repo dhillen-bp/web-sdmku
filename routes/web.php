@@ -14,11 +14,34 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('pages.home');
+    return redirect('/home');
 });
 
 Route::get('/home', function () {
-    return view('pages.home');
+    $slides = [
+        'https://drive.google.com/thumbnail?id=1UFjHU3EtdJswPzfnXY5n7xGc7ULmmkJv&sz=w1000',
+        'https://drive.google.com/thumbnail?id=1KN7X1s114AEcnjbGqnxWPm-vcght0IJm&sz=w1000',
+    ];
+
+    $services = [
+        [
+            'title' => 'Tahfiz',
+            'subtitle' => 'Hafalan 30 Juz',
+            'image' => 'https://drive.google.com/thumbnail?id=1_P8KrzbD7rvh2h9Fo5i4TvBCH3HN_V9h&sz=w1000'
+        ],
+        [
+            'title' => 'Ekstrakurikuler',
+            'subtitle' => '32 Ekstrakurikuler sesuai minat dan bakat siswa',
+            'image' => 'https://drive.google.com/thumbnail?id=1e0gUfEuglkFQn0FDdkcXPy8TidwelTl8&sz=w1000'
+        ],
+        [
+            'title' => 'Outing Class',
+            'subtitle' => 'lorem ipsum dolor sit amet',
+            'image' => 'https://drive.google.com/thumbnail?id=1zpSUHgdN4Vy_XHcDRwt5JO3DO2TfZlhp&sz=w1000'
+        ]
+    ];
+
+    return view('pages.home', compact('slides', 'services'));
 });
 
 Route::prefix('profil')->group(function () {
@@ -52,7 +75,49 @@ Route::prefix('profil')->group(function () {
 
 Route::prefix('kegiatan')->group(function () {
     Route::get('/ekstrakurikuler', function () {
-        return view('pages.ekstrakurikuler');
+        $extracurriculars = [
+            [
+                'title' => 'Tari',
+                'subtitle' => 'lorem ipsum dolor sit amet',
+                'image' => '',
+            ],
+            [
+                'title' => 'Robotik',
+                'subtitle' => 'lorem ipsum dolor sit amet',
+                'image' => '',
+            ],
+            [
+                'title' => 'Panahan',
+                'subtitle' => 'lorem ipsum dolor sit amet',
+                'image' => '',
+            ],
+            [
+                'title' => 'Paduan Suara',
+                'subtitle' => 'lorem ipsum dolor sit amet',
+                'image' => '',
+            ],
+            [
+                'title' => 'Mewarnai',
+                'subtitle' => 'lorem ipsum dolor sit amet',
+                'image' => '',
+            ],
+            [
+                'title' => 'HW',
+                'subtitle' => 'lorem ipsum dolor sit amet',
+                'image' => '',
+            ],
+            [
+                'title' => 'English Club',
+                'subtitle' => 'lorem ipsum dolor sit amet',
+                'image' => '',
+            ],
+            [
+                'title' => 'Badminton',
+                'subtitle' => 'lorem ipsum dolor sit amet',
+                'image' => '',
+            ],
+        ];
+        return view('pages.ekstrakurikuler', compact('extracurriculars'));
     });
 
     Route::get('/pendukung', function () {

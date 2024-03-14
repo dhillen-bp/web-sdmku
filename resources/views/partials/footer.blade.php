@@ -55,15 +55,18 @@
         <nav class="py-2">
             <h6 class="footer-title">Media Sosial</h6>
             <div class="flex gap-4">
-                <a class="cursor-pointer rounded-full bg-gradient-to-tr p-2 hover:from-[#FF7806] hover:to-[#A20AD0]">
+                <a href="https://www.instagram.com/sdmuhklatenutara/" target="_blank"
+                    class="cursor-pointer rounded-full bg-gradient-to-tr p-2 hover:from-[#FF7806] hover:to-[#A20AD0]">
                     @include('partials.svg._instagram-svg')
                 </a>
 
-                <a class="cursor-pointer rounded-full p-2 hover:bg-green-500">
-                    @include('partials.svg._whatsapp-svg')
+                <a href="https://www.tiktok.com/@sdmuhklatenutara?_t=8kfWcypYH6f&_r=1" target="_blank"
+                    class="cursor-pointer rounded-full p-2 text-white hover:bg-black-2">
+                    @include('partials.svg._tiktok-svg')
                 </a>
 
-                <a class="cursor-pointer rounded-full p-2 hover:bg-red-500">
+                <a href="https://youtube.com/@sdmuhammadiyahklatenutara7131?si=24ktqPuVwajWWfBI" target="_blank"
+                    class="cursor-pointer rounded-full p-2 hover:bg-red-500">
                     @include('partials.svg._youtube-svg')
                 </a>
             </div>

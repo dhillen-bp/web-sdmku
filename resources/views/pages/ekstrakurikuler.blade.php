@@ -8,21 +8,18 @@
         </div>
 
         <div class="grid grid-cols-2 gap-6 px-6 py-16 md:grid-cols-3 lg:px-16">
-            @for ($i = 0; $i < 3; $i++)
+            @foreach ($extracurriculars as $eskul)
                 <div class="bg-slate-100s card w-full shadow-lg">
                     <div class="flex items-center justify-center">
                         <img class="h-36 w-full rounded-t-2xl object-cover lg:h-50"
-                            src="https://source.unsplash.com/random/{{ $i }}" alt="">
+                            src="https://source.unsplash.com/random/{{ 1 }}" alt="">
                     </div>
                     <div class="p-4">
-                        <h3 class="text-center text-base font-bold lg:text-xl">Ekstrakurikuler {{ $i }}</h3>
-                        <p class="text-gray-600 text-center text-sm">Deskripsi ekstrakurikuler pendukung Lorem ipsum dolor
-                            sit amet
-                            consectetur
-                            adipisicing elit.</p>
+                        <h3 class="text-center text-base font-bold lg:text-xl">{{ $eskul['title'] }}</h3>
+                        <p class="text-gray-600 text-center text-sm">{{ $eskul['subtitle'] }}</p>
                     </div>
                 </div>
-            @endfor
+            @endforeach
         </div>
 
     </section>
