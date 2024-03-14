@@ -12,13 +12,25 @@
                 <div class="card w-full bg-base-100 shadow-xl">
                     <div class="card-body">
                         <h2 class="card-title justify-center">Visi</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, modi?</p>
+                        <p>Mewujudkan siswa-siswi yang Berakhlak Mulia, Kreatif, Cerdas, Cinta terhadap Lingkungan dan
+                            Berwawasan Global</p>
                     </div>
                 </div>
                 <div class="card w-full bg-base-100 shadow-xl">
                     <div class="card-body">
                         <h2 class="card-title justify-center">Misi</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, modi?</p>
+                        <ol class="list-decimal">
+                            <li>Mewujudkan/menciptakan siswa yang taat beribadah.</li>
+                            <li>Membentuk sikap dan perilaku yang baik.</li>
+                            <li>Mewujudkan siswa/i yang disiplin.</li>
+                            <li>Menciptakan suasana Pembelajaran yang aktif, inovatif, kreatif, efektif, menyenangkan,
+                                gembira dan berbobot</li>
+                            <li>Mewujudkan siswa yang berprestasi.</li>
+                            <li>Mewujudkan suasana kekeluargaan antar warga sekolah</li>
+                            <li>Mewujudkan sekolah yang bersih</li>
+                            <li>Mengembangkan bidang Ilmu Pengetahuan dan Teknologi berdasarkan minat, bakat dan potensi
+                                peserta didik</li>
+                        </ol>
                     </div>
                 </div>
             </div>

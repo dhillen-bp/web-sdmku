@@ -24,7 +24,7 @@
             </div>
 
             <div class="mb-6 mt-3 flex">
-                <a href="/akademis/guru-staf"
+                <a href="/profil/guru-staf"
                     class="inline-flex w-full items-center justify-center gap-1 rounded-full bg-primary px-5 py-2 text-center font-medium text-white hover:bg-opacity-90 lg:px-5 xl:px-6">
                     Lihat Guru & Staf
                 </a>
@@ -39,7 +39,7 @@
                         <h4 class="my-auto mb-6 text-xl font-bold text-black dark:text-white">
                             Tabel
                         </h4>
-                        <a href="/admin/akademis/guru-staf/create"
+                        <a href="/admin/profil/guru-staf/create"
                             class="inline-flex items-center justify-center rounded-full bg-primary px-6 py-2 text-center font-medium text-white hover:bg-opacity-90 lg:px-6 xl:px-6">
                             Tambah Data
                         </a>

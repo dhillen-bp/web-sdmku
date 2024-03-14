@@ -28,7 +28,7 @@
             </label>
 
             <ul
-                class="-x-8 menu dropdown-content relative right-0 z-[1] w-screen translate-x-6 bg-primary text-slate-100 sm:translate-x-8">
+                class="-x-8 menu dropdown-content relative right-0 z-[1] w-screen translate-x-6 bg-primary p-6 text-slate-100 sm:translate-x-8">
                 <li><a href="/home" class="{{ Request::path() == 'home' ? 'active' : '' }}">Home</a></li>
                 <li>
                     <details id="profileDropdown" {{ Str::startsWith(Request::path(), 'profil/') ? 'open' : '' }}>
@@ -72,7 +72,8 @@
                 <li><a href="/galeri"
                         class="{{ Request::path() == 'galeri' ? 'active' : '' }} text-slate-100">Galeri</a>
                 </li>
-                <li><a href="/ppdb" class="{{ Request::path() == 'ppdb' ? 'active' : '' }} text-slate-100">PPDB</a>
+                <li><a href="/ppdb"
+                        class="{{ Request::path() == 'ppdb' ? 'active' : '' }} font-bold text-slate-100">PPDB</a>
                 </li>
             </ul>
         </div>

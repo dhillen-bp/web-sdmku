@@ -11,6 +11,10 @@ module.exports = {
     theme: {
         fontFamily: {
             satoshi: ['Satoshi', 'sans-serif'],
+            lobster: ['Lobster', 'georgia'],
+            androgyne: ['Androgyne', 'georgia'],
+            comicsans: ['ComicSans', 'serif'],
+            poppins: ['Poppins','sans-serif'],
           },
           screens: {
             '2xsm': '375px',

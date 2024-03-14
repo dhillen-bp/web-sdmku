@@ -4,7 +4,7 @@
     <section class="bg-base-200">
         <div class="h-24 bg-cover bg-no-repeat py-24 opacity-90"
             style="background-image: url({{ asset('images/shapes/low-poly-grid-haikei.svg') }});">
-            <h1 class="mt-4 text-center text-3xl font-bold text-slate-100">Kegiatan Ekstrakurikuler</h1>
+            <h1 class="mt-4 text-center text-3xl font-bold text-slate-100">Kegiatan Pendukung</h1>
         </div>
 
         <div class="grid grid-cols-2 gap-6 px-6 py-16 md:grid-cols-3 lg:px-16">
@@ -15,9 +15,8 @@
                             src="https://source.unsplash.com/random/{{ $i }}" alt="">
                     </div>
                     <div class="p-4">
-                        <h3 class="text-center text-base font-bold lg:text-xl">Ekstrakurikuler {{ $i }}</h3>
-                        <p class="text-gray-600 text-center text-sm">Deskripsi ekstrakurikuler pendukung Lorem ipsum dolor
-                            sit amet
+                        <h3 class="text-center text-base font-bold lg:text-xl">Pendukung {{ $i }}</h3>
+                        <p class="text-gray-600 text-center text-sm">Deskripsi kegiatan pendukung Lorem ipsum dolor sit amet
                             consectetur
                             adipisicing elit.</p>
                     </div>

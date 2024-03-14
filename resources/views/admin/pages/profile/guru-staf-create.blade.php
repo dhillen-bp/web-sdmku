@@ -17,7 +17,7 @@
                             <a class="font-medium" href="/admin/home">Home /</a>
                         </li>
                         <li>
-                            <a class="font-medium" href="/admin/akademis/guru-staf">Guru & Staf /</a>
+                            <a class="font-medium" href="/admin/profil/guru-staf">Guru & Staf /</a>
                         </li>
                         <li class="font-medium text-primary">Guru & Staf Form</li>
                     </ol>

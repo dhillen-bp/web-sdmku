@@ -17,7 +17,7 @@
                             <a class="font-medium" href="/admin/home">Home /</a>
                         </li>
                         <li>
-                            <a class="font-medium" href="/admin/akademis/prestasi">Prestasi /</a>
+                            <a class="font-medium" href="/admin/prestasi">Prestasi /</a>
                         </li>
                         <li class="font-medium text-primary">Prestasi Form</li>
                     </ol>

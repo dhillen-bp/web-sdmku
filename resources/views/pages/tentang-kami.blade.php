@@ -20,10 +20,12 @@
 
         <div class="px-6 py-8 lg:px-16">
             <h2 class="mb-3 text-center text-2xl font-bold">Sambutan Kepala Sekolah</h2>
-            <div class="flex flex-col justify-between gap-6 lg:flex-row">
+            <div class="flex flex-col items-center justify-between gap-6 lg:flex-row">
                 <div class="flex-[1]">
-                    <img class="rounded-md border border-slate-100 shadow-lg"
-                        src="https://source.unsplash.com/brown-and-white-concrete-building-BlCJi8walFQ" alt="School">
+                    {{-- <iframe src="https://drive.google.com/file/d/179oXThdRX5UmRX7t-qF1X8Iz5uCuTlpx/preview?rm=thumbnail"
+                        width="330" height="499" allowfullscreen="true" allow="autoplay"></iframe> --}}
+                    <img class="rounded-md border border-slate-100 object-cover shadow-lg"
+                        src="{{ asset('images/sambutan_kepsek.JPG') }}" alt="Kepala Sekolah">
                 </div>
                 <div class="flex-[2]">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi delectus eligendi placeat explicabo

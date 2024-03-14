@@ -31,13 +31,32 @@ Route::prefix('profil')->group(function () {
     });
 
     Route::get('/guru-staf', function () {
-        return view('pages.guru-staf');
+        $data = [
+            [
+                "nama" => "John Doe",
+                "jabatan" => "Guru Kelas",
+                "gambar" => "https://drive.google.com/thumbnail?id=18hnYcm_GAkkU7qUoiTcqy6MXKsLIgYcP&sz=w1000",
+                "instagram" => "john.doe"
+            ],
+            [
+                "nama" => "Jane Smith",
+                "jabatan" => "Guru Bahasa",
+                "gambar" => "https://drive.google.com/thumbnail?id=1a_wNim77_v8-v5uxiiuwGjV-l3-n4J7a&sz=w1000",
+                "instagram" => "jane.smith"
+            ]
+        ];
+
+        return view('pages.guru-staf', compact('data'));
     });
 });
 
 Route::prefix('kegiatan')->group(function () {
     Route::get('/ekstrakurikuler', function () {
         return view('pages.ekstrakurikuler');
+    });
+
+    Route::get('/pendukung', function () {
+        return view('pages.pendukung');
     });
 });
 

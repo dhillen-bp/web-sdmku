@@ -42,12 +42,15 @@
                 frameborder="0" allowfullscreen></iframe>
 
             <div class="px-6 lg:w-2/3 lg:px-0">
-                <h1 class="py-1 text-2xl font-semibold lg:text-5xl">SD Muhammadiyah Klaten Utara</h1>
-                <h1 class="text-2xl font-semibold lg:py-1 lg:text-4xl"><span class="text-yellow-500">Cerdas</span>, <span
-                        class="text-blue-500">Kreatif</span>, dan
-                    <span class="text-green-500">Berakhlak Mulia</span>!
+                <h1 class="py-2 font-lobster text-2xl font-semibold lg:text-5xl">SD Muhammadiyah Klaten Utara</h1>
+                <h1 class="pb-2 pt-1 font-androgyne text-xl font-semibold text-slate-600 lg:text-2xl">Binaan SD Muhammadiyah
+                    Sapen Yogyakarta
                 </h1>
-                <p class="py-4">SD Muhammadiyah Klaten Utara adalah sekolah unggulan dengan berbagai prestasi. Kami
+                <h1 class="py-2 font-comicsans text-xl font-semibold lg:text-2xl"><span
+                        class="text-yellow-500">Cerdas</span>, <span class="text-blue-500">Kreatif</span>, dan
+                    <span class="text-green-500">Berakhlak Mulia</span> !
+                </h1>
+                <p class="py-2">SD Muhammadiyah Klaten Utara adalah sekolah unggulan dengan berbagai prestasi. Kami
                     memiliki sistem pembelajaran profesional, religius dan ceria dilengkapi fasilitas yang memadai.
                 </p>
                 <a href="/profil/sekolah" class="btn btn-primary">Profil Kami</a>
@@ -58,7 +61,7 @@
     {{-- OUR SERVICE SECTION --}}
     <section class="space-y-4 px-6 py-8 lg:space-y-8 lg:px-16 lg:py-16">
         <h3 class="text-center text-xl font-bold lg:text-4xl">Mengapa Memilih Kami?</h3>
-        <div class="flex flex-col items-center justify-around gap-4 lg:flex-row lg:gap-6">
+        <div class="carousel flex flex-col items-center justify-around gap-4 lg:flex-row lg:gap-6">
             @for ($i = 0; $i < 3; $i++)
                 <div class="h-full w-full rounded border border-primary p-4 shadow lg:w-1/3">
                     <img src="{{ asset('images/shapes/random-shapes.svg') }}" alt=""
