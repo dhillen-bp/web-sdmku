@@ -7,12 +7,12 @@
             <h1 class="mt-4 text-center text-3xl font-bold text-slate-100">Prestasi</h1>
         </div>
 
-        <div class="grid grid-cols-3 gap-6 px-6 py-16 lg:grid-cols-6 lg:gap-16 lg:px-16">
+        <div class="grid grid-cols-2 gap-6 px-6 py-16 lg:grid-cols-4 lg:gap-16 lg:px-16">
             @for ($i = 0; $i < 9; $i++)
-                <div class="col-span-1 flex flex-col items-center justify-center gap-3">
-                    <div class="group relative cursor-pointer space-y-2 hover:space-y-3">
+                <div class="col-span-1 flex flex-col items-center justify-center gap-2">
+                    <div class="group relative cursor-pointer space-y-1 hover:space-y-2">
                         <img class="mask mask-hexagon transition-transform duration-300 group-hover:scale-110"
-                            src="{{ asset('images/shapes/award.png') }}" />
+                            src="https://source.unsplash.com/random/500x500/?medals" />
                         <div
                             class="text-wrap border-2 border-primary p-1 text-center text-sm text-primary shadow group-hover:font-semibold">
                             Lorem ipsum dolor, sit amet consectetur adipisicing.</div>

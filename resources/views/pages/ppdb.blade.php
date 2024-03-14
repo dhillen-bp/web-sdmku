@@ -15,6 +15,7 @@
                             class="rounded-sm border border-slate-100 shadow">
                     </a>
                     <p class="text-center font-semibold">PPDB Brosur</p>
+                    <a class="btn btn-primary btn-sm w-full">Form Pendaftaran</a>
                 </div>
             </div>
         </div>

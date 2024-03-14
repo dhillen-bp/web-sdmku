@@ -19,7 +19,7 @@
                 <div class="card w-full bg-base-100 shadow-xl">
                     <div class="card-body">
                         <h2 class="card-title justify-center">Misi</h2>
-                        <ol class="list-decimal">
+                        <ol class="list-decimal py-1">
                             <li>Mewujudkan/menciptakan siswa yang taat beribadah.</li>
                             <li>Membentuk sikap dan perilaku yang baik.</li>
                             <li>Mewujudkan siswa/i yang disiplin.</li>

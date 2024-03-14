@@ -19,15 +19,14 @@
                     </figure>
                     <div class="card-body items-center">
                         <h2 class="card-title text-base">{{ $guru['nama'] }}</h2>
-                        <div
-                            class="badge badge-primary badge-outline mb-1 cursor-default text-sm hover:bg-primary hover:py-3 hover:font-semibold hover:text-slate-100 hover:shadow-sm">
+                        <div class="badge badge-primary badge-outline mb-1 cursor-default text-sm shadow-sm">
                             {{ $guru['jabatan'] }}</div>
-                        <div class="card-actions justify-center">
+                        {{-- <div class="card-actions justify-center">
                             <a
                                 class="cursor-pointer rounded-full bg-gradient-to-tr hover:from-[#FF7806] hover:to-[#A20AD0]">
                                 @include('partials.svg._instagram-svg', ['width' => 20, 'height' => 20])
                             </a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 {{-- END CARD GURU --}}

@@ -53,7 +53,7 @@
             @foreach ($services as $unggulan)
                 <div class="h-full w-full rounded border border-primary p-4 shadow lg:w-1/3">
                     <img src="{{ $unggulan['image'] }}" alt=""
-                        class="h-[300px] w-full border-b border-primary object-cover py-1">
+                        class="h-[220px] w-full border-b border-primary object-cover py-1">
                     <h5 class="mt-1 text-center text-base font-semibold lg:text-xl">{{ $unggulan['title'] }}</h5>
                     <p class="text-xs lg:text-sm">{{ $unggulan['subtitle'] }}</p>
                     <button class="btn btn-primary btn-sm float-right mt-2">Lihat {{ $unggulan['title'] }}</button>
