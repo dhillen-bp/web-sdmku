@@ -2,11 +2,18 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: [
-        "./resources/**/*.blade.php",
+    // content: [
+    //     "./resources/**/*.blade.php",
+    //     "./resources/**/*.js",
+    //     "./resources/**/*.vue",
+    // ],
+    content: {
+        relative: true,
+        transform: (content) => content.replace(/taos:/g, ''),
+        files: [ "./resources/**/*.blade.php",
         "./resources/**/*.js",
-        "./resources/**/*.vue",
-    ],
+        "./resources/**/*.vue",],
+      },
     darkMode: 'class',
     theme: {
         fontFamily: {
@@ -298,5 +305,14 @@ module.exports = {
             },
           },
     },
-    plugins: [require("daisyui")],
+    plugins: [
+        require("daisyui"),
+        require('taos/plugin')
+    ],
+    safelist: [
+        '!duration-[0ms]',
+        '!delay-[0ms]',
+        'html.js :where([class*="taos:"]:not(.taos-init))'
+    ],
+
 };

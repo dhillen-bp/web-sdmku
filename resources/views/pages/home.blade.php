@@ -49,14 +49,18 @@
     {{-- OUR SERVICE SECTION --}}
     <section class="space-y-4 px-6 py-8 lg:space-y-8 lg:px-16 lg:py-16">
         <h3 class="text-center text-xl font-bold lg:text-4xl">Mengapa Memilih Kami?</h3>
-        <div class="carousel flex flex-col items-center justify-around gap-4 lg:flex-row lg:gap-6">
+        <div class="flex flex-col items-center justify-around gap-4 lg:flex-row lg:gap-6">
             @foreach ($services as $unggulan)
-                <div class="h-full w-full rounded border border-primary p-4 shadow lg:w-1/3">
+                <div class="taos:translate-y-[100%] taos:invisible h-full w-full rounded-lg border-2 border-primary bg-base-200 shadow-lg delay-[300ms] duration-[600ms] [animation-iteration-count:infinite] hover:scale-[1.05] lg:w-1/3"
+                    data-taos-offset="50">
                     <img src="{{ $unggulan['image'] }}" alt=""
-                        class="h-[220px] w-full border-b border-primary object-cover py-1">
-                    <h5 class="mt-1 text-center text-base font-semibold lg:text-xl">{{ $unggulan['title'] }}</h5>
-                    <p class="text-xs lg:text-sm">{{ $unggulan['subtitle'] }}</p>
-                    <button class="btn btn-primary btn-sm float-right mt-2">Lihat {{ $unggulan['title'] }}</button>
+                        class="h-[220px] w-full rounded-t-lg bg-base-200 object-cover shadow">
+                    <div class="p-3">
+                        <h5 class="text-center text-base font-semibold lg:text-xl">{{ $unggulan['title'] }}</h5>
+                        <p class="text-xs lg:text-sm">{{ $unggulan['subtitle'] }}</p>
+                        {{-- <button class="btn-white btn btn-sm float-right mt-2 text-black">Lihat
+                            {{ $unggulan['title'] }}</button> --}}
+                    </div>
                 </div>
             @endforeach
         </div>
@@ -108,7 +112,7 @@
                     </figure>
                     <div class="card-body w-2/3 text-sm">
                         <h2 class="card-title text-sm lg:text-base">New movie is released!</h2>
-                        <p class="text-xs lg:text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+                        <p class="text-xs lg:text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
                         <div class="card-actions justify-end">
                             <button class="btn btn-primary btn-sm">Baca</button>
                         </div>
