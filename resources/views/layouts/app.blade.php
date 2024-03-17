@@ -5,7 +5,7 @@
     @include('partials.head')
 </head>
 
-<body>
+<body class="overflow-x-hidden">
     @include('partials.nav')
     @yield('body')
     @include('partials.footer')

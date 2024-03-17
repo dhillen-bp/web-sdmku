@@ -7,18 +7,19 @@
             <h1 class="mt-4 text-center text-3xl font-bold text-slate-100">Berita</h1>
         </div>
 
-        <div class="grid grid-cols-2 justify-center gap-6 px-6 py-16 lg:grid-cols-5 lg:px-16">
+        <div class="grid grid-cols-2 justify-center gap-6 px-6 py-16 lg:grid-cols-4 lg:px-16">
             <!-- component -->
             @for ($i = 0; $i < 6; $i++)
                 <div class="w-full overflow-hidden border-b-4 border-blue-500 bg-white">
                     <img src="https://images.unsplash.com/photo-1573748240263-a4e9c57a7fcd" alt="People"
                         class="h-32 w-full object-cover sm:h-48 md:h-64">
-                    <div class="p-4 md:p-6">
-                        <div>
-                            <div class="badge badge-primary badge-outline badge-sm py-[8px] text-sm">category</div>
-                            <div class="badge badge-primary badge-outline badge-sm py-[8px] text-sm">category</div>
+                    <div class="space-y-4 md:p-6">
+                        <div class="mb-3">
+                            <div class="badge badge-primary badge-outline badge-sm text-sm">category</div>
+                            <div class="badge badge-primary badge-outline badge-sm text-sm">category</div>
                         </div>
-                        <a href="/berita/slug" class="my-2 font-semibold leading-tight sm:leading-normal">The Coldest Sunset
+                        <a href="/berita/slug" class="font-semibold leading-tight hover:underline sm:leading-normal">The
+                            Coldest Sunset
                             lorem
                             ipsum</a>
                         <div class="flex items-center text-sm">

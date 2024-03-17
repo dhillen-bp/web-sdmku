@@ -3,7 +3,7 @@
 @section('body')
     {{-- HEADER & HERO --}}
     <section class="relative">
-        <div class="carousel relative min-h-screen w-full object-cover md:h-[460px]">
+        <div class="min-h-90 carousel relative w-full object-cover md:h-[460px] lg:min-h-screen">
             @foreach ($slides as $index => $image)
                 @php
                     $jumlah = count($slides) - 1;
@@ -12,8 +12,10 @@
                     <img src="{{ $image }}" class="w-full" />
                     <div
                         class="absolute left-6 right-6 top-1/2 flex -translate-y-1/2 transform justify-between lg:left-16 lg:right-16">
-                        <a href="#slide{{ $index == 0 ? $jumlah : $index - 1 }}" class="btn btn-circle">❮</a>
-                        <a href="#slide{{ $index == $jumlah ? $jumlah - $jumlah : $index + 1 }}" class="btn btn-circle">❯</a>
+                        <a href="#slide{{ $index == 0 ? $jumlah : $index - 1 }}"
+                            class="btn btn-circle btn-sm opacity-90">❮</a>
+                        <a href="#slide{{ $index == $jumlah ? $jumlah - $jumlah : $index + 1 }}"
+                            class="btn btn-circle btn-sm opacity-90">❯</a>
                     </div>
                 </div>
             @endforeach
@@ -25,20 +27,21 @@
         <div class="hero-content flex-col lg:flex-row-reverse lg:px-0">
             {{-- <img src="https://source.unsplash.com/white-and-red-concrete-building-ZPkG0EdWQa8"
                 class="h-80 max-w-sm rounded-lg shadow-2xl lg:w-1/3" /> --}}
-            <iframe class="h-[320px] w-[500px] px-6 lg:h-[245px] lg:w-[450px] lg:px-0"
+            <iframe class="h-[320px] w-full px-6 lg:h-[245px] lg:w-[450px] lg:px-0"
                 src="https://www.youtube.com/embed/UDyCZdRIYBY?si=jaAnG3uMX9ZidG9H?modestbranding=1&rel=0&showinfo=0"
                 frameborder="0" allowfullscreen></iframe>
 
             <div class="px-6 lg:w-2/3 lg:px-0">
-                <h1 class="py-2 font-lobster text-2xl font-semibold lg:text-5xl">SD Muhammadiyah Klaten Utara</h1>
-                <h1 class="pb-2 pt-1 font-androgyne text-xl font-semibold text-slate-600 lg:text-2xl">Binaan SD Muhammadiyah
+                <h1 class="py-2 font-lobster text-xl font-semibold lg:text-5xl">SD Muhammadiyah Klaten Utara</h1>
+                <h1 class="pb-2 pt-1 font-androgyne text-lg font-semibold text-slate-600 lg:text-2xl">Binaan SD Muhammadiyah
                     Sapen Yogyakarta
                 </h1>
-                <h1 class="py-2 font-comicsans text-xl font-semibold lg:text-2xl"><span
+                <h1 class="py-2 font-comicsans text-base font-semibold lg:text-2xl"><span
                         class="text-yellow-500">Cerdas</span>, <span class="text-blue-500">Kreatif</span>, dan
                     <span class="text-green-500">Berakhlak Mulia</span> !
                 </h1>
-                <p class="py-2">SD Muhammadiyah Klaten Utara adalah sekolah unggulan dengan berbagai prestasi. Kami
+                <p class="py-2 text-sm lg:text-base">SD Muhammadiyah Klaten Utara adalah sekolah unggulan dengan berbagai
+                    prestasi. Kami
                     memiliki sistem pembelajaran profesional, religius dan ceria dilengkapi fasilitas yang memadai.
                 </p>
                 <a href="/profil/sekolah" class="btn btn-primary">Profil Kami</a>
@@ -51,10 +54,13 @@
         <h3 class="text-center text-xl font-bold lg:text-4xl">Mengapa Memilih Kami?</h3>
         <div class="flex flex-col items-center justify-around gap-4 lg:flex-row lg:gap-6">
             @foreach ($services as $unggulan)
-                <div class="taos:translate-y-[100%] taos:invisible h-full w-full rounded-lg border-2 border-primary bg-base-200 shadow-lg delay-[300ms] duration-[600ms] [animation-iteration-count:infinite] hover:scale-[1.05] lg:w-1/3"
+                <div class="taos:translate-y-[100%] taos:invisible group h-full w-full overflow-hidden rounded-lg border-2 border-primary bg-base-200 shadow-lg transition-transform delay-[150ms] duration-[450ms] [animation-iteration-count:infinite] lg:w-1/3"
                     data-taos-offset="50">
-                    <img src="{{ $unggulan['image'] }}" alt=""
-                        class="h-[220px] w-full rounded-t-lg bg-base-200 object-cover shadow">
+                    <div
+                        class="h-[220px] w-full rounded-t-lg bg-base-200 object-cover shadow transition-transform duration-500 group-hover:scale-105">
+                        <img src="{{ $unggulan['image'] }}" alt="" class="h-full w-full object-cover">
+                    </div>
+
                     <div class="p-3">
                         <h5 class="text-center text-base font-semibold lg:text-xl">{{ $unggulan['title'] }}</h5>
                         <p class="text-xs lg:text-sm">{{ $unggulan['subtitle'] }}</p>
@@ -68,31 +74,26 @@
 
     {{-- PPDB SECTION --}}
     <section class="bg-base-200 px-6 py-8 lg:px-16 lg:py-16">
-        <div class="flex items-start justify-between gap-4 space-y-4">
+        <div class="flex h-full flex-col items-center justify-between lg:flex-row">
 
-            <div class="w-2/3 space-y-4">
+            <div class="taos:translate-x-[-200px] taos:opacity-0 h-full flex-grow space-y-4 bg-primary p-4 text-white shadow delay-[300ms] duration-[500ms] [animation-iteration-count:infinite] lg:w-1/3 lg:space-y-8"
+                data-taos-offset="100">
                 <h3 class="text-xl font-bold lg:text-4xl">PPDB</h3>
-                <h5 class="text-sm font-semibold lg:text-lg">Mari bergabung di sekolah kami! Memberikan pendidikan
-                    berkualitas
-                    dan lingkungan
-                    belajar
-                    yang menyenangkan untuk masa depan cerah anak Anda.</h5>
-                <p class="text-sm font-semibold lg:text-lg">Ayo daftarkan putra/putri tercinta pada Penerimaan Peserta Didik
-                    Baru (PPDB)
-                    Sekolah Dasar.
-                    Berikan mereka fondasi pendidikan terbaik untuk sukses di masa depan!</p>
+                <div>
+                    <p class="text-center text-sm">Penerimaan Peserta Didik Baru telah resmi dibuka. Lihat detail informasi
+                        dan langkah-langkah pendaftarannya dengan klik tombol di bawah.</p>
+                </div>
+                <a class="btn btn-sm w-full border bg-white font-bold text-primary lg:btn-md lg:text-lg" href="/ppdb">Info
+                    PPDB</a>
             </div>
-            <div class="flex w-1/3 flex-col items-center">
-                <img src="{{ asset('images/default/akreditasi.png') }}" alt="Akreditasi Image"
-                    class="h-[200px] w-[150px] object-cover">
-            </div>
-        </div>
-        <a class="btn btn-primary btn-sm w-full font-bold lg:btn-md lg:text-lg" href="/ppdb">Info PPDB</a>
-        <div class="mt-4">
-            <img src="{{ asset('images/default/PPDB.png') }}" alt="PPDB Info">
-        </div>
 
+            <div class="taos:translate-x-[200px] taos:opacity-0 flex h-full flex-col items-center shadow delay-[300ms] duration-[500ms] [animation-iteration-count:infinite] lg:w-2/3"
+                data-taos-offset="100">
+                <img src="{{ asset('images/default/Logo Bawah type2.png') }}" alt="" class="h-full">
+            </div>
+        </div>
     </section>
+
 
 
     {{-- NEWS SECTION --}}
@@ -106,7 +107,8 @@
         </div>
         <div class="grid gap-4 md:grid-cols-2 lg:gap-8">
             @for ($i = 0; $i < 4; $i++)
-                <div class="card card-side h-[180px] bg-primary bg-opacity-5 shadow-xl lg:h-[200px]">
+                <div class="taos:scale-[0.6] taos:opacity-0 card card-side h-[180px] bg-primary bg-opacity-5 shadow-xl delay-[300ms] duration-[500ms] [animation-iteration-count:infinite] lg:h-[200px]"
+                    data-taos-offset="100">
                     <figure><img src="https://source.unsplash.com/black-wooden-writing-desk-chair-inside-room-IXTvnOOSTyU"
                             alt="Movie" class="w-[160px] object-contain lg:w-[250px]" />
                     </figure>

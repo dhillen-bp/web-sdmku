@@ -5,6 +5,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* FONT FACE */
 @font-face {
     font-family: 'Androgyne';
     src: url('/resources/fonts/Androgyne_TB.otf') format('opentype');
@@ -32,3 +33,15 @@
     font-weight: normal;
     font-style: normal;
 }
+/* END FONT FACE */
+
+
+/* TAOS */
+/* .taos-fade-up{
+    @apply duration-[600ms] delay-[300ms] taos:translate-y-[200px] taos:opacity-0;
+}
+
+.taos-slide-up {
+    @apply delay-[300ms] duration-[600ms] taos:translate-y-[100%] taos:invisible;
+} */
+/* END TAOS */
