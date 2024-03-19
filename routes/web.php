@@ -25,9 +25,15 @@ Route::get('/home', function () {
     ];
 
     $services = [
+
         [
-            'title' => 'Tahfiz',
-            'subtitle' => 'Hafalan 30 Juz',
+            'title' => 'Akreditasi dan Kurikulum',
+            'subtitle' => 'Sekolah Dasar dengan Akreditasi A dan mengimplementasi Kurikulum Merdeka',
+            'image' => 'https://drive.google.com/thumbnail?id=18X9ltCxgbcPZMRe0NsnVqTmQQrIztVCX&sz=w1000'
+        ],
+        [
+            'title' => 'Tahfidz',
+            'subtitle' => 'Program Hafalan Juz 30 Al-Quran dengan Bimbingan Terpadu, Dibimbing oleh Ustadz/Ustadzah Terbaik Kami',
             'image' => 'https://drive.google.com/thumbnail?id=1_P8KrzbD7rvh2h9Fo5i4TvBCH3HN_V9h&sz=w1000'
         ],
         [
@@ -35,11 +41,6 @@ Route::get('/home', function () {
             'subtitle' => '32 Ekstrakurikuler sesuai minat dan bakat siswa',
             'image' => 'https://drive.google.com/thumbnail?id=1e0gUfEuglkFQn0FDdkcXPy8TidwelTl8&sz=w1000'
         ],
-        [
-            'title' => 'Outing Class',
-            'subtitle' => 'lorem ipsum dolor sit amet',
-            'image' => 'https://drive.google.com/thumbnail?id=1zpSUHgdN4Vy_XHcDRwt5JO3DO2TfZlhp&sz=w1000'
-        ]
     ];
 
     return view('pages.home', compact('slides', 'services'));

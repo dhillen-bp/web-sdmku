@@ -45,3 +45,21 @@
     @apply delay-[300ms] duration-[600ms] taos:translate-y-[100%] taos:invisible;
 } */
 /* END TAOS */
+
+
+@layer base {
+    .text-shadow-1 {
+    text-shadow:
+       4px 4px 0 #3C50E0,
+     -2px -2px 0 #3C50E0,
+      2px -2px 0 #3C50E0,
+      -2px 2px 0 #3C50E0,
+       2px 2px 0 #3C50E0;
+  }
+  .font-outline-2 {
+    -webkit-text-stroke: 2px #3C50E0;
+  }
+  .font-outline-4 {
+    -webkit-text-stroke: 4px #3C50E0;
+  }
+}
