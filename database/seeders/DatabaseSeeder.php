@@ -23,9 +23,20 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         $this->call([
-            HomeSeeder::class,
-            HomeHeroSeeder::class,
-            HomeFeaturedSeeder::class
+            // HOME
+            // HomeSeeder::class,
+            // HomeHeroSeeder::class,
+            // HomeFeaturedSeeder::class
+
+            // PROFILE
+            // VisionSeeder::class,
+            // MissionSeeder::class,
+
+            // PPDB
+            // PPDBSeeder::class
+
+            // ACTIVITY
+            ExtracurricularSeeder::class
         ]);
     }
 }

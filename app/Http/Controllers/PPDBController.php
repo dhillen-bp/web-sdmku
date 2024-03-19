@@ -14,7 +14,9 @@ class PPDBController extends Controller
      */
     public function index()
     {
-        //
+        $ppdb = PPDB::get()->first();
+
+        return view('pages.ppdb', compact('ppdb'));
     }
 
     /**

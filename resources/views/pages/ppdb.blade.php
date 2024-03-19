@@ -11,11 +11,12 @@
             <div class="flex items-center justify-center">
                 <div class="h-1/3 w-1/3 space-y-3">
                     <a href="/images/default/PPDB.jpg" target="_blank">
-                        <img src="{{ asset('images/default/PPDB.jpg') }}" alt=""
+                        <img src={{ asset("images/default/$ppdb->image") }} alt=""
                             class="rounded-sm border border-slate-100 shadow">
                     </a>
                     <p class="text-center font-semibold">PPDB Brosur</p>
-                    <a class="btn btn-primary btn-sm w-full">Form Pendaftaran</a>
+                    <a href="{{ $ppdb->url_ppdb }}" class="btn btn-primary btn-sm w-full" target="_blank">Form
+                        Pendaftaran</a>
                 </div>
             </div>
         </div>

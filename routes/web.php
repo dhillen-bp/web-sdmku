@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\ExtracurricularController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MissionController;
+use App\Http\Controllers\PPDBController;
+use App\Models\Extracurricular;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,39 +22,10 @@ Route::get('/', function () {
     return redirect('/home');
 });
 
-Route::get('/home', function () {
-    $slides = [
-        'https://drive.google.com/thumbnail?id=1UFjHU3EtdJswPzfnXY5n7xGc7ULmmkJv&sz=w1000',
-        'https://drive.google.com/thumbnail?id=1KN7X1s114AEcnjbGqnxWPm-vcght0IJm&sz=w1000',
-        'https://drive.google.com/thumbnail?id=1FTLdbJMFcL5cSUg4khYapvOTtSV3yQq6&sz=w1000',
-    ];
-
-    $services = [
-
-        [
-            'title' => 'Akreditasi dan Kurikulum',
-            'subtitle' => 'Sekolah Dasar dengan Akreditasi A dan mengimplementasi Kurikulum Merdeka',
-            'image' => 'https://drive.google.com/thumbnail?id=18X9ltCxgbcPZMRe0NsnVqTmQQrIztVCX&sz=w1000'
-        ],
-        [
-            'title' => 'Tahfidz',
-            'subtitle' => 'Program Hafalan Juz 30 Al-Quran dengan Bimbingan Terpadu, Dibimbing oleh Ustadz/Ustadzah Terbaik Kami',
-            'image' => 'https://drive.google.com/thumbnail?id=1_P8KrzbD7rvh2h9Fo5i4TvBCH3HN_V9h&sz=w1000'
-        ],
-        [
-            'title' => 'Ekstrakurikuler',
-            'subtitle' => '32 Ekstrakurikuler sesuai minat dan bakat siswa',
-            'image' => 'https://drive.google.com/thumbnail?id=1e0gUfEuglkFQn0FDdkcXPy8TidwelTl8&sz=w1000'
-        ],
-    ];
-
-    return view('pages.home', compact('slides', 'services'));
-});
+Route::get('/home', [HomeController::class, 'index']);
 
 Route::prefix('profil')->group(function () {
-    Route::get('/visi-misi', function () {
-        return view('pages.visi-misi');
-    });
+    Route::get('/visi-misi', [MissionController::class, 'index']);
 
     Route::get('/sekolah', function () {
         return view('pages.tentang-kami');
@@ -284,51 +260,7 @@ Route::prefix('profil')->group(function () {
 });
 
 Route::prefix('kegiatan')->group(function () {
-    Route::get('/ekstrakurikuler', function () {
-        $extracurriculars = [
-            [
-                'title' => 'Tari',
-                'subtitle' => 'lorem ipsum dolor sit amet',
-                'image' => 'https://drive.google.com/thumbnail?id=15AhvNj9RS-agN--5Y5x_Rbn7a6eJVvme&sz=w1000',
-            ],
-            [
-                'title' => 'Robotik',
-                'subtitle' => 'lorem ipsum dolor sit amet',
-                'image' => 'https://drive.google.com/thumbnail?id=1XTmBU1nWkAfXpAY0GySL0n8NUlAxZuBW&sz=w1000',
-            ],
-            [
-                'title' => 'Panahan',
-                'subtitle' => 'lorem ipsum dolor sit amet',
-                'image' => 'https://drive.google.com/thumbnail?id=10VSNAuA5Cd8lIhmOz3cVV0el58TOyyz7&sz=w1000',
-            ],
-            [
-                'title' => 'Paduan Suara',
-                'subtitle' => 'lorem ipsum dolor sit amet',
-                'image' => 'https://drive.google.com/thumbnail?id=&sz=w1000',
-            ],
-            [
-                'title' => 'Mewarnai',
-                'subtitle' => 'lorem ipsum dolor sit amet',
-                'image' => 'https://drive.google.com/thumbnail?id=1YSeWv8DTq9fECCA0wLs5FaSS7ZNGNIAD&sz=w1000',
-            ],
-            [
-                'title' => 'HW',
-                'subtitle' => 'lorem ipsum dolor sit amet',
-                'image' => 'https://drive.google.com/thumbnail?id=1zpSUHgdN4Vy_XHcDRwt5JO3DO2TfZlhp&sz=w1000',
-            ],
-            [
-                'title' => 'English Club',
-                'subtitle' => 'lorem ipsum dolor sit amet',
-                'image' => 'https://drive.google.com/thumbnail?id=1Zp7hAniAkyP2wGRYdFiKtI5qgss60g0V&sz=w1000',
-            ],
-            [
-                'title' => 'Badminton',
-                'subtitle' => 'lorem ipsum dolor sit amet',
-                'image' => 'https://drive.google.com/thumbnail?id=14qHCqkI79u0dGs92MWuYzZdeCVPvt4id&sz=w1000',
-            ],
-        ];
-        return view('pages.ekstrakurikuler', compact('extracurriculars'));
-    });
+    Route::get('/ekstrakurikuler', [ExtracurricularController::class, 'index']);
 
     Route::get('/pendukung', function () {
         return view('pages.pendukung');
@@ -349,9 +281,7 @@ Route::prefix('berita')->group(function () {
     });
 });
 
-Route::get('/ppdb', function () {
-    return view('pages.ppdb');
-});
+Route::get('/ppdb', [PPDBController::class, 'index']);
 
 Route::get('/galeri', function () {
     return view('pages.gallery');

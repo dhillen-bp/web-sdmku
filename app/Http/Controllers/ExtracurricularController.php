@@ -14,7 +14,9 @@ class ExtracurricularController extends Controller
      */
     public function index()
     {
-        //
+        $extracurriculars = Extracurricular::get();
+
+        return view('pages.ekstrakurikuler', compact('extracurriculars'));
     }
 
     /**

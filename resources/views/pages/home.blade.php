@@ -4,12 +4,12 @@
     {{-- HEADER & HERO --}}
     <section class="relative">
         <div class="min-h-90 carousel relative w-full object-cover md:h-[460px] lg:min-h-screen">
-            @foreach ($slides as $index => $image)
+            @foreach ($homeHero as $index => $hero)
                 @php
-                    $jumlah = count($slides) - 1;
+                    $jumlah = count($homeHero) - 1;
                 @endphp
                 <div id="slide{{ $index }}" class="carousel-item relative w-full">
-                    <img src="{{ $image }}" class="w-full" />
+                    <img src="{{ $hero->image }}" class="w-full" />
                     <div
                         class="absolute left-6 right-6 top-1/2 flex -translate-y-1/2 transform justify-between lg:left-16 lg:right-16">
                         <a href="#slide{{ $index == 0 ? $jumlah : $index - 1 }}"
@@ -32,20 +32,17 @@
                 frameborder="0" allowfullscreen></iframe>
 
             <div class="px-6 lg:w-2/3 lg:px-0">
-                <h1 class="text-shadow-1 py-2 font-lobster text-xl font-semibold text-slate-100 lg:text-5xl">SD
-                    Muhammadiyah
-                    Klaten Utara
+                <h1 class="text-shadow-1 py-2 font-lobster text-xl font-semibold text-slate-100 lg:text-5xl">
+                    {{ $home->school_name }}
                 </h1>
-                <h1 class="pb-2 pt-1 font-androgyne text-lg font-semibold text-primary lg:text-2xl">Binaan SD Muhammadiyah
-                    Sapen Yogyakarta
+                <h1 class="pb-2 pt-1 font-androgyne text-lg font-semibold text-primary lg:text-2xl">
+                    {{ $home->school_affiliate }}
                 </h1>
-                <h1 class="py-2 font-comicsans text-base font-semibold lg:text-2xl"><span
-                        class="text-yellow-500">Cerdas</span>, <span class="text-blue-500">Kreatif</span>, dan
-                    <span class="text-green-500">Berakhlak Mulia</span> !
+                <h1 class="py-2 font-comicsans text-base font-semibold lg:text-2xl">
+                    {{ $home->motto }}
                 </h1>
-                <p class="py-2 text-sm lg:text-base">SD Muhammadiyah Klaten Utara adalah sekolah unggulan dengan berbagai
-                    prestasi. Kami
-                    memiliki sistem pembelajaran profesional, religius dan ceria dilengkapi fasilitas yang memadai.
+                <p class="py-2 text-sm lg:text-base">
+                    {{ $home->description }}
                 </p>
                 <a href="/profil/sekolah" class="btn btn-primary">Profil Kami</a>
             </div>
@@ -56,19 +53,19 @@
     <section class="space-y-4 px-6 py-8 lg:space-y-8 lg:px-16 lg:py-16">
         <h3 class="text-center text-xl font-bold lg:text-4xl">Program Unggulan</h3>
         <div class="flex flex-col items-center justify-around gap-4 lg:flex-row lg:gap-6">
-            @foreach ($services as $unggulan)
+            @foreach ($homeFeatured as $feature)
                 <div class="taos:translate-y-[100%] taos:invisible group h-full w-full overflow-hidden rounded-lg border-2 border-primary bg-base-200 shadow-lg transition-transform delay-[150ms] duration-[450ms] [animation-iteration-count:infinite] lg:h-[340px] lg:w-1/3"
                     data-taos-offset="50">
                     <div
                         class="h-[220px] w-full rounded-t-lg bg-base-200 object-cover shadow transition-transform duration-500 group-hover:scale-105">
-                        <img src="{{ $unggulan['image'] }}" alt="" class="h-full w-full object-cover">
+                        <img src="{{ $feature->featured_image }}" alt="" class="h-full w-full object-cover">
                     </div>
 
                     <div class="p-3">
-                        <h5 class="text-center text-base font-semibold lg:text-xl">{{ $unggulan['title'] }}</h5>
-                        <p class="text-center text-xs lg:text-sm">{{ $unggulan['subtitle'] }}</p>
+                        <h5 class="text-center text-base font-semibold lg:text-xl">{{ $feature->featured_title }}</h5>
+                        <p class="text-center text-xs lg:text-sm">{{ $feature->featured_subtitle }}</p>
                         {{-- <button class="btn-white btn btn-sm float-right mt-2 text-black">Lihat
-                            {{ $unggulan['title'] }}</button> --}}
+                            {{ $feature['title'] }}</button> --}}
                     </div>
                 </div>
             @endforeach

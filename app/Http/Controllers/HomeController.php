@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Home;
+use App\Models\HomeFeatured;
+use App\Models\HomeHero;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -14,7 +16,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //
+        $home = Home::get()->first();
+        $homeHero = HomeHero::get();
+        $homeFeatured = HomeFeatured::get();
+        return view('pages.home', compact('home', 'homeHero', 'homeFeatured'));
     }
 
     /**
