@@ -13,14 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('home', function (Blueprint $table) {
+        Schema::create('home_featured', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('school_name');
-            $table->string('school_affiliate');
-            $table->string('motto');
-            $table->text('description');
-            $table->text('ppdb_banner');
-            $table->text('ppdb_desc');
+            $table->string('featured_title');
+            $table->text('featured_subtitle');
+            $table->text('featured_image');
+            $table->uuid('home_id');
+            $table->foreign('home_id')->references('id')->on('home')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -32,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('home');
+        Schema::dropIfExists('home_featured');
     }
 };

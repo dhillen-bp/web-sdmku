@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Mision;
+use App\Models\HomeFeatured;
 use Illuminate\Http\Request;
 
-class MisionController extends Controller
+class HomeFeaturedController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class MisionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Mision  $mision
+     * @param  \App\Models\HomeFeatured  $homeFeatured
      * @return \Illuminate\Http\Response
      */
-    public function show(Mision $mision)
+    public function show(HomeFeatured $homeFeatured)
     {
         //
     }
@@ -52,10 +52,10 @@ class MisionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Mision  $mision
+     * @param  \App\Models\HomeFeatured  $homeFeatured
      * @return \Illuminate\Http\Response
      */
-    public function edit(Mision $mision)
+    public function edit(HomeFeatured $homeFeatured)
     {
         //
     }
@@ -64,10 +64,10 @@ class MisionController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Mision  $mision
+     * @param  \App\Models\HomeFeatured  $homeFeatured
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Mision $mision)
+    public function update(Request $request, HomeFeatured $homeFeatured)
     {
         //
     }
@@ -75,10 +75,10 @@ class MisionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Mision  $mision
+     * @param  \App\Models\HomeFeatured  $homeFeatured
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Mision $mision)
+    public function destroy(HomeFeatured $homeFeatured)
     {
         //
     }

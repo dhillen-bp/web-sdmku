@@ -6,12 +6,12 @@ use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Mission extends Model
+class HomeFeatured extends Model
 {
     use HasFactory;
     use HasUuids;
 
-    protected $table = 'mission';
+    protected $table = 'home_featured';
     protected $primaryKey = 'id';
     public $timestamps = true;
 
