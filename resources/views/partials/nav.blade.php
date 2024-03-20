@@ -2,7 +2,7 @@
     <div class="flex-1">
         <a class="inline-flex cursor-pointer items-center text-xl font-bold text-slate-100">
             <img src="{{ asset('images/logo/logo_sdmku_compress.png') }}" alt="School Logo" class="mr-3 h-8 w-8">
-            <p>SD MKU</p>
+            <p class="font-lobster">SD MKU</p>
         </a>
     </div>
     <div class="flex-none">
@@ -58,9 +58,11 @@
                                     class="{{ Request::path() == 'kegiatan/ekstrakurikuler' ? 'active' : '' }}">
                                     Ekstrakurikuler</a>
                             </li>
-                            <li><a href="/kegiatan/pendukung"
-                                    class="{{ Request::path() == 'kegiatan/pendukung' ? 'active' : '' }}">
-                                    Pendukung</a></li>
+                            <li><a href="/kegiatan/event"
+                                    class="{{ Request::path() == 'kegiatan/event' ? 'active' : '' }}">
+                                    Event Terbaru</a></li>
+                            <li><a href="/kegiatan/kbm" class="{{ Request::path() == 'kegiatan/kbm' ? 'active' : '' }}">
+                                    KBM</a></li>
                         </ul>
                     </details>
                 </li>
@@ -110,9 +112,11 @@
                                 class="{{ Request::path() == 'kegiatan/ekstrakurikuler' ? 'active' : '' }}">
                                 Ekstrakurikuler</a>
                         </li>
-                        <li><a href="/kegiatan/pendukung"
-                                class="{{ Request::path() == 'kegiatan/pendukung' ? 'active' : '' }}">
-                                Pendukung</a></li>
+                        <li><a href="/kegiatan/event"
+                                class="{{ Request::path() == 'kegiatan/event' ? 'active' : '' }}">
+                                Event Terbaru</a></li>
+                        <li><a href="/kegiatan/kbm" class="{{ Request::path() == 'kegiatan/kbm' ? 'active' : '' }}">
+                                KBM</a></li>
                     </ul>
                 </details>
             </li>

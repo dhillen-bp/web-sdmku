@@ -4,14 +4,16 @@
             <img src="{{ asset('images/logo/logo_sdmku_compress.png') }}" alt="School Logo"
                 class="w-2h-20 mr-3 h-20 lg:h-24 lg:w-24">
             <div class="space-y-2">
-                <h2 class="text-lg font-bold lg:text-2xl">SD Muhammadiyah Klaten Utara</h2>
+                <h2 class="font-lobster text-lg font-bold lg:text-2xl">SD Muhammadiyah Klaten Utara</h2>
                 <div class="flex flex-[4] items-center">
-                    <span class="material-icons flex-[0.4] text-lg">call</span>
-                    <p class="flex-[3.6] text-xs md:text-base">0272326984</p>
+                    <span class="material-icons flex-[0.3] text-lg">call</span>
+                    <p class="flex-[3.7] gap-2 text-xs md:text-sm">0272326984</p>
                 </div>
-                <div class="flex flex-[4] items-center">
-                    <span class="material-icons flex-[0.4] text-lg">email</span>
-                    <p class="flex-[3.6] text-xs md:text-base">sdmuhammadiyahklatenutara@yahoo.com</p>
+                <div class="flex flex-[4] items-center gap-2">
+                    <span class="flex-[0.2]">@include('partials.svg._whatsapp-svg', ['width' => 18, 'height' => 18])</span>
+                    <a class="text-xs hover:underline md:text-sm" href="https://wa.me/6281326915512">+6281326915512 </a>
+                    <span class="text-xs">(Jam Kerja Senin-Jum'at Pukul 07.00 - 14.00)</span>
+
                 </div>
             </div>
         </div>
@@ -43,7 +45,7 @@
         <nav class="col-span-1 block space-y-2 py-2">
             <h6 class="footer-title">Kegiatan</h6>
             <a class="link-hover link block">Ekstrakurikuler</a>
-            <a class="link-hover link block">Pendukung</a>
+            <a class="link-hover link block">Event Terbaru</a>
         </nav>
         <nav class="col-span-1 block space-y-2 py-2">
             <h6 class="footer-title">Menu Lain</h6>
@@ -55,6 +57,10 @@
         <nav class="py-2">
             <h6 class="footer-title">Media Sosial</h6>
             <div class="flex gap-4">
+                <a href="https://www.facebook.com/pages/SD-Muhammadiyah-Klaten-Utara/145005322367547?mibextid=rS40aB7S9Ucbxw6v"
+                    target="_blank" class="cursor-pointer rounded-full p-2 hover:bg-blue-500">
+                    @include('partials.svg._facebook-svg')
+                </a>
                 <a href="https://www.instagram.com/sdmuhklatenutara/" target="_blank"
                     class="cursor-pointer rounded-full bg-gradient-to-tr p-2 hover:from-[#FF7806] hover:to-[#A20AD0]">
                     @include('partials.svg._instagram-svg')

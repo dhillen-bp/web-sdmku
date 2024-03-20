@@ -19,8 +19,12 @@
                 <button type="button"
                     class="dark:bg-gray-900 mb-3 me-3 rounded-full border border-black bg-white px-5 py-2.5 text-center text-base font-medium text-black hover:bg-primary hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300">Fasilitas</button>
             </div>
+            <iframe src="https://drive.google.com/embeddedfolderview?id=1WlNNuzMfiqmzD7nK45VBu1pLDzcYXwn4#grid"
+                style="width:100%; height:600px; border:0;"></iframe>
+
+
             <div class="grid grid-cols-2 gap-4 md:grid-cols-3">
-                @for ($i = 0; $i < 6; $i++)
+                {{-- @for ($i = 0; $i < 6; $i++)
                     <div class="relative">
                         <img class="h-56 w-full max-w-full rounded-lg object-cover"
                             src="https://source.unsplash.com/random/{{ $i }}" alt="">
@@ -30,7 +34,7 @@
                                 mollitia.</span>
                         </div>
                     </div>
-                @endfor
+                @endfor --}}
             </div>
 
         </div>

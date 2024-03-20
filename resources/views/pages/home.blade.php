@@ -39,7 +39,7 @@
                     {{ $home->school_affiliate }}
                 </h1>
                 <h1 class="py-2 font-comicsans text-base font-semibold lg:text-2xl">
-                    {{ $home->motto }}
+                    {!! $home->motto !!}
                 </h1>
                 <p class="py-2 text-sm lg:text-base">
                     {{ $home->description }}
@@ -99,7 +99,7 @@
     {{-- NEWS SECTION --}}
     <section class="px-6 py-8 lg:px-16 lg:py-16">
         <div class="mb-8 flex items-center justify-between">
-            <h3 class="text-xl font-bold lg:text-4xl">Berita Terbaru</h3>
+            <h3 class="text-xl font-bold lg:text-4xl">Event Terbaru</h3>
             <div class="flex items-center">
                 <a class="cursor-pointer hover:underline">Lihat Lainnya </a>
                 <span class="material-icons">keyboard_double_arrow_right</span>

@@ -32,11 +32,11 @@ Route::prefix('admin')->group(function () {
         });
 
         Route::get('/guru-staf', function () {
-            return view('admin.pages.profil.guru-staf');
+            return view('admin.pages.profile.guru-staf');
         });
 
         Route::get('/guru-staf/create', function () {
-            return view('admin.pages.profil.guru-staf-create');
+            return view('admin.pages.profile.guru-staf-create');
         });
     });
 

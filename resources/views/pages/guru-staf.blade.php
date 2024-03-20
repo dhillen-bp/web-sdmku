@@ -9,16 +9,20 @@
 
         <div class="grid grid-cols-2 justify-center gap-6 px-6 py-16 lg:grid-cols-5 lg:px-16">
 
+            @php
+                $i = 1;
+            @endphp
             @foreach ($data as $guru)
                 {{-- CARD GURU --}}
-                <div class="card card-compact col-span-1 bg-base-100 shadow-2xl">
+                <div class="taos:scale-[0.6] taos:opacity-0 card card-compact col-span-1 bg-base-100 shadow-2xl delay-[300ms] duration-[600ms] [animation-iteration-count:infinite]"
+                    data-taos-offset="100">
                     <figure class="m-0 p-0">
                         {{-- <img src="https://drive.google.com/thumbnail?id=Image-ID&sz=w1000"> --}}
                         <img src="{{ $guru['gambar'] }}" alt="Shoes" class="block w-full object-cover" />
 
                     </figure>
                     <div class="card-body items-center">
-                        <h2 class="card-title text-base">{{ $guru['nama'] }}</h2>
+                        <h2 class="card-title text-center text-base">{{ $i }}. {{ $guru['nama'] }}</h2>
                         <div class="badge badge-primary badge-outline mb-1 cursor-default text-sm shadow-sm">
                             {{ $guru['jabatan'] }}</div>
                         {{-- <div class="card-actions justify-center">
@@ -30,6 +34,9 @@
                     </div>
                 </div>
                 {{-- END CARD GURU --}}
+                @php
+                    $i++;
+                @endphp
             @endforeach
 
         </div>
