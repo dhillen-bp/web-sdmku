@@ -22,6 +22,7 @@
         "flatpickr": "^4.6.13",
         "jquery": "^3.7.1",
         "jsvectormap": "^1.5.3",
-        "taos": "^1.0.5"
+        "taos": "^1.0.5",
+        "tinymce": "^5.10.9"
     }
 }

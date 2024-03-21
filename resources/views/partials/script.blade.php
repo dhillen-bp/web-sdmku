@@ -1,3 +1,17 @@
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script>
+    //message with toastr
+    @if (session()->has('success'))
+
+        toastr.success('{{ session('success') }}', 'BERHASIL!');
+    @elseif (session()->has('error'))
+
+        toastr.error('{{ session('error') }}', 'GAGAL!');
+    @endif
+</script>
+
 <script type="module">
     // Fungsi untuk menutup details yang lain saat satu details dibuka
     function toggleDetails(detailsId) {

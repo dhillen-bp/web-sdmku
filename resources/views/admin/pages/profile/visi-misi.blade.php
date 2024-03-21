@@ -45,7 +45,7 @@
                                     <label class="mb-3 block text-sm font-medium text-black dark:text-white">
                                         Content
                                     </label>
-                                    <textarea rows="6" placeholder="Type your message"
+                                    <textarea id="visiContent" name="content" rows="6" placeholder="Type your message"
                                         class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"></textarea>
                                 </div>
 
@@ -74,7 +74,7 @@
                                     <label class="mb-3 block text-sm font-medium text-black dark:text-white">
                                         Content
                                     </label>
-                                    <textarea rows="6" placeholder="Type your message"
+                                    <textarea id="misiContent" name="content" rows="6" placeholder="Type your message"
                                         class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"></textarea>
                                 </div>
 
@@ -90,4 +90,39 @@
 
         </div>
     </main>
+@endsection
+
+@section('after-script')
+    <script>
+        $('#visiContent, #misiContent').summernote({
+            // placeholder: 'Ketik disini',
+            tabsize: 2,
+            height: 150,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['insert', ['link', 'picture', 'video']],
+                ['view', ['fullscreen', 'codeview', 'help']]
+            ]
+        });
+
+        $(document).ready(function() {
+            $.ajax({
+                url: '{{ route('admin.visi.show') }}',
+                type: 'GET',
+                dataType: 'json',
+                success: function(response) {
+                    let vision = response.vision;
+                    // $('#visiContent').html(vision.content);
+                    $('#visiContent').summernote('editor.insertText', vision.content);
+                },
+                error: function(xhr, status, error) {
+                    console.error(xhr.responseText);
+                }
+            });
+        });
+    </script>
 @endsection

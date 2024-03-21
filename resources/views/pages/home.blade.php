@@ -9,7 +9,8 @@
                     $jumlah = count($homeHero) - 1;
                 @endphp
                 <div id="slide{{ $index }}" class="carousel-item relative w-full">
-                    <img src="{{ $hero->image }}" class="w-full" />
+                    <img src="{{ $hero->image == 'hero_default.JPG' ? asset('images/home/' . $hero->image) : asset('storage/images/home/' . $hero->image) }}"
+                        class="w-full" />
                     <div
                         class="absolute left-6 right-6 top-1/2 flex -translate-y-1/2 transform justify-between lg:left-16 lg:right-16">
                         <a href="#slide{{ $index == 0 ? $jumlah : $index - 1 }}"
@@ -89,7 +90,7 @@
 
             <div class="taos:translate-x-[200px] taos:opacity-0 flex h-full flex-col items-center shadow delay-[300ms] duration-[500ms] [animation-iteration-count:infinite] lg:w-2/3"
                 data-taos-offset="100">
-                <img src="{{ asset('images/default/Logo Bawah type2.png') }}" alt="" class="h-full">
+                <img src="{{ asset("images/home/$home->ppdb_banner") }}" alt="" class="h-full">
             </div>
         </div>
     </section>

@@ -28,9 +28,11 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
         <!-- ===== Content Area End ===== -->
 
     </div>
+    @include('partials.toastr')
 
     @include('partials.script')
     @yield('after-script')
+
 </body>
 
 </html>

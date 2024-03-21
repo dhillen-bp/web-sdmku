@@ -36,14 +36,15 @@
 
                     </div>
 
-                    <form action="#">
+                    <form action="{{ route('home.hero.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
                         <div class="p-6.5">
 
                             <div class="mb-6">
                                 <label class="mb-3 block text-sm font-medium text-black dark:text-white">
                                     Upload Gambar
                                 </label>
-                                <input type="file"
+                                <input type="file" name="image"
                                     class="w-full cursor-pointer rounded-lg border-[1.5px] border-stroke bg-transparent font-normal outline-none transition file:mr-5 file:border-collapse file:cursor-pointer file:border-0 file:border-r file:border-solid file:border-stroke file:bg-whiter file:px-5 file:py-3 file:hover:bg-primary file:hover:bg-opacity-10 focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:file:border-form-strokedark dark:file:bg-white/30 dark:file:text-white dark:focus:border-primary">
                             </div>
 
@@ -70,22 +71,34 @@
                     </div>
 
                     <div class="grid grid-cols-2 gap-2">
-                        <div>
-                            <img class="h-auto max-w-full rounded-lg"
-                                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="">
-                        </div>
-                        <div>
-                            <img class="h-auto max-w-full rounded-lg"
-                                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="">
-                        </div>
-                        <div>
-                            <img class="h-auto max-w-full rounded-lg"
-                                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="">
-                        </div>
-                        <div>
-                            <img class="h-auto max-w-full rounded-lg"
-                                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="">
-                        </div>
+                        @foreach ($homeHero as $hero)
+                            <div class="relative">
+                                <img class="h-auto max-w-full rounded-lg"
+                                    src={{ $hero->image === 'hero_default.JPG' ? asset("images/home/$hero->image") : asset("storage/images/home/$hero->image") }}
+                                    alt="">
+                                <button
+                                    class="absolute right-2 top-2 rounded-full bg-red-500 p-1 text-white hover:bg-red-600 focus:outline-none"
+                                    aria-label="Hapus Gambar" onclick="modal_delete_hero.showModal()">
+                                    <span class="material-icons flex items-center justify-center">delete</span>
+                                </button>
+                            </div>
+                        @endforeach
+                        <dialog id="modal_delete_hero" class="modal">
+                            <div class="modal-box">
+                                <h3 class="text-lg font-bold">Hapus Hero Image!</h3>
+                                <p class="py-4"></p>
+                                <div class="modal-action">
+                                    <form action="{{ route('home.hero.destroy', $hero->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <!-- if there is a button in form, it will close the modal -->
+                                        <button class="btn btn-error text-white" type="submit">Ya</button>
+                                        <button class="btn btn-ghost" type="button"
+                                            onclick="cancelForm(event)">Batal</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </dialog>
                     </div>
 
                 </div>
@@ -94,4 +107,17 @@
             </div>
         </div>
     </main>
+@endsection
+
+@section('after-script')
+    <script>
+        function cancelForm(event) {
+            event.preventDefault();
+            // Implement your cancel logic here
+            // For example, hide the form or reset input fields
+            $("#modal_delete_hero").removeAttr("open");
+            $("#modal_delete_hero").attr("close", "close");
+
+        }
+    </script>
 @endsection

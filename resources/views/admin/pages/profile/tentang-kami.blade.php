@@ -45,7 +45,7 @@
                                     <label class="mb-3 block text-sm font-medium text-black dark:text-white">
                                         Description
                                     </label>
-                                    <textarea rows="6" placeholder="Masukkan description"
+                                    <textarea id="summernote" rows="6" placeholder="Masukkan description"
                                         class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"></textarea>
                                 </div>
 
@@ -74,4 +74,23 @@
 
         </div>
     </main>
+@endsection
+
+@section('after-script')
+    <script>
+        $('#summernote').summernote({
+            placeholder: 'Hello stand alone ui',
+            tabsize: 2,
+            height: 120,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['insert', ['link', 'picture', 'video']],
+                ['view', ['fullscreen', 'codeview', 'help']]
+            ]
+        });
+    </script>
 @endsection
