@@ -23,13 +23,8 @@
             <div class="grid grid-cols-2 gap-4 md:grid-cols-3">
                 @for ($i = 0; $i < 6; $i++)
                     <div class="relative">
-                        <img class="h-56 w-full max-w-full rounded-lg object-cover"
+                        <img class="h-full w-full max-w-full rounded-lg object-cover"
                             src="https://source.unsplash.com/random/{{ $i }}" alt="">
-                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-2 text-center text-white">
-                            <span class="text-sm font-semibold">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                In,
-                                mollitia.</span>
-                        </div>
                     </div>
                 @endfor
             </div>

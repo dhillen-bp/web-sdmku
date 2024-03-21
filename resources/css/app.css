@@ -62,4 +62,7 @@
   .font-outline-4 {
     -webkit-text-stroke: 4px #3C50E0;
   }
+  ul, ol {
+    list-style: revert;
+  }
 }

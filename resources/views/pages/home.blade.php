@@ -53,9 +53,9 @@
     {{-- OUR SERVICE SECTION --}}
     <section class="space-y-4 px-6 py-8 lg:space-y-8 lg:px-16 lg:py-16">
         <h3 class="text-center text-xl font-bold lg:text-4xl">Program Unggulan</h3>
-        <div class="flex flex-col items-center justify-around gap-4 lg:flex-row lg:gap-6">
+        <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-3 lg:gap-6">
             @foreach ($homeFeatured as $feature)
-                <div class="taos:translate-y-[100%] taos:invisible group h-full w-full overflow-hidden rounded-lg border-2 border-primary bg-base-200 shadow-lg transition-transform delay-[150ms] duration-[450ms] [animation-iteration-count:infinite] lg:h-[340px] lg:w-1/3"
+                <div class="taos:translate-y-[100%] taos:invisible lg:w-[calc(100%/3 - 1rem)] group h-full w-full overflow-hidden rounded-lg border-2 border-primary bg-base-200 shadow-lg transition-transform delay-[150ms] duration-[450ms] [animation-iteration-count:infinite] lg:h-[340px]"
                     data-taos-offset="50">
                     <div
                         class="h-[220px] w-full rounded-t-lg bg-base-200 object-cover shadow transition-transform duration-500 group-hover:scale-105">
@@ -71,6 +71,7 @@
                 </div>
             @endforeach
         </div>
+
     </section>
 
     {{-- PPDB SECTION --}}

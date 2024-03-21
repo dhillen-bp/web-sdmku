@@ -45,11 +45,11 @@ class HomeFeaturedController extends Controller
     {
         $home = Home::first();
         $validated = $request->validated();
-        $validated['home'] = $home->id;
+        $validated['home_id'] = $home->id;
 
         $imageName = '';
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
+        if ($request->hasFile('featured_image')) {
+            $image = $request->file('featured_image');
             $imageExtension = $image->getClientOriginalExtension();
             $imageName = Str::uuid() . '.' . $imageExtension;
             $image->storeAs("images/home", $imageName);
@@ -126,6 +126,6 @@ class HomeFeaturedController extends Controller
 
         $featured->delete();
 
-        return redirect('/admin/home/hero-banner')->with('success', 'Program Unggulan berhasil dihapus!');
+        return redirect('/admin/home/program-unggulan')->with('success', 'Program Unggulan berhasil dihapus!');
     }
 }

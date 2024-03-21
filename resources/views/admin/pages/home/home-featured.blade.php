@@ -36,9 +36,9 @@
                         <a href="{{ route('home.featured.create') }}" class="btn btn-primary btn-sm">Tambah Program</a>
                     </div>
 
-                    <div class="flex flex-col items-center justify-around gap-4 lg:flex-row lg:gap-6">
+                    <div class="grid grid-cols-2 gap-2 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4">
                         @foreach ($homeFeatured as $featured)
-                            <div class="group h-full w-full overflow-hidden rounded-lg border-2 border-primary bg-base-200 shadow-lg lg:h-[400px] lg:w-1/3"
+                            <div class="group h-full w-full overflow-hidden rounded-lg border-2 border-primary bg-base-200 shadow-lg"
                                 data-taos-offset="50">
                                 <div
                                     class="h-[220px] w-full rounded-t-lg bg-base-200 object-cover shadow transition-transform duration-500 group-hover:scale-105">
@@ -52,13 +52,30 @@
                                     <p class="text-center text-xs lg:text-sm">{{ $featured->featured_subtitle }}</p>
                                 </div>
 
-                                <div class="mt-5 flex justify-around">
+                                <div class="flex items-end justify-around p-2">
                                     <a href="{{ route('home.featured.edit', $featured->id) }}"
                                         class="btn btn-warning btn-sm">Edit</a>
-                                    <button class="btn btn-error btn-sm text-white">Hapus</button>
+                                    <button class="btn btn-error btn-sm text-white"
+                                        onclick="modal_delete_featured.showModal()">Hapus</button>
                                 </div>
                             </div>
                         @endforeach
+                        <dialog id="modal_delete_featured" class="modal">
+                            <div class="modal-box">
+                                <h3 class="text-lg font-bold">Hapus Hero Image!</h3>
+                                <p class="py-4"></p>
+                                <div class="modal-action">
+                                    <form action="{{ route('home.featured.destroy', $featured->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <!-- if there is a button in form, it will close the modal -->
+                                        <button class="btn btn-error text-white" type="submit">Ya</button>
+                                        <button class="btn btn-ghost" type="button"
+                                            onclick="cancelForm(event)">Batal</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </dialog>
                     </div>
 
                 </div>
@@ -67,4 +84,18 @@
             </div>
         </div>
     </main>
+@endsection
+
+
+@section('after-script')
+    <script>
+        function cancelForm(event) {
+            event.preventDefault();
+            // Implement your cancel logic here
+            // For example, hide the form or reset input fields
+            $("#modal_delete_featured").removeAttr("open");
+            $("#modal_delete_featured").attr("close", "close");
+
+        }
+    </script>
 @endsection

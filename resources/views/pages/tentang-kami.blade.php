@@ -28,9 +28,10 @@
                         src="{{ asset('images/sambutan_kepsek.JPG') }}" alt="Kepala Sekolah">
                 </div>
                 <div class="flex-[2]">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi delectus eligendi placeat explicabo
-                        necessitatibus vero debitis, velit earum voluptatem tempore, at vitae asperiores. Tempore veritatis,
-                        eius officia illo doloribus aut.</p>
+                    <p>Anak adalah amanah dan anugrah Allah SWT yang paling berharga, mereka adalah anugrah yang berharga
+                        yang harus kita jaga dengan sempurna, memberikan pendidikan yang terbaik serta lingkungan yang
+                        nyaman untuk perkembangannya, SD Muhammadiyah Klaten Utara sekolah yang menjadikan mitra untuk
+                        memupuk, mengembangkan, menumbuhkan dan membina potensi sejak dini.</p>
                 </div>
             </div>
         </div>

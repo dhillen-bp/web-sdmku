@@ -45,8 +45,7 @@
                                     <label class="mb-3 block text-sm font-medium text-black dark:text-white">
                                         Content
                                     </label>
-                                    <textarea id="visiContent" name="content" rows="6" placeholder="Type your message"
-                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"></textarea>
+                                    <textarea id="visiContent" name="content" rows="6" class="w-full">{!! $vision->content !!}</textarea>
                                 </div>
 
                                 <button
@@ -74,14 +73,15 @@
                                     <label class="mb-3 block text-sm font-medium text-black dark:text-white">
                                         Content
                                     </label>
-                                    <textarea id="misiContent" name="content" rows="6" placeholder="Type your message"
-                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"></textarea>
+                                    <textarea id="misiContent" name="content" rows="6"
+                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary">{!! $mission->content !!}</textarea>
                                 </div>
 
                                 <button
                                     class="flex w-full justify-center rounded bg-primary p-3 font-medium text-gray hover:bg-opacity-90">
                                     Submit
                                 </button>
+
                             </div>
                         </form>
                     </div>
@@ -110,14 +110,16 @@
         });
 
         $(document).ready(function() {
+
             $.ajax({
                 url: '{{ route('admin.visi.show') }}',
                 type: 'GET',
                 dataType: 'json',
                 success: function(response) {
                     let vision = response.vision;
+                    console.log(vision.content);
                     // $('#visiContent').html(vision.content);
-                    $('#visiContent').summernote('editor.insertText', vision.content);
+                    // $('#visiContent').summernote('code', vision.content);
                 },
                 error: function(xhr, status, error) {
                     console.error(xhr.responseText);

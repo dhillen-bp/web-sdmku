@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Vision\UpdateRequest;
+use App\Models\Mission;
 use App\Models\Vision;
 use Illuminate\Http\Request;
 
@@ -17,8 +18,9 @@ class VisionController extends Controller
     public function index()
     {
         $vision = Vision::first();
+        $mission = Mission::first();
 
-        return view('admin.pages.profile.visi-misi');
+        return view('admin.pages.profile.visi-misi', compact('mission', 'vision'));
     }
 
     /**
@@ -82,7 +84,7 @@ class VisionController extends Controller
 
         $visionUpdate = $vision->update($validated);
 
-        return  response()->json(['message' => 'Visi submitted successfully!']);
+        return  response()->json(['message' => 'Visi berhasil diperbarui!']);
     }
 
     /**

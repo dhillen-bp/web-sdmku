@@ -25,9 +25,10 @@ Route::prefix('admin')->group(function () {
 
         Route::get('/program-unggulan', [HomeFeaturedController::class, 'index'])->name('home.featured.index');
         Route::get('/program-unggulan/create', [HomeFeaturedController::class, 'create'])->name('home.featured.create');
-        Route::put('/program-unggulan/store', [HomeFeaturedController::class, 'store'])->name('home.featured.store');
+        Route::post('/program-unggulan/store', [HomeFeaturedController::class, 'store'])->name('home.featured.store');
         Route::get('/program-unggulan/edit/{id}', [HomeFeaturedController::class, 'edit'])->name('home.featured.edit');
         Route::put('/program-unggulan/update/{id}', [HomeFeaturedController::class, 'update'])->name('home.featured.update');
+        Route::delete('/program-unggulan/destroy/{id}', [HomeFeaturedController::class, 'destroy'])->name('home.featured.destroy');
     });
 
     Route::prefix('profil')->group(function () {
