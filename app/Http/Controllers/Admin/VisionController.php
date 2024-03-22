@@ -39,7 +39,7 @@ class VisionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(UpdateRequest $request)
+    public function store(Request $request)
     {
     }
 
@@ -84,7 +84,7 @@ class VisionController extends Controller
 
         $visionUpdate = $vision->update($validated);
 
-        return  response()->json(['message' => 'Visi berhasil diperbarui!']);
+        return redirect('/admin/profil/visi-misi')->with('success', 'Visi berhasil diperbarui!');
     }
 
     /**

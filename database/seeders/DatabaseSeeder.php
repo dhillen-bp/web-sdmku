@@ -24,19 +24,20 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call([
             // HOME
-            // HomeSeeder::class,
-            // HomeHeroSeeder::class,
-            // HomeFeaturedSeeder::class
+            HomeSeeder::class,
+            HomeHeroSeeder::class,
+            HomeFeaturedSeeder::class,
 
             // PROFILE
-            // VisionSeeder::class,
-            // MissionSeeder::class,
+            VisionSeeder::class,
+            MissionSeeder::class,
 
             // PPDB
-            // PPDBSeeder::class
+            PPDBSeeder::class,
 
             // ACTIVITY
-            ExtracurricularSeeder::class
+            ExtracurricularSeeder::class,
+            TeacherStaffSeeder::class,
         ]);
     }
 }

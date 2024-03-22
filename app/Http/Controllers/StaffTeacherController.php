@@ -14,7 +14,9 @@ class StaffTeacherController extends Controller
      */
     public function index()
     {
-        //
+        $teachers = StaffTeacher::get();
+
+        return view('pages.guru-staf', compact('teachers'));
     }
 
     /**

@@ -46,59 +46,74 @@
                     </div>
 
                     <div class="flex flex-col">
-                        <div class="grid grid-cols-3 rounded-sm bg-gray-2 dark:bg-meta-4 sm:grid-cols-5">
+                        <div class="grid grid-cols-3 rounded-sm bg-gray-2 dark:bg-meta-4 sm:grid-cols-4">
                             <div class="p-2.5 xl:p-5">
                                 <h5 class="text-sm font-medium uppercase xsm:text-base">Name</h5>
                             </div>
                             <div class="p-2.5 text-center xl:p-5">
+                                <h5 class="text-sm font-medium uppercase xsm:text-base">Image</h5>
+                            </div>
+                            <div class="p-2.5 text-center xl:p-5">
                                 <h5 class="text-sm font-medium uppercase xsm:text-base">Position</h5>
-                            </div>
-                            <div class="hidden p-2.5 text-center sm:block xl:p-5">
-                                <h5 class="text-sm font-medium uppercase xsm:text-base">Instagram</h5>
-                            </div>
-                            <div class="hidden p-2.5 text-center sm:block xl:p-5">
-                                <h5 class="text-sm font-medium uppercase xsm:text-base">Whatsapp</h5>
                             </div>
                             <div class="p-2.5 text-center xl:p-5">
                                 <h5 class="text-sm font-medium uppercase xsm:text-base">Action</h5>
                             </div>
                         </div>
 
-                        @for ($i = 0; $i < 3; $i++)
-                            <div class="grid grid-cols-3 border-b border-stroke dark:border-strokedark sm:grid-cols-5">
+                        @foreach ($teachers as $teacher)
+                            <div class="grid grid-cols-3 border-b border-stroke dark:border-strokedark sm:grid-cols-4">
                                 <div class="flex items-center gap-3 p-2.5 xl:p-5">
                                     <p class="font-medium text-black dark:text-white sm:block">
-                                        John Doe
+                                        {{ $teacher->name }}
                                     </p>
                                 </div>
 
+                                <div class="flex items-center justify-center rounded-md">
+                                    <img src="{{ Str::contains($teacher->image, 'drive') ? $teacher->image : asset('images/guru_staf' . $teacher->image) }}"
+                                        alt="Product" class="mx-auto">
+                                </div>
+
                                 <div class="flex items-center justify-center p-2.5 xl:p-5">
-                                    <p class="font-medium text-black dark:text-white">Guru Kelas</p>
-                                </div>
-
-                                <div class="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
-                                    <p class="font-medium text-meta-1">@johndoe</p>
-                                </div>
-
-                                <div class="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
-                                    <p class="font-medium text-meta-3">62801722892</p>
+                                    <div class="badge badge-primary badge-outline dark:text-white">{{ $teacher->position }}
+                                    </div>
                                 </div>
 
                                 <div class="flex items-center justify-center p-2.5 xl:p-5">
                                     <div class="flex gap-2">
-                                        <div class="tooltip tooltip-warning cursor-pointer hover:text-warning"
+                                        <a href="{{ route('admin.guru.edit', $teacher->id) }}"
+                                            class="tooltip tooltip-warning cursor-pointer hover:text-warning"
                                             data-tip="Edit">
                                             <span class="material-icons">edit</span>
-                                        </div>
-                                        <div class="tooltip tooltip-error cursor-pointer hover:text-danger"
-                                            data-tip="Hapus">
+                                        </a>
+                                        <button class="tooltip tooltip-error cursor-pointer hover:text-danger"
+                                            data-tip="Hapus" onclick="modal_delete_guru.showModal()">
                                             <span class="material-icons">delete</span>
-                                        </div>
+                                        </button>
                                     </div>
                                 </div>
-                            </div>
-                        @endfor
 
+                                <dialog id="modal_delete_guru" class="modal">
+                                    <div class="modal-box">
+                                        <h3 class="text-lg font-bold">Hapus Hero Image!</h3>
+                                        <p class="py-4"></p>
+                                        <div class="modal-action">
+                                            <form action="{{ route('admin.guru.destroy', $teacher->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <!-- if there is a button in form, it will close the modal -->
+                                                <button class="btn btn-error text-white" type="submit">Ya</button>
+                                                <button class="btn btn-ghost" type="button"
+                                                    onclick="cancelForm(event)">Batal</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </dialog>
+                            </div>
+                        @endforeach
+                        <div class="my-2">
+                            {{ $teachers->links('vendor.pagination.tailwind') }}
+                        </div>
                     </div>
                 </div>
 
@@ -107,4 +122,17 @@
             <!-- ====== Table Section End -->
         </div>
     </main>
+@endsection
+
+@section('after-script')
+    <script>
+        function cancelForm(event) {
+            event.preventDefault();
+            // Implement your cancel logic here
+            // For example, hide the form or reset input fields
+            $("#modal_delete_guru").removeAttr("open");
+            $("#modal_delete_guru").attr("close", "close");
+
+        }
+    </script>
 @endsection

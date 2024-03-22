@@ -38,7 +38,9 @@
                                 Visi Form
                             </h3>
                         </div>
-                        <form action="#">
+                        <form action="{{ route('admin.visi.update') }}" method="POST">
+                            @csrf
+                            @method('PUT')
                             <div class="p-6.5">
 
                                 <div class="mb-6">
@@ -66,7 +68,9 @@
                                 Misi Form
                             </h3>
                         </div>
-                        <form action="#">
+                        <form action="{{ route('admin.misi.update') }}" method="post">
+                            @csrf
+                            @method('PUT')
                             <div class="p-6.5">
 
                                 <div class="mb-6">
@@ -107,24 +111,6 @@
                 ['insert', ['link', 'picture', 'video']],
                 ['view', ['fullscreen', 'codeview', 'help']]
             ]
-        });
-
-        $(document).ready(function() {
-
-            $.ajax({
-                url: '{{ route('admin.visi.show') }}',
-                type: 'GET',
-                dataType: 'json',
-                success: function(response) {
-                    let vision = response.vision;
-                    console.log(vision.content);
-                    // $('#visiContent').html(vision.content);
-                    // $('#visiContent').summernote('code', vision.content);
-                },
-                error: function(xhr, status, error) {
-                    console.error(xhr.responseText);
-                }
-            });
         });
     </script>
 @endsection

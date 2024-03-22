@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\Admin\GuruStafController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\HomeFeaturedController;
 use App\Http\Controllers\Admin\HomeHeroController;
+use App\Http\Controllers\Admin\MissionController;
 use App\Http\Controllers\Admin\VisionController;
 use Illuminate\Support\Facades\Route;
 
@@ -35,19 +37,20 @@ Route::prefix('admin')->group(function () {
         // Route::get('/', [VisionController::class, 'index']);
 
         Route::get('/visi-misi', [VisionController::class, 'index']);
-        Route::get('/visi-misi-detail', [VisionController::class, 'show'])->name('admin.visi.show');
+        Route::put('/visi-update', [VisionController::class, 'update'])->name('admin.visi.update');
+
+        Route::put('/misi-update', [MissionController::class, 'update'])->name('admin.misi.update');
 
         Route::get('/sekolah', function () {
             return view('admin.pages.profile.tentang-kami');
         });
 
-        Route::get('/guru-staf', function () {
-            return view('admin.pages.profile.guru-staf');
-        });
-
-        Route::get('/guru-staf/create', function () {
-            return view('admin.pages.profile.guru-staf-create');
-        });
+        Route::get('/guru-staf', [GuruStafController::class, 'index'])->name('admin.guru.index');
+        Route::get('/guru-staf/create', [GuruStafController::class, 'create']);
+        Route::post('/guru-staf/store', [GuruStafController::class, 'store'])->name('admin.guru.store');
+        Route::get('/guru-staf/edit/{id}', [GuruStafController::class, 'edit'])->name('admin.guru.edit');
+        Route::put('/guru-staf/update/{id}', [GuruStafController::class, 'update'])->name('admin.guru.update');
+        Route::delete('/guru-staf/destroy/{id}', [GuruStafController::class, 'destroy'])->name('admin.guru.destroy');
     });
 
     Route::prefix('kegiatan')->group(function () {

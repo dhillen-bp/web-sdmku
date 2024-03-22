@@ -34,15 +34,17 @@
                                 Guru & Staf Form
                             </h3>
                         </div>
-                        <form action="{{ route('admin.guru.store') }}" method="POST">
+                        <form action="{{ route('admin.guru.update', $teacher->id) }}" method="POST">
                             @csrf
+                            @method('PUT')
                             <div class="p-6.5">
 
                                 <div class="mb-6">
                                     <label class="mb-3 block text-sm font-medium text-black dark:text-white">
                                         Name
                                     </label>
-                                    <input type="text" name="name" placeholder="Masukkan Name" required
+                                    <input type="text" name="name" value="{{ $teacher->name }}"
+                                        placeholder="Masukkan Name" required
                                         class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
                                 </div>
 
@@ -50,7 +52,8 @@
                                     <label class="mb-3 block text-sm font-medium text-black dark:text-white">
                                         Jabatan
                                     </label>
-                                    <input type="text" name="position" placeholder="Masukkan Jabatan" required
+                                    <input type="text" name="position" value="{{ $teacher->position }}"
+                                        placeholder="Masukkan Jabatan" required
                                         class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
                                 </div>
 
@@ -68,7 +71,9 @@
                                     </label>
                                     <span
                                         class="mb-3 block"><small>https://drive.google.com/thumbnail?id=Image_File_ID&sz=w1000</small></span>
-                                    <input type="text" name="image_gdrive" placeholder="Masukkan ID File Google Drive"
+                                    <input type="text" name="image_gdrive"
+                                        value="{{ Str::contains($teacher->image, 'drive') ? $teacher->image : 'Anda mengupload file di storage' }}"
+                                        placeholder="Masukkan ID File Google Drive"
                                         class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
                                 </div>
 

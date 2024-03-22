@@ -17,7 +17,7 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->string('school_name');
             $table->string('school_affiliate');
-            $table->string('motto');
+            $table->text('motto');
             $table->text('description');
             $table->text('ppdb_banner');
             $table->text('ppdb_desc');

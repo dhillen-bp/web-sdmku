@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Mision\UpdateRequest;
+use App\Models\Mission;
 use Illuminate\Http\Request;
 
 class MissionController extends Controller
@@ -67,9 +69,15 @@ class MissionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateRequest $request, $id)
     {
-        //
+        $mission = Mission::first();
+
+        $validated = $request->validated();
+
+        $visionUpdate = $mission->update($validated);
+
+        return redirect('/admin/profil/visi-misi')->with('success', 'Misi berhasil diperbarui!');
     }
 
     /**

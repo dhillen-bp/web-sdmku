@@ -62,7 +62,7 @@
                                 <label class="mb-3 block text-sm font-semibold text-black dark:text-white">
                                     Nama Sekolah
                                 </label>
-                                <input type="text" name="school_name" value="{{ $home->school_name }}"
+                                <input type="text" name="school_name" value="{{ $home->school_name ?? '' }}"
                                     class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
                             </div>
 
@@ -70,7 +70,7 @@
                                 <label class="mb-3 block text-sm font-semibold text-black dark:text-white">
                                     Binaan Sekolah
                                 </label>
-                                <input type="text" name="school_affiliate" value="{{ $home->school_affiliate }}"
+                                <input type="text" name="school_affiliate" value="{{ $home->school_affiliate ?? '' }}"
                                     class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
                             </div>
 
@@ -79,7 +79,7 @@
                                     Motto
                                 </label>
                                 <textarea id="motto" rows="3" name="motto" placeholder="Masukkan Subtitle"
-                                    class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary">{{ $home->motto }}</textarea>
+                                    class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary">{!! $home->motto ?? '' !!}</textarea>
                             </div>
 
                             <div class="mb-8">
@@ -87,14 +87,14 @@
                                     Description
                                 </label>
                                 <textarea id="description" rows="3" name="description" placeholder="Masukkan Subtitle"
-                                    class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary">{{ $home->description }}</textarea>
+                                    class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary">{{ $home->description ?? '' }}</textarea>
                             </div>
 
                             <div class="mb-8">
                                 <label class="mb-3 block text-sm font-semibold text-black dark:text-white">
                                     PPDB Banner
                                 </label>
-                                <img id="imagePreview" src="{{ $home->ppdb_banner }}" alt="Image Preview">
+                                <img id="imagePreview" src="{{ $home->ppdb_banner ?? '' }}" alt="Image Preview">
 
                                 <input type="file"
                                     class="w-full cursor-pointer rounded-lg border-[1.5px] border-stroke bg-transparent font-normal outline-none transition file:mr-5 file:border-collapse file:cursor-pointer file:border-0 file:border-r file:border-solid file:border-stroke file:bg-whiter file:px-5 file:py-3 file:hover:bg-primary file:hover:bg-opacity-10 focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:file:border-form-strokedark dark:file:bg-white/30 dark:file:text-white dark:focus:border-primary">
@@ -105,7 +105,7 @@
                                     PPDB Description
                                 </label>
                                 <textarea id="ppdb_desc" rows="3" name="ppdb_desc" placeholder="Masukkan Subtitle"
-                                    class="note-codeable w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary">{{ $home->ppdb_desc }}</textarea>
+                                    class="note-codeable w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary">{{ $home->ppdb_desc ?? '' }}</textarea>
                             </div>
 
                             <button type="submit"

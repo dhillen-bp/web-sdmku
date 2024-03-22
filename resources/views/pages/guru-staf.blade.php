@@ -12,19 +12,19 @@
             @php
                 $i = 1;
             @endphp
-            @foreach ($data as $guru)
+            @foreach ($teachers as $teacher)
                 {{-- CARD GURU --}}
                 <div class="taos:scale-[0.6] taos:opacity-0 card card-compact col-span-1 bg-base-100 shadow-2xl delay-[300ms] duration-[600ms] [animation-iteration-count:infinite]"
                     data-taos-offset="100">
                     <figure class="m-0 p-0">
                         {{-- <img src="https://drive.google.com/thumbnail?id=Image-ID&sz=w1000"> --}}
-                        <img src="{{ $guru['gambar'] }}" alt="Shoes" class="block w-full object-cover" />
+                        <img src="{{ $teacher['image'] }}" alt="Shoes" class="block w-full object-cover" />
 
                     </figure>
                     <div class="card-body items-center">
-                        <h2 class="card-title text-center text-base">{{ $i }}. {{ $guru['nama'] }}</h2>
+                        <h2 class="card-title text-center text-base">{{ $i }}. {{ $teacher['name'] }}</h2>
                         <div class="badge badge-primary badge-outline mb-1 cursor-default text-sm shadow-sm">
-                            {{ $guru['jabatan'] }}</div>
+                            {{ $teacher['position'] }}</div>
                         {{-- <div class="card-actions justify-center">
                             <a
                                 class="cursor-pointer rounded-full bg-gradient-to-tr hover:from-[#FF7806] hover:to-[#A20AD0]">
