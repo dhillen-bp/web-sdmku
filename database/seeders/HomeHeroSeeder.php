@@ -19,15 +19,7 @@ class HomeHeroSeeder extends Seeder
         $homeId = Home::first()->id;
         $data = [
             [
-                'image' => 'https://drive.google.com/thumbnail?id=1UFjHU3EtdJswPzfnXY5n7xGc7ULmmkJv&sz=w1000',
-                'home_id' => $homeId
-            ],
-            [
-                'image' => 'https://drive.google.com/thumbnail?id=1KN7X1s114AEcnjbGqnxWPm-vcght0IJm&sz=w1000',
-                'home_id' => $homeId
-            ],
-            [
-                'image' => 'https://drive.google.com/thumbnail?id=1FTLdbJMFcL5cSUg4khYapvOTtSV3yQq6&sz=w1000',
+                'image' => 'hero_default.JPG',
                 'home_id' => $homeId
             ],
         ];
