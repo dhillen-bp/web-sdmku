@@ -93,24 +93,27 @@
                                     </div>
                                 </div>
 
-                                <dialog id="modal_delete_guru" class="modal">
-                                    <div class="modal-box">
-                                        <h3 class="text-lg font-bold">Hapus Hero Image!</h3>
-                                        <p class="py-4"></p>
-                                        <div class="modal-action">
-                                            <form action="{{ route('admin.guru.destroy', $teacher->id) }}" method="POST">
-                                                @csrf
-                                                @method('DELETE')
-                                                <!-- if there is a button in form, it will close the modal -->
-                                                <button class="btn btn-error text-white" type="submit">Ya</button>
-                                                <button class="btn btn-ghost" type="button"
-                                                    onclick="cancelForm(event)">Batal</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </dialog>
                             </div>
                         @endforeach
+
+                        <dialog id="modal_delete_guru" class="modal">
+                            <div class="modal-box">
+                                <h3 class="text-lg font-bold">Hapus Hero Image!</h3>
+                                <p class="py-4"></p>
+                                <div class="modal-action">
+                                    <form action="{{ route('admin.guru.destroy', $teacher->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <!-- if there is a button in form, it will close the modal -->
+                                        <button class="btn btn-error text-white" type="submit">Ya</button>
+                                        <button class="btn btn-ghost" type="button"
+                                            onclick="cancelForm(event)">Batal</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </dialog>
+
+
                         <div class="my-2">
                             {{ $teachers->links('vendor.pagination.tailwind') }}
                         </div>

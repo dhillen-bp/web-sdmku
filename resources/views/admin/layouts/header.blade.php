@@ -30,7 +30,7 @@
             </button>
             <!-- Hamburger Toggle BTN -->
             <a class="block flex-shrink-0 lg:hidden" href="index.html">
-                <img src="{{ 'src/images/logo/logo-icon.svg' }}" alt="Logo" />
+                <img src="{{ asset('images/logo/logo_sdmku_compress.png') }}" alt="Logo" />
             </a>
         </div>
         <div class="hidden sm:block">

@@ -15,7 +15,7 @@
                 <nav>
                     <ol class="flex items-center gap-2">
                         <li>
-                            <a class="font-medium" href="index.html">Home /</a>
+                            <a class="font-medium" href="/admin/home">Home /</a>
                         </li>
                         <li class="font-medium text-primary">Ekstrakurikuler </li>
                     </ol>
@@ -36,32 +36,54 @@
                         class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
                         <div class="border-b border-stroke px-6.5 py-4 dark:border-strokedark">
                             <div class="mt-2">
-                                <a href="/admin/berita/create"
+                                <a href="{{ route('admin.extra.create') }}"
                                     class="inline-flex items-center justify-center gap-1 rounded-full bg-primary px-5 py-2 text-center font-medium text-white hover:bg-opacity-90 lg:px-5 xl:px-6">
                                     <span class="material-icons">add</span> Tambah Ekstrakurikuler
                                 </a>
                             </div>
 
                             <div class="grid grid-cols-2 gap-6 py-6 md:grid-cols-3">
-                                @for ($i = 0; $i < 4; $i++)
+                                @foreach ($extracurriculars as $extra)
                                     <div class="card col-span-1 bg-slate-100 shadow">
-                                        <img src="https://source.unsplash.com//random/300x300?computer"
-                                            alt="Ekstrakurikuler 1" class="mb-2 w-full rounded-lg object-cover">
+                                        <img src="{{ $extra->image }}" alt="Ekstrakurikuler 1"
+                                            class="mb-2 w-full rounded-lg object-cover">
                                         <div class="p-2">
-                                            <h3 class="mb-2 text-xl font-bold">Nama Ekstrakurikuler 1</h3>
-                                            <p class="text-gray-600 mb-2">Deskripsi fasilitas 1 Lorem ipsum dolor sit amet
-                                                consectetur
-                                                adipisicing
-                                                elit.
+                                            <h3 class="mb-2 text-xl font-bold">{{ $extra->name }}</h3>
+                                            <p class="text-gray-600 mb-2">{{ $extra->desc }}
                                             </p>
                                             <div class="my-3 flex justify-around">
-                                                <button class="btn btn-warning btn-sm">Edit</button>
-                                                <button class="btn btn-error btn-sm text-white">Hapus</button>
+                                                <a href="{{ route('admin.extra.edit', $extra->id) }}"
+                                                    class="btn btn-warning btn-sm">Edit</a>
+                                                <button class="btn btn-error btn-sm text-white"
+                                                    onclick="modal_delete_extra.showModal()">Hapus</button>
                                             </div>
                                         </div>
                                     </div>
-                                @endfor
+                                @endforeach
+
+                                <dialog id="modal_delete_extra" class="modal">
+                                    <div class="modal-box">
+                                        <h3 class="text-lg font-bold">Hapus Ekstrakurikuler!</h3>
+                                        <p class="py-4">Anda yakin menghapus data {{ $extra->name }}</p>
+                                        <div class="modal-action">
+                                            <form action="{{ route('admin.extra.destroy', $extra->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <!-- if there is a button in form, it will close the modal -->
+                                                <button class="btn btn-error text-white" type="submit">Ya</button>
+                                                <button class="btn btn-ghost" type="button"
+                                                    onclick="cancelForm(event)">Batal</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </dialog>
+
                             </div>
+
+                            <div class="my-2">
+                                {{ $extracurriculars->links('vendor.pagination.tailwind') }}
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -69,4 +91,17 @@
 
         </div>
     </main>
+@endsection
+
+@section('after-script')
+    <script>
+        function cancelForm(event) {
+            event.preventDefault();
+            // Implement your cancel logic here
+            // For example, hide the form or reset input fields
+            $("#modal_delete_extra").removeAttr("open");
+            $("#modal_delete_extra").attr("close", "close");
+
+        }
+    </script>
 @endsection

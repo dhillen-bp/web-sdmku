@@ -1,11 +1,14 @@
 <?php
 
+use App\Http\Controllers\Admin\ExtracurricularController as AdminExtracurricularController;
+use App\Http\Controllers\Admin\ExtracurricullarController;
 use App\Http\Controllers\Admin\GuruStafController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\HomeFeaturedController;
 use App\Http\Controllers\Admin\HomeHeroController;
 use App\Http\Controllers\Admin\MissionController;
 use App\Http\Controllers\Admin\VisionController;
+use App\Http\Controllers\ExtracurricularController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->group(function () {
@@ -54,9 +57,12 @@ Route::prefix('admin')->group(function () {
     });
 
     Route::prefix('kegiatan')->group(function () {
-        Route::get('/ekstrakurikuler', function () {
-            return view('admin.pages.kegiatan.ekstrakurikuler');
-        });
+        Route::get('/ekstrakurikuler', [AdminExtracurricularController::class, 'index'])->name('admin.extra.index');
+        Route::get('/ekstrakurikuler/create', [AdminExtracurricularController::class, 'create'])->name('admin.extra.create');
+        Route::post('/ekstrakurikuler/store', [AdminExtracurricularController::class, 'store'])->name('admin.extra.store');
+        Route::get('/ekstrakurikuler/edit/{id}', [AdminExtracurricularController::class, 'edit'])->name('admin.extra.edit');
+        Route::put('/ekstrakurikuler/update/{id}', [AdminExtracurricularController::class, 'update'])->name('admin.extra.update');
+        Route::delete('/ekstrakurikuler/destroy/{id}', [AdminExtracurricularController::class, 'destroy'])->name('admin.extra.destroy');
     });
 
     Route::prefix('prestasi')->group(function () {
