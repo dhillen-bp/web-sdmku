@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Achievement;
-use App\Models\AchievementCategories;
+use App\Http\Controllers\Controller;
+use App\Models\SchoolProfile;
 use Illuminate\Http\Request;
 
-class AchievementController extends Controller
+class SchoolProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +15,7 @@ class AchievementController extends Controller
      */
     public function index()
     {
-        $achievements = Achievement::paginate(9);
-        $categories = AchievementCategories::get();
-
-        return view('pages.prestasi', compact('achievements', 'categories'));
+        //
     }
 
     /**
@@ -45,10 +42,10 @@ class AchievementController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Achievement  $achievement
+     * @param  \App\Models\SchoolProfile  $schoolProfile
      * @return \Illuminate\Http\Response
      */
-    public function show(Achievement $achievement)
+    public function show(SchoolProfile $schoolProfile)
     {
         //
     }
@@ -56,10 +53,10 @@ class AchievementController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Achievement  $achievement
+     * @param  \App\Models\SchoolProfile  $schoolProfile
      * @return \Illuminate\Http\Response
      */
-    public function edit(Achievement $achievement)
+    public function edit(SchoolProfile $schoolProfile)
     {
         //
     }
@@ -68,10 +65,10 @@ class AchievementController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Achievement  $achievement
+     * @param  \App\Models\SchoolProfile  $schoolProfile
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Achievement $achievement)
+    public function update(Request $request, SchoolProfile $schoolProfile)
     {
         //
     }
@@ -79,21 +76,11 @@ class AchievementController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Achievement  $achievement
+     * @param  \App\Models\SchoolProfile  $schoolProfile
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Achievement $achievement)
+    public function destroy(SchoolProfile $schoolProfile)
     {
         //
-    }
-
-    public function showBasedCategory($slug)
-    {
-        $achievements = Achievement::with('category')->whereHas('category', function ($query) use ($slug) {
-            $query->where('slug', $slug);
-        })->paginate(9);
-        $categories = AchievementCategories::get();
-
-        return view('pages.prestasi-based-category', compact('achievements', 'categories', 'slug'));
     }
 }

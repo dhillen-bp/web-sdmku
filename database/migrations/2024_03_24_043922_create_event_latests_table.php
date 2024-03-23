@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('other_activities', function (Blueprint $table) {
+        Schema::create('event_latests', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('name');
-            $table->text('desc');
-            $table->text('image')->nullable();
+            $table->text('image');
+
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('other_activities');
+        Schema::dropIfExists('event_latests');
     }
 };

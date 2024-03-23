@@ -18,7 +18,7 @@
         <div class="grid grid-cols-1 justify-center gap-6 px-6 py-16 lg:grid-cols-4 lg:px-16">
             <div class="col-span-4 space-y-4 rounded bg-white p-4 shadow lg:col-span-3">
                 <h4 class="mb-4 text-2xl font-bold">{{ $news->title }}</h4>
-                <img src="{{ Str::contains($news->image, 'drive') ? $news->image : asset('storage/images/berita' . $news->image) }}"
+                <img src="{{ Str::contains($news->image, 'drive') ? $news->image : asset('storage/images/berit/a' . $news->image) }}"
                     alt="News Image" class="h-[400px] w-full object-cover object-top">
                 <div class="flex items-center text-sm text-slate-500"><span
                         class="material-icons mr-2 text-sm">person_outline</span>
@@ -44,7 +44,7 @@
                 <h3 class="text-xl font-bold">Berita Terbaru</h3>
                 @foreach ($newsLatests as $latest)
                     <div class="bg-white p-2 shadow">
-                        <img src="{{ Str::contains($latest->image, 'drive') ? $latest->image : asset('storage/images/beritas' . $latest->image) }}"
+                        <img src="{{ Str::contains($latest->image, 'drive') ? $latest->image : asset('storage/images/berita/' . $latest->image) }}"
                             alt="" class="h-[180px] w-full">
                         <div class="flex items-center text-sm">
                             <svg class="mr-2 opacity-75" xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +59,7 @@
                             <p class="leading-none">{{ $latest->created_at }}</p>
                         </div>
 
-                        <h5 class="text-lg font-semibold">{{ $latest->title }}</h5>
+                        <a href="/berita/{{ $latest->slug }}" class="text-lg font-semibold">{{ $latest->title }}</a>
                         <p class="text-gray-600">{!! strlen($latest->content) > 20 ? substr($latest->content, 0, 20) . '...' : $latest->content !!}
                         </p>
                     </div>

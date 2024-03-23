@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Achievement;
-use App\Models\AchievementCategories;
+use App\Models\EventLatest;
 use Illuminate\Http\Request;
 
-class AchievementController extends Controller
+class EventLatestController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +14,8 @@ class AchievementController extends Controller
      */
     public function index()
     {
-        $achievements = Achievement::paginate(9);
-        $categories = AchievementCategories::get();
-
-        return view('pages.prestasi', compact('achievements', 'categories'));
+        $events = EventLatest::paginate(9);
+        return view('pages.event-terbaru', compact('events'));
     }
 
     /**
@@ -45,10 +42,10 @@ class AchievementController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Achievement  $achievement
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Achievement $achievement)
+    public function show($id)
     {
         //
     }
@@ -56,10 +53,10 @@ class AchievementController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Achievement  $achievement
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Achievement $achievement)
+    public function edit($id)
     {
         //
     }
@@ -68,10 +65,10 @@ class AchievementController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Achievement  $achievement
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Achievement $achievement)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -79,21 +76,11 @@ class AchievementController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Achievement  $achievement
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Achievement $achievement)
+    public function destroy($id)
     {
         //
-    }
-
-    public function showBasedCategory($slug)
-    {
-        $achievements = Achievement::with('category')->whereHas('category', function ($query) use ($slug) {
-            $query->where('slug', $slug);
-        })->paginate(9);
-        $categories = AchievementCategories::get();
-
-        return view('pages.prestasi-based-category', compact('achievements', 'categories', 'slug'));
     }
 }

@@ -41,6 +41,7 @@ class DatabaseSeeder extends Seeder
             AchievementCategoriesSeeder::class,
             UserSeeder::class,
             NavbarSeeder::class,
+            SchoolProfileSeeder::class,
         ]);
     }
 }

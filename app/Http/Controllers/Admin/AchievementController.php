@@ -19,7 +19,7 @@ class AchievementController extends Controller
      */
     public function index()
     {
-        $achievements = Achievement::paginate(6);
+        $achievements = Achievement::paginate(9);
         $categories = AchievementCategories::get();
 
         return view('admin.pages.prestasi.index', compact('achievements', 'categories'));

@@ -10,12 +10,12 @@
         <div class="px-6 py-16 lg:px-16">
             <div class="flex flex-wrap items-center justify-center gap-3 py-4 md:py-8">
                 <a href="/prestasi"
-                    class="dark:bg-gray-900 mb-3 me-3 rounded-full border border-primary bg-white px-5 py-1 text-center text-base font-medium text-primary hover:bg-primary hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300">All
+                    class="dark:bg-gray-900 mb-3 me-3 rounded-full border border-black bg-white px-5 py-1 text-center text-base font-medium text-black hover:bg-primary hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300">All
                     categories</a>
+
                 @foreach ($categories as $category)
                     <a href="/prestasi/kategori/{{ $category->slug }}"
-                        class="dark:bg-gray-900 mb-3 me-3 rounded-full border border-black bg-white px-5 py-1 text-center text-base font-medium text-black hover:bg-primary hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300">
-                        {{ $category->name }}</a>
+                        class="dark:bg-gray-900 {{ $category->slug === $slug ? 'text-primary border-primary' : 'border-black text-black' }} mb-3 me-3 rounded-full border bg-white px-5 py-1 text-center text-base font-medium hover:bg-primary hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300">{{ $category->name }}</a>
                 @endforeach
             </div>
 
