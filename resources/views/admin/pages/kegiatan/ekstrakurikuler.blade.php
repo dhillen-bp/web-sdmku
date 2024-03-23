@@ -59,24 +59,26 @@
                                             </div>
                                         </div>
                                     </div>
-                                @endforeach
 
-                                <dialog id="modal_delete_extra" class="modal">
-                                    <div class="modal-box">
-                                        <h3 class="text-lg font-bold">Hapus Ekstrakurikuler!</h3>
-                                        <p class="py-4">Anda yakin menghapus data {{ $extra->name }}</p>
-                                        <div class="modal-action">
-                                            <form action="{{ route('admin.extra.destroy', $extra->id) }}" method="POST">
-                                                @csrf
-                                                @method('DELETE')
-                                                <!-- if there is a button in form, it will close the modal -->
-                                                <button class="btn btn-error text-white" type="submit">Ya</button>
-                                                <button class="btn btn-ghost" type="button"
-                                                    onclick="cancelForm(event)">Batal</button>
-                                            </form>
+                                    <dialog id="modal_delete_extra" class="modal">
+                                        <div class="modal-box">
+                                            <h3 class="text-lg font-bold">Hapus Ekstrakurikuler!</h3>
+                                            <p class="py-4">Anda yakin menghapus data {{ $extra->name }}</p>
+                                            <div class="modal-action">
+                                                <form action="{{ route('admin.extra.destroy', $extra->id) }}"
+                                                    method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <!-- if there is a button in form, it will close the modal -->
+                                                    <button class="btn btn-error text-white" type="submit">Ya</button>
+                                                </form>
+
+                                                <form method="dialog"><button class="btn btn-ghost"
+                                                        type="button">Batal</button></form>
+                                            </div>
                                         </div>
-                                    </div>
-                                </dialog>
+                                    </dialog>
+                                @endforeach
 
                             </div>
 
@@ -91,17 +93,4 @@
 
         </div>
     </main>
-@endsection
-
-@section('after-script')
-    <script>
-        function cancelForm(event) {
-            event.preventDefault();
-            // Implement your cancel logic here
-            // For example, hide the form or reset input fields
-            $("#modal_delete_extra").removeAttr("open");
-            $("#modal_delete_extra").attr("close", "close");
-
-        }
-    </script>
 @endsection

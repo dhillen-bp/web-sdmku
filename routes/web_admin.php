@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\AchievementCategoryController;
+use App\Http\Controllers\Admin\AchievementController;
 use App\Http\Controllers\Admin\ExtracurricularController as AdminExtracurricularController;
 use App\Http\Controllers\Admin\ExtracurricullarController;
 use App\Http\Controllers\Admin\GuruStafController;
@@ -7,6 +9,7 @@ use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\HomeFeaturedController;
 use App\Http\Controllers\Admin\HomeHeroController;
 use App\Http\Controllers\Admin\MissionController;
+use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\VisionController;
 use App\Http\Controllers\ExtracurricularController;
 use Illuminate\Support\Facades\Route;
@@ -66,22 +69,30 @@ Route::prefix('admin')->group(function () {
     });
 
     Route::prefix('prestasi')->group(function () {
-        Route::get('/', function () {
-            return view('admin.pages.prestasi.index');
-        });
+        Route::get('/', [AchievementController::class, 'index'])->name('admin.achievement.index');
+        Route::get('/create', [AchievementController::class, 'create'])->name('admin.achievement.create');
+        Route::post('/store', [AchievementController::class, 'store'])->name('admin.achievement.store');
+        Route::get('/edit/{id}', [AchievementController::class, 'edit'])->name('admin.achievement.edit');
+        Route::put('/update/{id}', [AchievementController::class, 'update'])->name('admin.achievement.update');
+        Route::delete('/destroy/{id}', [AchievementController::class, 'destroy'])->name('admin.achievement.destroy');
+        Route::get('/category/{slug}', [AchievementController::class, 'showBasedCategory'])->name('admin.achievement.slug');
 
-        Route::get('/create', function () {
-            return view('admin.pages.prestasi.prestasi-create');
-        });
+        Route::get('/kategori', [AchievementCategoryController::class, 'index'])->name('admin.achievement_category.index');
+        Route::get('/kategori/create', [AchievementCategoryController::class, 'create'])->name('admin.achievement_category.create');
+        Route::post('/kategori/store', [AchievementCategoryController::class, 'store'])->name('admin.achievement_category.store');
+        Route::get('/kategori/edit/{id}', [AchievementCategoryController::class, 'edit'])->name('admin.achievement_category.edit');
+        Route::put('/kategori/update/{id}', [AchievementCategoryController::class, 'update'])->name('admin.achievement_category.update');
+        Route::delete('/kategori/destroy/{id}', [AchievementCategoryController::class, 'destroy'])->name('admin.achievement_category.destroy');
     });
 
     Route::prefix('berita')->group(function () {
-        Route::get('/', function () {
-            return view('admin.pages.berita.index');
-        });
-        Route::get('/create', function () {
-            return view('admin.pages.berita.berita-create');
-        });
+        Route::get('/', [NewsController::class, 'index'])->name('admin.news.index');
+        Route::get('/create', [NewsController::class, 'create'])->name('admin.news.create');
+        Route::post('/store', [NewsController::class, 'store'])->name('admin.news.store');
+        Route::get('/edit/{id}', [NewsController::class, 'edit'])->name('admin.news.edit');
+        Route::put('/update/{id}', [NewsController::class, 'update'])->name('admin.news.update');
+        Route::delete('/destroy/{id}', [NewsController::class, 'destroy'])->name('admin.news.destroy');
+
 
         Route::get('/fasilitas', function () {
             return view('admin.pages.non-akademis.fasilitas');

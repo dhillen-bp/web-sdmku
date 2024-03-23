@@ -38,6 +38,7 @@ class DatabaseSeeder extends Seeder
             // ACTIVITY
             ExtracurricularSeeder::class,
             TeacherStaffSeeder::class,
+            AchievementCategoriesSeeder::class,
         ]);
     }
 }

@@ -82,23 +82,27 @@
                                     <span class="material-icons flex items-center justify-center">delete</span>
                                 </button>
                             </div>
-                        @endforeach
-                        <dialog id="modal_delete_hero" class="modal">
-                            <div class="modal-box">
-                                <h3 class="text-lg font-bold">Hapus Hero Image!</h3>
-                                <p class="py-4"></p>
-                                <div class="modal-action">
-                                    <form action="{{ route('home.hero.destroy', $hero->id) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <!-- if there is a button in form, it will close the modal -->
-                                        <button class="btn btn-error text-white" type="submit">Ya</button>
-                                        <button class="btn btn-ghost" type="button"
-                                            onclick="cancelForm(event)">Batal</button>
-                                    </form>
+
+                            <dialog id="modal_delete_hero" class="modal">
+                                <div class="modal-box">
+                                    <h3 class="text-lg font-bold">Hapus Hero Image!</h3>
+                                    <p class="py-4"></p>
+                                    <div class="modal-action">
+                                        <form action="{{ route('home.hero.destroy', $hero->id) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <!-- if there is a button in form, it will close the modal -->
+                                            <button class="btn btn-error text-white" type="submit">Ya</button>
+                                        </form>
+
+                                        <form method="dialog">
+                                            <button class="btn btn-ghost" type="button">Batal</button>
+                                        </form>
+                                    </div>
                                 </div>
-                            </div>
-                        </dialog>
+                            </dialog>
+                        @endforeach
+
                     </div>
 
                 </div>
@@ -107,17 +111,4 @@
             </div>
         </div>
     </main>
-@endsection
-
-@section('after-script')
-    <script>
-        function cancelForm(event) {
-            event.preventDefault();
-            // Implement your cancel logic here
-            // For example, hide the form or reset input fields
-            $("#modal_delete_hero").removeAttr("open");
-            $("#modal_delete_hero").attr("close", "close");
-
-        }
-    </script>
 @endsection

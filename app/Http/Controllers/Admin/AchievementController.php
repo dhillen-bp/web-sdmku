@@ -3,13 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StaffTeacher\StoreRequest;
-use App\Models\StaffTeacher;
+use App\Http\Requests\Achievement\PrestasiRequest;
+use App\Models\Achievement;
+use App\Models\AchievementCategories;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
-class GuruStafController extends Controller
+class AchievementController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,9 +19,10 @@ class GuruStafController extends Controller
      */
     public function index()
     {
-        $teachers = StaffTeacher::paginate(10);
+        $achievements = Achievement::paginate(6);
+        $categories = AchievementCategories::get();
 
-        return view('admin.pages.profile.guru-staf', compact('teachers'));
+        return view('admin.pages.prestasi.index', compact('achievements', 'categories'));
     }
 
     /**
@@ -30,7 +32,8 @@ class GuruStafController extends Controller
      */
     public function create()
     {
-        return view('admin.pages.profile.guru-staf-create');
+        $categories = AchievementCategories::get();
+        return view('admin.pages.prestasi.create', compact('categories'));
     }
 
     /**
@@ -39,40 +42,35 @@ class GuruStafController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreRequest $request)
+    public function store(PrestasiRequest $request)
     {
-        // return dd($request->all());
         $validated = $request->validated();
-
-        $name = $validated['name'];
-        $position = $validated['position'];
+        $categoryId = $validated['category_id'];
 
         if ($request->hasFile('image')) {
 
             $image = $request->file('image');
             $imageExtension = $image->getClientOriginalExtension();
             $imageName = Str::uuid() . '.' . $imageExtension;
-            $image->storeAs("images/guru_staf", $imageName);
+            $image->storeAs("images/prestasi", $imageName);
 
             // Simpan path gambar ke dalam database
-            $storeUploadFile = StaffTeacher::create([
-                'name' => $name,
-                'position' => $position,
+            $storeUploadFile = Achievement::create([
+                'category_id' => $categoryId,
                 'image' => $imageName,
             ]);
 
             // return dd($storeUploadFile);
         } else {
             // Jika input adalah URL Google Drive, langsung simpan URL ke dalam database
-            $storeWithGDrive = StaffTeacher::create([
-                'name' => $name,
-                'position' => $position,
+            $storeWithGDrive = Achievement::create([
+                'category_id' => $categoryId,
                 'image' => $request->input('image_gdrive'),
             ]);
             // return dd($storeWithGDrive);
         }
 
-        return redirect()->route('admin.guru.index')->with('success', 'Data Guru berhasil disimpan!');
+        return redirect()->route('admin.achievement.index')->with('success', 'Data Prestasi berhasil disimpan!');
     }
 
     /**
@@ -94,8 +92,9 @@ class GuruStafController extends Controller
      */
     public function edit($id)
     {
-        $teacher = StaffTeacher::find($id);
-        return view('admin.pages.profile.guru-staf-edit', compact('teacher'));
+        $prestasi = Achievement::find($id);
+        $categories = AchievementCategories::get();
+        return view('admin.pages.prestasi.edit', compact('prestasi', 'categories'));
     }
 
     /**
@@ -105,48 +104,37 @@ class GuruStafController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(StoreRequest $request, $id)
+    public function update(PrestasiRequest $request, $id)
     {
-        $teacher = StaffTeacher::find($id);
+        $prestasi = Achievement::find($id);
         $validated = $request->validated();
-
-        $name = $validated['name'];
-        $position = $validated['position'];
-
+        $categoryId = $validated['category_id'];
 
         if ($request->hasFile('image')) {
 
             $image = $request->file('image');
             $imageExtension = $image->getClientOriginalExtension();
             $imageName = Str::uuid() . '.' . $imageExtension;
-            $image->storeAs("images/guru_staf", $imageName);
-
-            $deleteImage = Storage::disk('public')->delete('images/guru_staf/' . $teacher->image);
+            $image->storeAs("images/prestasi", $imageName);
 
             // Simpan path gambar ke dalam database
-            $storeUploadFile = StaffTeacher::create([
-                'name' => $name,
-                'position' => $position,
+            $storeUploadFile = Achievement::create([
+                'category_id' => $categoryId,
                 'image' => $imageName,
             ]);
 
             // return dd($storeUploadFile);
         } elseif ($request->filled('image_gdrive')) {
             // Jika ada URL Google Drive yang disertakan
-            $teacher->update([
-                'name' => $name,
-                'position' => $position,
+            $prestasi->update([
+                'category_id' => $categoryId,
                 'image' => $request->input('image_gdrive'),
             ]);
         } else {
             // Jika tidak ada perubahan pada gambar
-            $teacher->update([
-                'name' => $name,
-                'position' => $position,
-            ]);
+            return redirect()->route('admin.achievement.index')->with('success', 'Data Prestasi tidak ada perubahan!');
         }
-
-        return redirect()->route('admin.guru.index')->with('success', 'Data Guru berhasil diperbarui!');
+        return redirect()->route('admin.achievement.index')->with('success', 'Data Prestasi berhasil diperbarui!');
     }
 
     /**
@@ -157,15 +145,25 @@ class GuruStafController extends Controller
      */
     public function destroy($id)
     {
-        $teacher = StaffTeacher::find($id);
+        $prestasi = Achievement::find($id);
 
-        if (!empty($teacher->image)) {
-            if (!Str::contains($teacher->image, 'drive')) {
-                $deleteImage = Storage::disk('public')->delete('images/guru_staf/' . $teacher->image);
+        if (!empty($prestasi->image)) {
+            if (!Str::contains($prestasi->image, 'drive')) {
+                $deleteImage = Storage::disk('public')->delete('images/prestasi' . $prestasi->image);
             }
-            $teacher->delete();
+            $prestasi->delete();
         }
 
-        return redirect('/admin/profil/guru-staf')->with('success', 'Data Guru/Staff berhasil dihapus!');
+        return redirect()->route('admin.achievement.index')->with('success', 'Data Prestasi berhasil dihapus!');
+    }
+
+    public function showBasedCategory($slug)
+    {
+        $achievements = Achievement::with('category')->whereHas('category', function ($query) use ($slug) {
+            $query->where('slug', $slug);
+        })->paginate(6);
+        $categories = AchievementCategories::get();
+
+        return view('admin.pages.prestasi.show-based-category', compact('achievements', 'categories', 'slug'));
     }
 }

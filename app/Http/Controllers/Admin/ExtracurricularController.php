@@ -120,6 +120,8 @@ class ExtracurricularController extends Controller
             $imageName = Str::uuid() . '.' . $imageExtension;
             $image->storeAs("images/eskul", $imageName);
 
+            $deleteImage = Storage::disk('public')->delete('images/eskul' . $extra->image);
+
             // Simpan path gambar ke dalam database
             $storeUploadFile = Extracurricular::create([
                 'name' => $name,
