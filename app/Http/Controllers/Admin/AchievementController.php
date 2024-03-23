@@ -115,10 +115,14 @@ class AchievementController extends Controller
             $image = $request->file('image');
             $imageExtension = $image->getClientOriginalExtension();
             $imageName = Str::uuid() . '.' . $imageExtension;
+
+
+            $deleteImage = Storage::disk('public')->delete('images/prestasi' . $prestasi->image);
+
             $image->storeAs("images/prestasi", $imageName);
 
             // Simpan path gambar ke dalam database
-            $storeUploadFile = Achievement::create([
+            $prestasi->update([
                 'category_id' => $categoryId,
                 'image' => $imageName,
             ]);

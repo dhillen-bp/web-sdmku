@@ -54,8 +54,8 @@
                             <div class="grid grid-cols-2 justify-center gap-6 px-6 py-6 lg:grid-cols-3">
                                 @foreach ($achievements as $achievement)
                                     <div class="w-full overflow-hidden border-b-4 border-blue-500 bg-slate-100">
-                                        <img src="{{ $achievement->image }}" alt="People"
-                                            class="h-32 w-full object-cover sm:h-48 md:h-64">
+                                        <img src="{{ Str::contains($achievement->image, 'drive') ? $achievement->image : asset('images/guru_staf' . $achievement->image) }}"
+                                            alt="People" class="h-32 w-full object-cover sm:h-48 md:h-64">
                                         <div class="my-2 flex justify-around">
                                             <a href="{{ route('admin.achievement.edit', $achievement->id) }}"
                                                 class="btn btn-warning btn-sm">Edit</a>

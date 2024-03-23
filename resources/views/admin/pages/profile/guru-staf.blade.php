@@ -70,7 +70,7 @@
                                 </div>
 
                                 <div class="flex items-center justify-center rounded-md">
-                                    <img src="{{ Str::contains($teacher->image, 'drive') ? $teacher->image : asset('images/guru_staf' . $teacher->image) }}"
+                                    <img src="{{ Str::contains($teacher->image, 'drive') ? $teacher->image : asset('storage/images/guru_staf' . $teacher->image) }}"
                                         alt="Product" class="mx-auto">
                                 </div>
 

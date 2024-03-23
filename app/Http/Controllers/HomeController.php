@@ -19,6 +19,7 @@ class HomeController extends Controller
         $home = Home::get()->first();
         $homeHero = HomeHero::orderBy('created_at', 'desc')->get();
         $homeFeatured = HomeFeatured::get();
+
         return view('pages.home', compact('home', 'homeHero', 'homeFeatured'));
     }
 

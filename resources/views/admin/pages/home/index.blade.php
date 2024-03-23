@@ -126,7 +126,7 @@
 
 @section('after-script')
     <script>
-        $('#description, #ppdb_desc').summernote({
+        $('#description, #ppdb_desc, #motto').summernote({
             placeholder: 'Ketik disini',
             tabsize: 2,
             height: 120,
@@ -134,30 +134,12 @@
                 ['style', ['style']],
                 ['font', ['bold', 'underline', 'clear']],
                 ['color', ['color']],
+                ['forecolor', ['forecolor']],
                 ['para', ['ul', 'ol', 'paragraph']],
                 ['table', ['table']],
                 ['insert', ['link', 'picture', 'video']],
-                ['view', ['fullscreen', 'codeview', 'help']]
+                ['view', ['fullscreen', 'codeview', 'help']],
             ]
-        });
-
-        $('#motto').summernote({
-            height: 120,
-            codemirror: {
-                theme: 'monokai'
-            },
-            callbacks: {
-                onInit: function() {
-                    // $('#motto').summernote('codeview.activate');
-                    $('.btn-submit').on('click', function() {
-                        $("#motto").each(function(index) {
-                            if ($(this).summernote('codeview.isActivated')) {
-                                $(this).summernote('codeview.deactivate');
-                            }
-                        });
-                    });
-                }
-            }
         });
     </script>
 

@@ -9,19 +9,17 @@
 
         <div class="grid grid-cols-2 justify-center gap-6 px-6 py-16 lg:grid-cols-4 lg:px-16">
             <!-- component -->
-            @for ($i = 0; $i < 6; $i++)
+            @foreach ($news as $berita)
                 <div class="w-full overflow-hidden border-b-4 border-blue-500 bg-white">
-                    <img src="https://images.unsplash.com/photo-1573748240263-a4e9c57a7fcd" alt="People"
-                        class="h-32 w-full object-cover sm:h-48 md:h-64">
+                    <img src="{{ Str::contains($berita->image, 'drive') ? $berita->image : asset('storage/images/berita' . $berita->image) }}"
+                        alt="News Img" class="h-32 w-full object-cover sm:h-48 md:h-64">
                     <div class="space-y-4 md:p-6">
-                        <div class="mb-3">
-                            <div class="badge badge-primary badge-outline badge-sm text-sm">category</div>
-                            <div class="badge badge-primary badge-outline badge-sm text-sm">category</div>
-                        </div>
-                        <a href="/berita/slug" class="font-semibold leading-tight hover:underline sm:leading-normal">The
-                            Coldest Sunset
-                            lorem
-                            ipsum</a>
+                        <a href="/berita/{{ $berita->slug }}"
+                            class="font-semibold leading-tight hover:underline sm:leading-normal">{{ $berita->title }}
+                        </a>
+                        <div class="flex items-center text-sm"><span
+                                class="material-icons mr-2 text-sm">person_outline</span>
+                            {{ $berita->author }} </div>
                         <div class="flex items-center text-sm">
                             <svg class="mr-2 opacity-75" xmlns="http://www.w3.org/2000/svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
@@ -32,11 +30,15 @@
                                 <path
                                     d="M73.898,47.08H52.066V20.83c0-2.209-1.791-4-4-4c-2.209,0-4,1.791-4,4v30.25c0,2.209,1.791,4,4,4h25.832    c2.209,0,4-1.791,4-4S76.107,47.08,73.898,47.08z" />
                             </svg>
-                            <p class="leading-none">21 Oct 2019</p>
+                            <p class="leading-none">{{ $berita->created_at }}</p>
                         </div>
                     </div>
                 </div>
-            @endfor
+            @endforeach
+        </div>
+
+        <div class="my-2">
+            {{ $news->links('vendor.pagination.tailwind') }}
         </div>
     </section>
 @endsection

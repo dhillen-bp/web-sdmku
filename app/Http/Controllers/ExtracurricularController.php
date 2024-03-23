@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Extracurricular;
+use App\Models\Navbar;
 use Illuminate\Http\Request;
 
 class ExtracurricularController extends Controller
@@ -15,8 +16,9 @@ class ExtracurricularController extends Controller
     public function index()
     {
         $extracurriculars = Extracurricular::get();
+        $navbar = Navbar::first();
 
-        return view('pages.ekstrakurikuler', compact('extracurriculars'));
+        return view('pages.ekstrakurikuler', compact('extracurriculars', 'navbar'));
     }
 
     /**

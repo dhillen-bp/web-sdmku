@@ -36,27 +36,20 @@
                         class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
                         <div class="border-b border-stroke px-6.5 py-4 dark:border-strokedark">
                             <div class="mt-2">
-                                <a href="/admin/berita/create"
+                                <a href="{{ route('admin.news.create') }}"
                                     class="inline-flex items-center justify-center gap-1 rounded-full bg-primary px-5 py-2 text-center font-medium text-white hover:bg-opacity-90 lg:px-5 xl:px-6">
                                     <span class="material-icons">add</span> Tambah Berita
                                 </a>
                             </div>
                             <div class="grid grid-cols-2 justify-center gap-6 px-6 py-6 lg:grid-cols-3">
-                                @for ($i = 0; $i < 6; $i++)
+                                @foreach ($news as $berita)
                                     <div class="w-full overflow-hidden border-b-4 border-blue-500 bg-slate-100">
-                                        <img src="https://images.unsplash.com/photo-1573748240263-a4e9c57a7fcd"
+                                        <img src="{{ Str::contains($berita->image, 'drive') ? $berita->image : asset('images/guru_staf' . $berita->image) }}"
                                             alt="People" class="h-32 w-full object-cover sm:h-48 md:h-64">
-                                        <div class="p-4 md:p-6">
-                                            <div>
-                                                <div class="badge badge-primary badge-outline badge-sm py-[8px] text-sm">
-                                                    category</div>
-                                                <div class="badge badge-primary badge-outline badge-sm py-[8px] text-sm">
-                                                    category</div>
-                                            </div>
-                                            <h3 class="my-2 font-semibold leading-tight sm:leading-normal">The Coldest
-                                                Sunset
-                                                lorem
-                                                ipsum</h3>
+                                        <div class="p-4">
+                                            <h3 class="my-2 font-semibold leading-tight sm:leading-normal">
+                                                {{ $berita->title }}</h3>
+                                            <div class="text-sm">{{ $berita->author }}</div>
                                             <div class="flex items-center text-sm">
                                                 <svg class="mr-2 opacity-75" xmlns="http://www.w3.org/2000/svg"
                                                     xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"
@@ -69,16 +62,42 @@
                                                         d="M73.898,47.08H52.066V20.83c0-2.209-1.791-4-4-4c-2.209,0-4,1.791-4,4v30.25c0,2.209,1.791,4,4,4h25.832    c2.209,0,4-1.791,4-4S76.107,47.08,73.898,47.08z">
                                                     </path>
                                                 </svg>
-                                                <p class="leading-none">21 Oct 2019</p>
+                                                <p class="leading-none">{{ $berita->created_at }}</p>
                                             </div>
-                                            <div class="mt-5 flex justify-around">
-                                                <button class="btn btn-warning btn-sm">Edit</button>
-                                                <button class="btn btn-error btn-sm text-white">Hapus</button>
+                                            <div class="mt-3 flex justify-around">
+                                                <a href="{{ route('admin.news.edit', $berita->id) }}"
+                                                    class="btn btn-warning btn-sm">Edit</a>
+                                                <button class="btn btn-error btn-sm text-white"
+                                                    onclick="modal_delete_berita_{{ $loop->iteration }}.showModal()">Hapus</button>
                                             </div>
                                         </div>
                                     </div>
-                                @endfor
 
+                                    <dialog id="modal_delete_berita_{{ $loop->iteration }}" class="modal">
+                                        <div class="modal-box">
+                                            <h3 class="text-lg font-bold">Hapus Berita!</h3>
+                                            <p class="py-4">Anda yakin menghapus data berita ini? {{ $berita->title }}
+                                            </p>
+                                            <div class="modal-action">
+                                                <form action="{{ route('admin.news.destroy', $berita->id) }}"
+                                                    method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <!-- if there is a button in form, it will close the modal -->
+                                                    <button class="btn btn-error text-white" type="submit">Ya</button>
+                                                </form>
+                                                <form method="dialog">
+                                                    <button class="btn btn-ghost">Batal</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </dialog>
+                                @endforeach
+
+                            </div>
+
+                            <div class="my-2">
+                                {{ $news->links('vendor.pagination.tailwind') }}
                             </div>
                         </div>
                     </div>

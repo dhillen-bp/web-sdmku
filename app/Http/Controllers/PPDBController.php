@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Navbar;
 use App\Models\PPDB;
 use Illuminate\Http\Request;
 
@@ -15,8 +16,9 @@ class PPDBController extends Controller
     public function index()
     {
         $ppdb = PPDB::get()->first();
+        $navbar = Navbar::first();
 
-        return view('pages.ppdb', compact('ppdb'));
+        return view('pages.ppdb', compact('ppdb', 'navbar'));
     }
 
     /**

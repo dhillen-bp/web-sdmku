@@ -3,6 +3,7 @@
 use App\Http\Controllers\ExtracurricularController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MissionController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PPDBController;
 use App\Http\Controllers\StaffTeacherController;
 use App\Models\Extracurricular;
@@ -52,13 +53,9 @@ Route::get('/prestasi', function () {
 });
 
 Route::prefix('berita')->group(function () {
-    Route::get('/', function () {
-        return view('pages.berita');
-    });
+    Route::get('/', [NewsController::class, 'index']);
 
-    Route::get('/slug', function () {
-        return view('pages.berita-detail');
-    });
+    Route::get('/{slug}', [NewsController::class, 'show']);
 });
 
 Route::get('/ppdb', [PPDBController::class, 'index']);

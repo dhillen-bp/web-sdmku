@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Navbar;
 use App\Models\StaffTeacher;
 use Illuminate\Http\Request;
 
@@ -15,8 +16,9 @@ class StaffTeacherController extends Controller
     public function index()
     {
         $teachers = StaffTeacher::get();
+        $navbar = Navbar::first();
 
-        return view('pages.guru-staf', compact('teachers'));
+        return view('pages.guru-staf', compact('teachers', 'navbar'));
     }
 
     /**

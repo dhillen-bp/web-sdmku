@@ -17,9 +17,12 @@
 
         <div class="grid grid-cols-1 justify-center gap-6 px-6 py-16 lg:grid-cols-4 lg:px-16">
             <div class="col-span-4 space-y-4 rounded bg-white p-4 shadow lg:col-span-3">
-                <h4 class="mb-4 text-2xl font-bold">Main News Title</h4>
-                <img src="{{ asset('images/default/News-Default.png') }}" alt="News Image"
-                    class="h-[400px] w-full object-cover object-top">
+                <h4 class="mb-4 text-2xl font-bold">{{ $news->title }}</h4>
+                <img src="{{ Str::contains($news->image, 'drive') ? $news->image : asset('storage/images/berita' . $news->image) }}"
+                    alt="News Image" class="h-[400px] w-full object-cover object-top">
+                <div class="flex items-center text-sm text-slate-500"><span
+                        class="material-icons mr-2 text-sm">person_outline</span>
+                    {{ $news->author }} </div>
                 <div class="flex items-center text-sm">
                     <svg class="mr-2 opacity-75" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
@@ -30,19 +33,19 @@
                         <path
                             d="M73.898,47.08H52.066V20.83c0-2.209-1.791-4-4-4c-2.209,0-4,1.791-4,4v30.25c0,2.209,1.791,4,4,4h25.832    c2.209,0,4-1.791,4-4S76.107,47.08,73.898,47.08z" />
                     </svg>
-                    <p class="leading-none">21 Oct 2019</p>
+                    <p class="leading-none text-slate-500">{{ $news->created_at }}</p>
                 </div>
-                <p class="text-gray-600 mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p class="text-gray-600 text-wrap mb-6 break-words">{!! $news->content !!}</p>
                 <!-- Add your main news content here -->
             </div>
 
             <!-- 1/4 Width for 3 Latest News List -->
             <div class="col-span-4 space-y-4 text-sm lg:col-span-1">
                 <h3 class="text-xl font-bold">Berita Terbaru</h3>
-                @for ($i = 0; $i < 3; $i++)
+                @foreach ($newsLatests as $latest)
                     <div class="bg-white p-2 shadow">
-                        <img src="{{ asset('images/default/News-Default.png') }}" alt="" class="h-[200px] w-full">
+                        <img src="{{ Str::contains($latest->image, 'drive') ? $latest->image : asset('storage/images/beritas' . $latest->image) }}"
+                            alt="" class="h-[180px] w-full">
                         <div class="flex items-center text-sm">
                             <svg class="mr-2 opacity-75" xmlns="http://www.w3.org/2000/svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
@@ -53,14 +56,14 @@
                                 <path
                                     d="M73.898,47.08H52.066V20.83c0-2.209-1.791-4-4-4c-2.209,0-4,1.791-4,4v30.25c0,2.209,1.791,4,4,4h25.832    c2.209,0,4-1.791,4-4S76.107,47.08,73.898,47.08z" />
                             </svg>
-                            <p class="leading-none">21 Oct 2019</p>
+                            <p class="leading-none">{{ $latest->created_at }}</p>
                         </div>
 
-                        <h5 class="text-lg font-semibold">News Title</h5>
-                        <p class="text-gray-600">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis,
-                            perspiciatis...</p>
+                        <h5 class="text-lg font-semibold">{{ $latest->title }}</h5>
+                        <p class="text-gray-600">{!! strlen($latest->content) > 20 ? substr($latest->content, 0, 20) . '...' : $latest->content !!}
+                        </p>
                     </div>
-                @endfor
+                @endforeach
             </div>
 
         </div>

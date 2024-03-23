@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Mission;
+use App\Models\Navbar;
 use App\Models\Vision;
 use Illuminate\Http\Request;
 
@@ -17,7 +18,8 @@ class MissionController extends Controller
     {
         $vision = Vision::get()->first();
         $mission = Mission::get()->first();
-        return view('pages.visi-misi', compact('vision', 'mission'));
+        $navbar = Navbar::first();
+        return view('pages.visi-misi', compact('vision', 'mission', 'navbar'));
     }
 
     /**

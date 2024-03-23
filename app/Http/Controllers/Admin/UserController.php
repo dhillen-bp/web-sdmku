@@ -1,11 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\News;
+use App\Http\Controllers\Controller;
+use App\Models\Navbar;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class NewsController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +17,6 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $news = News::paginate(8);
-
-        return view('pages.berita', compact('news'));
     }
 
     /**
@@ -43,24 +43,24 @@ class NewsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\News  $news
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show()
     {
-        $news = News::where('slug', $slug)->first();
-        $newsLatests = News::latest()->take(3)->get();
-
-        return view('pages.berita-detail', compact('news', 'newsLatests'));
+        $userId = Auth::id();
+        $user = User::findOrFail($userId);
+        $navbar = Navbar::first();
+        return view('admin.pages.profile.my.index', compact('user', 'navbar'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\News  $news
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(News $news)
+    public function edit($id)
     {
         //
     }
@@ -69,10 +69,10 @@ class NewsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\News  $news
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, News $news)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -80,10 +80,10 @@ class NewsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\News  $news
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(News $news)
+    public function destroy($id)
     {
         //
     }
