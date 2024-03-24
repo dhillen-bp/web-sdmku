@@ -102,8 +102,12 @@ class HomeFeaturedController extends Controller
             $image = $request->file('image');
             $imageExtension = $image->getClientOriginalExtension();
             $imageName = Str::uuid() . '.' . $imageExtension;
-            $image->storeAs("images/home", $imageName);
+            $image->storeAs("images/home/", $imageName);
         }
+
+        $deleteImage = Storage::disk('public')->delete('images/home/' . $featured->image);
+
+
         $validated['featured_image'] = $imageName;
 
         $updateFeatured = $featured->update($validated);

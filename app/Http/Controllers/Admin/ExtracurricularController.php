@@ -118,12 +118,12 @@ class ExtracurricularController extends Controller
             $image = $request->file('image');
             $imageExtension = $image->getClientOriginalExtension();
             $imageName = Str::uuid() . '.' . $imageExtension;
-            $image->storeAs("images/eskul", $imageName);
+            $image->storeAs("images/eskul/", $imageName);
 
-            $deleteImage = Storage::disk('public')->delete('images/eskul' . $extra->image);
+            $deleteImage = Storage::disk('public')->delete('images/eskul/' . $extra->image);
 
             // Simpan path gambar ke dalam database
-            $storeUploadFile = Extracurricular::create([
+            $extra->update([
                 'name' => $name,
                 'desc' => $desc,
                 'image' => $imageName,
@@ -145,7 +145,7 @@ class ExtracurricularController extends Controller
             ]);
         }
 
-        return redirect()->route('admin.guru.index')->with('success', 'Data Ekstrakurikuler berhasil diperbarui!');
+        return redirect()->route('admin.extra.index')->with('success', 'Data Ekstrakurikuler berhasil diperbarui!');
     }
 
     /**
@@ -160,7 +160,7 @@ class ExtracurricularController extends Controller
 
         if (!empty($extra->image)) {
             if (!Str::contains($extra->image, 'drive')) {
-                $deleteImage = Storage::disk('public')->delete('images/eskul' . $extra->image);
+                $deleteImage = Storage::disk('public')->delete('images/eskul/' . $extra->image);
             }
             $extra->delete();
         }

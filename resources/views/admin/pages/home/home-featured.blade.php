@@ -42,8 +42,8 @@
                                 data-taos-offset="50">
                                 <div
                                     class="h-[220px] w-full rounded-t-lg bg-base-200 object-cover shadow transition-transform duration-500 group-hover:scale-105">
-                                    <img src="{{ $featured->featured_image }}" alt=""
-                                        class="h-full w-full object-cover">
+                                    <img src="{{ Str::contains($featured->featured_image, 'drive') ? $featured->featured_image : asset('storage/images/home/' . $featured->featured_image) }}"
+                                        alt="" class="h-full w-full object-cover">
                                 </div>
 
                                 <div class="p-3">
@@ -70,8 +70,9 @@
                                         @method('DELETE')
                                         <!-- if there is a button in form, it will close the modal -->
                                         <button class="btn btn-error text-white" type="submit">Ya</button>
-                                        <button class="btn btn-ghost" type="button"
-                                            onclick="cancelForm(event)">Batal</button>
+                                        <form method="dialog">
+                                            <button class="btn btn-ghost" type="button">Batal</button>
+                                        </form>
                                     </form>
                                 </div>
                             </div>
@@ -84,18 +85,4 @@
             </div>
         </div>
     </main>
-@endsection
-
-
-@section('after-script')
-    <script>
-        function cancelForm(event) {
-            event.preventDefault();
-            // Implement your cancel logic here
-            // For example, hide the form or reset input fields
-            $("#modal_delete_featured").removeAttr("open");
-            $("#modal_delete_featured").attr("close", "close");
-
-        }
-    </script>
 @endsection

@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AchievementCategoryController;
 use App\Http\Controllers\Admin\AchievementController;
 use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\EventLatestController;
 use App\Http\Controllers\Admin\ExtracurricularController as AdminExtracurricularController;
 use App\Http\Controllers\Admin\ExtracurricullarController;
 use App\Http\Controllers\Admin\GuruStafController;
@@ -12,6 +13,7 @@ use App\Http\Controllers\Admin\HomeHeroController;
 use App\Http\Controllers\Admin\MissionController;
 use App\Http\Controllers\Admin\NavbarController;
 use App\Http\Controllers\Admin\NewsController;
+use App\Http\Controllers\Admin\SchoolProfileController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\VisionController;
 use App\Http\Controllers\ExtracurricularController;
@@ -52,9 +54,9 @@ Route::prefix('admin')->group(function () {
 
             Route::put('/misi-update', [MissionController::class, 'update'])->name('admin.misi.update');
 
-            Route::get('/sekolah', function () {
-                return view('admin.pages.profile.tentang-kami');
-            });
+            Route::get('/sekolah', [SchoolProfileController::class, 'index'])->name('admin.profil_sekolah.index');
+            Route::put('/sekolah/update/{id}', [SchoolProfileController::class, 'update'])->name('admin.profil_sekolah.update');
+            Route::delete('/sekolah/destroy/{id}', [SchoolProfileController::class, 'destroy'])->name('admin.profil_sekolah.destroy');
 
             Route::get('/guru-staf', [GuruStafController::class, 'index'])->name('admin.guru.index');
             Route::get('/guru-staf/create', [GuruStafController::class, 'create']);
@@ -71,6 +73,13 @@ Route::prefix('admin')->group(function () {
             Route::get('/ekstrakurikuler/edit/{id}', [AdminExtracurricularController::class, 'edit'])->name('admin.extra.edit');
             Route::put('/ekstrakurikuler/update/{id}', [AdminExtracurricularController::class, 'update'])->name('admin.extra.update');
             Route::delete('/ekstrakurikuler/destroy/{id}', [AdminExtracurricularController::class, 'destroy'])->name('admin.extra.destroy');
+
+            Route::get('/event-terbaru', [EventLatestController::class, 'index'])->name('admin.event.index');
+            Route::get('/event-terbaru/create', [EventLatestController::class, 'create'])->name('admin.event.create');
+            Route::post('/event-terbaru/store', [EventLatestController::class, 'store'])->name('admin.event.store');
+            Route::get('/event-terbaru/edit/{id}', [EventLatestController::class, 'edit'])->name('admin.event.edit');
+            Route::put('/event-terbaru/update/{id}', [EventLatestController::class, 'update'])->name('admin.event.update');
+            Route::delete('/event-terbaru/destroy/{id}', [EventLatestController::class, 'destroy'])->name('admin.event.destroy');
         });
 
         Route::prefix('prestasi')->group(function () {

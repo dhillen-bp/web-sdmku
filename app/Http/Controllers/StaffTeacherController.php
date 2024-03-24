@@ -15,7 +15,7 @@ class StaffTeacherController extends Controller
      */
     public function index()
     {
-        $teachers = StaffTeacher::get();
+        $teachers = StaffTeacher::paginate(10);
         $navbar = Navbar::first();
 
         return view('pages.guru-staf', compact('teachers', 'navbar'));

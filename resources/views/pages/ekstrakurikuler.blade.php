@@ -10,7 +10,8 @@
         <div class="grid grid-cols-2 gap-6 px-6 py-16 md:grid-cols-3 lg:px-16">
             @foreach ($extracurriculars as $eskul)
                 <div class="card w-full bg-slate-100 shadow-lg">
-                    <img class="h-[300px] w-full rounded-t-2xl object-cover" src={{ $eskul->image }}
+                    <img class="h-[300px] w-full rounded-t-2xl object-cover"
+                        src={{ Str::contains($eskul->image, 'drive') ? $eskul->image : asset('storage/images/eskul/' . $eskul->image) }}
                         alt="Gambar Ekstrakurikuler">
 
                     <div class="p-4">

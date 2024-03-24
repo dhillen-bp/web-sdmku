@@ -11,9 +11,11 @@
                 </div>
                 <div class="flex flex-[4] items-center gap-2">
                     <span class="flex-[0.2]">@include('partials.svg._whatsapp-svg', ['width' => 18, 'height' => 18])</span>
-                    <a class="text-xs hover:underline md:text-sm" href="https://wa.me/6281326915512">+6281326915512 </a>
-                    <span class="text-xs">(Jam Kerja Senin-Jum'at Pukul 07.00 - 14.00)</span>
-
+                    <div>
+                        <a class="text-xs hover:underline md:text-sm" href="https://wa.me/6281326915512">+6281326915512
+                        </a>
+                        <span class="text-xs">(Jam Kerja Senin-Jum'at Pukul 07.00 - 14.00)</span>
+                    </div>
                 </div>
             </div>
         </div>

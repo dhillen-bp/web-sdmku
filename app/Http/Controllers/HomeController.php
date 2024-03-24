@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\EventLatest;
 use App\Models\Home;
 use App\Models\HomeFeatured;
 use App\Models\HomeHero;
@@ -19,8 +20,9 @@ class HomeController extends Controller
         $home = Home::get()->first();
         $homeHero = HomeHero::orderBy('created_at', 'desc')->get();
         $homeFeatured = HomeFeatured::get();
+        $events = EventLatest::take(6)->get();
 
-        return view('pages.home', compact('home', 'homeHero', 'homeFeatured'));
+        return view('pages.home', compact('home', 'homeHero', 'homeFeatured', 'events'));
     }
 
     /**

@@ -82,7 +82,7 @@ class NavbarController extends Controller
             $imageExtension = $image->getClientOriginalExtension();
             $imageName = Str::uuid() . '.' . $imageExtension;
 
-            $image->storeAs("images/navbar", $imageName);
+            $image->storeAs("images/navbar/", $imageName);
         }
 
         if ($navbar->image !== 'default_pattern.svg') {

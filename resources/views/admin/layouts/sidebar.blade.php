@@ -110,7 +110,7 @@
                                     href="#" @click.prevent="selected = (selected === 'Kegiatan' ? '':'Kegiatan')"
                                     :class="{
                                         'bg-graydark dark:bg-meta-4': (selected === 'Kegiatan') || (
-                                            page === 'ekstrakurikuler' || page === 'pendukung')
+                                            page === 'ekstrakurikuler' || page === 'event')
                                     }">
                                     <svg class="fill-current" width="18" height="18" viewBox="0 0 18 18"
                                         fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -153,8 +153,8 @@
                                         </li>
                                         <li>
                                             <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
-                                                href="/admin/kegiatan/pendukung"
-                                                :class="page === 'pendukung' && '!text-white'">Event Terbaru
+                                                href="/admin/kegiatan/event-terbaru"
+                                                :class="page === 'event' && '!text-white'">Event Terbaru
                                             </a>
                                         </li>
                                     </ul>

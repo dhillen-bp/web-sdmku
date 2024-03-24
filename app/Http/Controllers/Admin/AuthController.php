@@ -16,10 +16,6 @@ class AuthController extends Controller
 
     function processLogin(Request $request)
     {
-        if (Auth::check()) {
-            return dd('sudah login');
-            return redirect('/admin')->withErrors('Anda sudah login!');
-        }
 
         $credentials = $request->validate([
             'email' => ['required'],

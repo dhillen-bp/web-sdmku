@@ -11,7 +11,7 @@
             <!-- component -->
             @foreach ($news as $berita)
                 <div class="w-full overflow-hidden border-b-4 border-blue-500 bg-white">
-                    <img src="{{ Str::contains($berita->image, 'drive') ? $berita->image : asset('storage/images/berita' . $berita->image) }}"
+                    <img src="{{ Str::contains($berita->image, 'drive') ? $berita->image : asset('storage/images/berita/' . $berita->image) }}"
                         alt="News Img" class="h-32 w-full object-cover sm:h-48 md:h-64">
                     <div class="space-y-4 md:p-6">
                         <a href="/berita/{{ $berita->slug }}"

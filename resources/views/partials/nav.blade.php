@@ -1,11 +1,11 @@
 <nav class="navbar fixed left-0 right-0 top-0 z-50 bg-primary bg-opacity-30 px-6 shadow-sm lg:px-16" id="header">
-    <div class="flex-1">
+    <div class="flex-[0.5]">
         <a class="inline-flex cursor-pointer items-center text-xl font-bold text-slate-100">
             <img src="{{ asset('images/logo/logo_sdmku_compress.png') }}" alt="School Logo" class="mr-3 h-8 w-8">
             <p class="font-lobster">SD MKU</p>
         </a>
     </div>
-    <div class="flex-none">
+    <div class="flex-[1.5] justify-end">
         {{-- MOBILE NAV --}}
         <div class="dropdown-end dropdown-bottom dropdown lg:hidden">
             <label class="swap-rotate btn btn-circle swap btn-sm">

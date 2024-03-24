@@ -117,7 +117,7 @@ class AchievementController extends Controller
             $imageName = Str::uuid() . '.' . $imageExtension;
 
 
-            $deleteImage = Storage::disk('public')->delete('images/prestasi' . $prestasi->image);
+            $deleteImage = Storage::disk('public')->delete('images/prestasi/' . $prestasi->image);
 
             $image->storeAs("images/prestasi", $imageName);
 
@@ -153,7 +153,7 @@ class AchievementController extends Controller
 
         if (!empty($prestasi->image)) {
             if (!Str::contains($prestasi->image, 'drive')) {
-                $deleteImage = Storage::disk('public')->delete('images/prestasi' . $prestasi->image);
+                $deleteImage = Storage::disk('public')->delete('images/prestasi/' . $prestasi->image);
             }
             $prestasi->delete();
         }

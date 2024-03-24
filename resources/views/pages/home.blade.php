@@ -59,7 +59,8 @@
                     data-taos-offset="50">
                     <div
                         class="h-[220px] w-full rounded-t-lg bg-base-200 object-cover shadow transition-transform duration-500 group-hover:scale-105">
-                        <img src="{{ $feature->featured_image }}" alt="" class="h-full w-full object-cover">
+                        <img src="{{ Str::contains($feature->featured_image, 'drive') ? $feature->featured_image : asset('storage/images/home/' . $feature->featured_image) }}"
+                            alt="" class="h-full w-full object-cover">
                     </div>
 
                     <div class="p-3">
@@ -103,26 +104,22 @@
         <div class="mb-8 flex items-center justify-between">
             <h3 class="text-xl font-bold lg:text-4xl">Event Terbaru</h3>
             <div class="flex items-center">
-                <a class="cursor-pointer hover:underline">Lihat Lainnya </a>
+                <a href="/kegiatan/event" class="cursor-pointer hover:underline">Lihat Lainnya </a>
                 <span class="material-icons">keyboard_double_arrow_right</span>
             </div>
         </div>
-        <div class="grid gap-4 md:grid-cols-2 lg:gap-8">
-            @for ($i = 0; $i < 4; $i++)
-                <div class="taos:scale-[0.6] taos:opacity-0 card card-side h-[180px] bg-primary bg-opacity-5 shadow-xl delay-[300ms] duration-[500ms] [animation-iteration-count:infinite] lg:h-[200px]"
+        <div class="grid gap-4 md:grid-cols-3 lg:gap-8">
+            @foreach ($events as $event)
+                <div class="taos:scale-[0.6] taos:opacity-0 relative delay-[300ms] duration-[500ms] [animation-iteration-count:infinite]"
                     data-taos-offset="100">
-                    <figure><img src="https://source.unsplash.com/black-wooden-writing-desk-chair-inside-room-IXTvnOOSTyU"
-                            alt="Movie" class="w-[160px] object-contain lg:w-[250px]" />
-                    </figure>
-                    <div class="card-body w-2/3 text-sm">
-                        <h2 class="card-title text-sm lg:text-base">New movie is released!</h2>
-                        <p class="text-xs lg:text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
-                        <div class="card-actions justify-end">
-                            <button class="btn btn-primary btn-sm">Baca</button>
-                        </div>
+                    <img class="h-56 w-full max-w-full rounded-lg object-cover"
+                        src="{{ Str::contains($event->image, 'drive') ? $event->image : asset('storage/images/event/' . $event->image) }}"
+                        alt="">
+                    <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-2 text-center text-white">
+                        <span class="text-sm font-semibold">{{ $event->name }}</span>
                     </div>
                 </div>
-            @endfor
+            @endforeach
         </div>
     </section>
 @endsection

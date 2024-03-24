@@ -118,7 +118,9 @@ class NewsController extends Controller
             $image = $request->file('image');
             $imageExtension = $image->getClientOriginalExtension();
             $imageName = Str::uuid() . '.' . $imageExtension;
-            $image->storeAs("images/berita", $imageName);
+            $image->storeAs("images/berita/", $imageName);
+
+            $deleteImage = Storage::disk('public')->delete('images/berita/' . $news->image);
 
             // Simpan path gambar ke dalam database
             $news->update([
@@ -157,7 +159,7 @@ class NewsController extends Controller
 
         if (!empty($news->image)) {
             if (!Str::contains($news->image, 'drive')) {
-                $deleteImage = Storage::disk('public')->delete('images/berita' . $news->image);
+                $deleteImage = Storage::disk('public')->delete('images/berita/' . $news->image);
             }
             $news->delete();
         }

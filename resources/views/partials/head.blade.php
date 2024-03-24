@@ -5,6 +5,7 @@
 
 @vite(['resources/css/app.css', 'resources/js/app.js'])
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v3.x.x/dist/alpine.min.js" defer></script>
+
 <script>
     document.documentElement.classList.add('js')
 </script>
