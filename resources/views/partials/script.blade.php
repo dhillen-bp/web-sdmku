@@ -75,18 +75,5 @@
             });
         });
 
-        $(document).ready(function() {
-            $('.swap-rotate input[type="checkbox"]').change(function() {
-                if ($(this).is(':checked')) {
-                    $('.swap-off').hide();
-                    $('.swap-on').show();
-                    $('.dropdown-content').addClass('block');
-                } else {
-                    $('.swap-off').show();
-                    $('.swap-on').hide();
-                    $('.dropdown-content').removeClass('block');
-                }
-            });
-        });
     });
 </script>
