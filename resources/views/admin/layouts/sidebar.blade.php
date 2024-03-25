@@ -4,7 +4,7 @@
             @click.outside="sidebarToggle = false">
             <!-- SIDEBAR HEADER -->
             <div class="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
-                <a href="index.html" class="flex items-center justify-center gap-3">
+                <a href="/admin/home" class="flex items-center justify-center gap-3">
                     <img src="{{ asset('images/logo/logo_sdmku_compress.png') }}" alt="Logo" class="h-10 w-10" />
                     <p class="text-xl font-bold text-white">SD MKU</p>
                 </a>
