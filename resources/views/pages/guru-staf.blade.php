@@ -21,7 +21,8 @@
                     </figure>
                     <div class="card-body items-center">
                         <h2 class="card-title text-center text-base">{{ $loop->iteration }}. {{ $teacher->name }}</h2>
-                        <div class="text-unwrap badge badge-primary badge-outline mb-1 cursor-default text-sm shadow-sm">
+                        <div
+                            class="text-nowrap badge badge-primary badge-outline mb-1 cursor-default text-xs shadow-sm md:text-sm">
                             {{ $teacher->position }}</div>
                     </div>
                 </div>
