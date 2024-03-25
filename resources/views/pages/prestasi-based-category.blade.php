@@ -23,7 +23,8 @@
                 @foreach ($achievements as $achievement)
                     <div class="relative">
                         <img class="h-full w-full max-w-full rounded-lg object-cover"
-                            src="https://source.unsplash.com/random/{{ $i }}" alt="">
+                            src="{{ Str::contains($achievement->image, 'drive') ? $achievement->image : asset('storage/images/prestasi/' . $achievement->image) }}"
+                            alt="">
                     </div>
                 @endforeach
             </div>
