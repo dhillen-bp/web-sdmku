@@ -34,7 +34,7 @@
                                 Berita Create
                             </h3>
                         </div>
-                        <form action="{{ route('admin.news.store') }}" method="POST">
+                        <form action="{{ route('admin.news.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="p-6.5">
 

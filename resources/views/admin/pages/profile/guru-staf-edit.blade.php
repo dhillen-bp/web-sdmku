@@ -34,7 +34,8 @@
                                 Guru & Staf Form
                             </h3>
                         </div>
-                        <form action="{{ route('admin.guru.update', $teacher->id) }}" method="POST">
+                        <form action="{{ route('admin.guru.update', $teacher->id) }}" method="POST"
+                            enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="p-6.5">

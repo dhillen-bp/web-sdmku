@@ -40,17 +40,20 @@ class NewsController extends Controller
      */
     public function store(NewsRequest $request)
     {
+
         $validated = $request->validated();
         $title = $validated['title'];
         $content = $validated['content'];
         $author = $validated['author'];
+
+
 
         if ($request->hasFile('image')) {
 
             $image = $request->file('image');
             $imageExtension = $image->getClientOriginalExtension();
             $imageName = Str::uuid() . '.' . $imageExtension;
-            $image->storeAs("images/berita", $imageName);
+            $image->storeAs("images/berita/", $imageName);
 
             // Simpan path gambar ke dalam database
             $storeUploadFile = News::create([

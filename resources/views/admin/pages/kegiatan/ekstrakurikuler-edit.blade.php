@@ -34,7 +34,8 @@
                                 Ekstrakurikuler Form
                             </h3>
                         </div>
-                        <form action="{{ route('admin.extra.update', $extra->id) }}" method="POST">
+                        <form action="{{ route('admin.extra.update', $extra->id) }}" method="POST"
+                            enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="p-6.5">

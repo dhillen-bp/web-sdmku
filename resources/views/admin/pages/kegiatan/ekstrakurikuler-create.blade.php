@@ -34,7 +34,7 @@
                                 Ekstrakurikuler Create
                             </h3>
                         </div>
-                        <form action="{{ route('admin.extra.store') }}" method="POST">
+                        <form action="{{ route('admin.extra.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="p-6.5">
 

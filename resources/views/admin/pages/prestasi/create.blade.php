@@ -36,7 +36,7 @@
                             <span class="block"><small>Silahkan memilih upload foto atau masukkan link dari
                                     file google drive</small></span>
                         </div>
-                        <form action="{{ route('admin.achievement.store') }}" method="POST">
+                        <form action="{{ route('admin.achievement.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
 
                             <div class="p-6.5">

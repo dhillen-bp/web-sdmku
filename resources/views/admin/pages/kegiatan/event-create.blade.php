@@ -34,7 +34,7 @@
                                 Event Terbaru Create
                             </h3>
                         </div>
-                        <form action="{{ route('admin.event.store') }}" method="POST">
+                        <form action="{{ route('admin.event.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="p-6.5">
 

@@ -36,7 +36,8 @@
                             <span class="block"><small>Silahkan memilih upload foto atau masukkan link dari
                                     file google drive</small></span>
                         </div>
-                        <form action="{{ route('admin.achievement.update', $prestasi->id) }}" method="POST">
+                        <form action="{{ route('admin.achievement.update', $prestasi->id) }}" method="POST"
+                            enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
 

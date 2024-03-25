@@ -38,7 +38,8 @@
                                 Profil Sekolah Form
                             </h3>
                         </div>
-                        <form action="{{ route('admin.profil_sekolah.update', $school->id) }}" method="POST">
+                        <form action="{{ route('admin.profil_sekolah.update', $school->id) }}" method="POST"
+                            enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="p-6.5">

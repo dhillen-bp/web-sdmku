@@ -34,7 +34,7 @@
                                 Guru & Staf Form
                             </h3>
                         </div>
-                        <form action="{{ route('admin.guru.store') }}" method="POST">
+                        <form action="{{ route('admin.guru.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="p-6.5">
 

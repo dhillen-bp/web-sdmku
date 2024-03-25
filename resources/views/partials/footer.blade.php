@@ -58,7 +58,7 @@
         </nav>
         <nav class="py-2">
             <h6 class="footer-title">Media Sosial</h6>
-            <div class="flex gap-4">
+            <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
                 <a href="https://www.facebook.com/pages/SD-Muhammadiyah-Klaten-Utara/145005322367547?mibextid=rS40aB7S9Ucbxw6v"
                     target="_blank" class="cursor-pointer rounded-full p-2 hover:bg-blue-500">
                     @include('partials.svg._facebook-svg')

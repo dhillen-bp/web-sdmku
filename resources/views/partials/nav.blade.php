@@ -5,7 +5,7 @@
             <p class="font-lobster">SD MKU</p>
         </a>
     </div>
-    <div class="flex-1 items-end justify-end lg:flex-[1.5]">
+    <div class="items-end justify-end lg:flex-[1.5]">
         {{-- MOBILE NAV --}}
         <div class="dropdown-end dropdown-bottom dropdown lg:hidden">
             <label class="swap-rotate btn btn-circle swap btn-sm">
