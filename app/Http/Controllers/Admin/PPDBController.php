@@ -3,13 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Home;
-use App\Models\HomeHero;
+use App\Models\PPDB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
-class HomeHeroController extends Controller
+class PPDBController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,9 +17,9 @@ class HomeHeroController extends Controller
      */
     public function index()
     {
-        $homeHero = HomeHero::get();
-
-        return view('admin.pages.home.hero-banner', compact('homeHero'));
+        $ppdb = PPDB::get();
+        $ppdb_1 = PPDB::first();
+        return view('admin.pages.ppdb.index', compact('ppdb', 'ppdb_1'));
     }
 
     /**
@@ -41,23 +40,22 @@ class HomeHeroController extends Controller
      */
     public function store(Request $request)
     {
-        $home = Home::first();
+        $ppdb = PPDB::first();
         $validated = $request->validate([
             'image' => 'image|mimes:jpeg,png,jpg|max:2048',
         ]);
-        $validated['home_id'] = $home->id;
 
         $imageName = '';
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $imageExtension = $image->getClientOriginalExtension();
             $imageName = Str::uuid() . '.' . $imageExtension;
-            $image->storeAs("images/home", $imageName);
+            $image->storeAs("images/ppdb/", $imageName);
         }
         $validated['image'] = $imageName;
 
-        $storeHero = HomeHero::create($validated);
-        return redirect()->route('home.hero.index')->with('success', 'Hero Image berhasil ditambahkan!')->withErrors($validated);
+        $storePPDB = PPDB::create($validated);
+        return redirect()->route('admin.ppdb.index')->with('success', 'PPDB Image berhasil ditambahkan!')->withErrors($validated);
     }
 
     /**
@@ -102,16 +100,27 @@ class HomeHeroController extends Controller
      */
     public function destroy($id)
     {
-        $hero = HomeHero::find($id);
+        $ppdb = PPDB::find($id);
 
-        if ($hero->image != 'hero_default.JPG') {
-            if (!empty($hero->image)) {
-                $deleteImage = Storage::disk('public')->delete('images/home/' . $hero->image);
+        if ($ppdb->image != 'Brosur_1.jpg') {
+            if (!empty($ppdb->image)) {
+                $deleteImage = Storage::disk('public')->delete('images/ppdb/' . $ppdb->image);
             }
         }
 
-        $hero->delete();
+        $ppdb->delete();
 
-        return redirect('/admin/home/hero-banner')->with('success', 'Hero Image Deleted Successfully!');
+        return redirect()->route('admin.ppdb.index')->with('success', 'PPDB Image Deleted Successfully!');
+    }
+
+    public function urlUpdate(Request $request)
+    {
+        $validated = $request->validate([
+            'url_ppdb' => 'required',
+        ]);
+
+        $ppdb = PPDB::firstOrFail();
+        $update = $ppdb->update($validated);
+        return redirect()->route('admin.ppdb.index')->with('success', "URL PPDB berhasil diperbarui!")->withErrors($validated);
     }
 }

@@ -10,12 +10,13 @@
         <div class="px-6 py-16 lg:px-16">
             <div class="flex items-center justify-center">
                 <div class="h-1/3 w-1/3 space-y-3">
-                    <a href="/images/default/PPDB.jpg" target="_blank">
-                        <img src={{ asset("images/default/$ppdb->image") }} alt=""
-                            class="rounded-sm border border-slate-100 shadow">
-                    </a>
+                    @foreach ($ppdb as $brosur)
+                        <img src={{ Str::contains($brosur->image, 'drive') ? $brosur->image : asset('storage/images/ppdb/' . $brosur->image) }}
+                            alt="" class="rounded-sm border border-slate-100 shadow">
+                    @endforeach
+
                     <p class="text-center font-semibold">PPDB Brosur</p>
-                    <a href="{{ $ppdb->url_ppdb }}" class="btn btn-primary btn-sm w-full" target="_blank">Form
+                    <a href="{{ $ppdb_url->url_ppdb }}" class="btn btn-primary btn-sm w-full" target="_blank">Form
                         Pendaftaran</a>
                 </div>
             </div>

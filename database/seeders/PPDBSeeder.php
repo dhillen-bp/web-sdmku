@@ -17,7 +17,7 @@ class PPDBSeeder extends Seeder
     {
         $data = [
             [
-                'image' => 'PPDB.jpg',
+                'image' => 'Brosur_1.jpg',
                 'url_ppdb' => 'https://docs.google.com/forms/u/0/d/e/1FAIpQLScrmuZ1evVNWZfyjFzaGJkCmFy8yUPBLBBtxRBPLRg214uoEA/closedform'
             ]
         ];

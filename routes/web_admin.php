@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\HomeHeroController;
 use App\Http\Controllers\Admin\MissionController;
 use App\Http\Controllers\Admin\NavbarController;
 use App\Http\Controllers\Admin\NewsController;
+use App\Http\Controllers\Admin\PPDBController;
 use App\Http\Controllers\Admin\SchoolProfileController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\VisionController;
@@ -123,6 +124,15 @@ Route::prefix('admin')->group(function () {
             Route::get('/', [UserController::class, 'show'])->name('admin.my_profile');
 
             Route::put('/navbar/update', [NavbarController::class, 'update'])->name('admin.navbar.update');
+        });
+
+        Route::prefix('ppdb')->group(function () {
+            Route::get('/', [PPDBController::class, 'index'])->name('admin.ppdb.index');
+            Route::get('/create', [PPDBController::class, 'create'])->name('admin.ppdb.create');
+            Route::post('/store', [PPDBController::class, 'store'])->name('admin.ppdb.store');
+            Route::delete('/destroy/{id}', [PPDBController::class, 'destroy'])->name('admin.ppdb.destroy');
+
+            Route::put('/update', [PPDBController::class, 'urlUpdate'])->name('admin.ppdb.url_update');
         });
     });
 });

@@ -15,10 +15,11 @@ class PPDBController extends Controller
      */
     public function index()
     {
-        $ppdb = PPDB::get()->first();
+        $ppdb = PPDB::get();
+        $ppdb_url = PPDB::first();
         $navbar = Navbar::first();
 
-        return view('pages.ppdb', compact('ppdb', 'navbar'));
+        return view('pages.ppdb', compact('ppdb', 'ppdb_url', 'navbar'));
     }
 
     /**

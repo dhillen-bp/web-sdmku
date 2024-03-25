@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('ppdb', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->text('image');
-            $table->text('url_ppdb');
+            $table->text('url_ppdb')->nullable();
             $table->timestamps();
         });
     }

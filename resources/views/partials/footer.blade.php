@@ -40,21 +40,22 @@
     <div class="col-span-1 grid w-full grid-cols-2 justify-between gap-2 lg:flex lg:justify-around">
         <nav class="col-span-1 block space-y-2 py-2">
             <h6 class="footer-title">Profil</h6>
-            <a class="link-hover link block">Profil Sekolah</a>
-            <a class="link-hover link block">Visi & Misi</a>
-            <a class="link-hover link block">Guru & Staf</a>
+            <a href="/profil/sekolah" class="link-hover link block">Profil Sekolah</a>
+            <a href="/profil/visi-misi" class="link-hover link block">Visi & Misi</a>
+            <a href="/profil/guru-staf" class="link-hover link block">Guru & Staf</a>
         </nav>
         <nav class="col-span-1 block space-y-2 py-2">
             <h6 class="footer-title">Kegiatan</h6>
-            <a class="link-hover link block">Ekstrakurikuler</a>
-            <a class="link-hover link block">Event Terbaru</a>
+            <a href="/kegiatan/ekstrakurikuler" class="link-hover link block">Ekstrakurikuler</a>
+            <a href="/kegiatan/event" class="link-hover link block">Event Terbaru</a>
+            <a href="/kegiatan/kbm" class="link-hover link block">KBM</a>
         </nav>
         <nav class="col-span-1 block space-y-2 py-2">
             <h6 class="footer-title">Menu Lain</h6>
-            <a class="link-hover link block">Prestasi</a>
-            <a class="link-hover link block">Berita</a>
-            <a class="link-hover link block">Galeri</a>
-            <a class="link-hover link block">PPDB</a>
+            <a href="/prestasi" class="link-hover link block">Prestasi</a>
+            <a href="/berita" class="link-hover link block">Berita</a>
+            <a href="/galeri" class="link-hover link block">Galeri</a>
+            <a href="/ppdb" class="link-hover link block">PPDB</a>
         </nav>
         <nav class="py-2">
             <h6 class="footer-title">Media Sosial</h6>

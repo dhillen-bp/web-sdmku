@@ -89,23 +89,8 @@
                                 {{ $user->name }}
                             </h3>
                             <p class="font-medium">{{ $user->email }}</p>
-                            <div
-                                class="mx-auto mb-5.5 mt-4.5 grid max-w-94 grid-cols-3 rounded-md border border-stroke py-2.5 shadow-1 dark:border-strokedark dark:bg-[#37404F]">
-                                <div
-                                    class="flex flex-col items-center justify-center gap-1 border-r border-stroke px-4 dark:border-strokedark xsm:flex-row">
-                                    <span class="font-semibold text-black dark:text-white">259</span>
-                                    <span class="text-sm">Posts</span>
-                                </div>
-                                <div
-                                    class="flex flex-col items-center justify-center gap-1 border-r border-stroke px-4 dark:border-strokedark xsm:flex-row">
-                                    <span class="font-semibold text-black dark:text-white">129K</span>
-                                    <span class="text-sm">Followers</span>
-                                </div>
-                                <div class="flex flex-col items-center justify-center gap-1 px-4 xsm:flex-row">
-                                    <span class="font-semibold text-black dark:text-white">2K</span>
-                                    <span class="text-sm">Following</span>
-                                </div>
-                            </div>
+
+                            <div class="divider"></div>
 
                             <div class="mx-auto max-w-180">
                                 <h4 class="font-medium text-black dark:text-white">
