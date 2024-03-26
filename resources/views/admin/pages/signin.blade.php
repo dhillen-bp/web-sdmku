@@ -27,12 +27,10 @@
                         </label>
                         <input name="password" type="password" placeholder="password" class="input input-bordered"
                             required />
-                        <label class="label">
-                            <a href="#" class="link-hover link label-text-alt">Forgot password?</a>
-                        </label>
                     </div>
                     <div class="form-control mt-6">
                         <button class="btn btn-primary" type="submit">Sign In</button>
+                        <a href="/home" class="mt-3 text-slate-600 hover:underline">Kembali ke Halaman Utama</a>
                     </div>
                 </form>
             </div>
