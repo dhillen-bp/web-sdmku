@@ -44,7 +44,7 @@
                             <div class="grid grid-cols-2 justify-center gap-6 px-6 py-6 lg:grid-cols-3">
                                 @foreach ($news as $berita)
                                     <div class="w-full overflow-hidden border-b-4 border-blue-500 bg-slate-100">
-                                        <img src="{{ Str::contains($berita->image, 'drive') ? $berita->image : asset('images/guru_staf' . $berita->image) }}"
+                                        <img src="{{ Str::contains($berita->image, 'drive') ? $berita->image : asset('storage/images/berita/' . $berita->image) }}"
                                             alt="People" class="h-32 w-full object-cover sm:h-48 md:h-64">
                                         <div class="p-4">
                                             <h3 class="my-2 font-semibold leading-tight sm:leading-normal">
