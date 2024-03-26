@@ -7,8 +7,8 @@
     </div>
     <div class="items-end justify-end lg:flex-[1.5]">
         {{-- MOBILE NAV --}}
-        <div class="dropdown-end dropdown-bottom dropdown lg:hidden">
-            <label class="swap-rotate btn btn-circle swap btn-sm">
+        <div class="dropdown dropdown-end dropdown-bottom lg:hidden">
+            <label class="btn btn-circle swap swap-rotate btn-sm">
                 <!-- this hidden checkbox controls the state -->
                 <input type="checkbox" />
 
@@ -71,9 +71,6 @@
                 <li><a href="/berita" class="{{ Request::path() == 'berita' ? 'active' : '' }} text-slate-100">Berita &
                         Artikel</a>
                 </li>
-                <li><a href="/galeri"
-                        class="{{ Request::path() == 'galeri' ? 'active' : '' }} text-slate-100">Galeri</a>
-                </li>
                 <li><a href="/ppdb"
                         class="{{ Request::path() == 'ppdb' ? 'active' : '' }} font-bold text-slate-100">PPDB</a>
                 </li>
@@ -124,8 +121,6 @@
                     class="{{ Request::path() == 'prestasi' ? 'active' : '' }} text-slate-100">Prestasi</a></li>
             <li><a href="/berita" class="{{ Request::path() == 'berita' ? 'active' : '' }} text-slate-100">Berita &
                     Artikel</a>
-            </li>
-            <li><a href="/galeri" class="{{ Request::path() == 'galeri' ? 'active' : '' }} text-slate-100">Galeri</a>
             </li>
             <li><a href="/ppdb"
                     class="{{ Request::path() == 'ppdb' ? 'active' : '' }} font-bold text-slate-100">PPDB</a></li>

@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\EventLatestController;
 use App\Http\Controllers\EventLatestController as ControllersEventLatestController;
 use App\Http\Controllers\ExtracurricularController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\KBMController;
 use App\Http\Controllers\MissionController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PPDBController;
@@ -44,9 +45,7 @@ Route::prefix('kegiatan')->group(function () {
 
     Route::get('/event', [ControllersEventLatestController::class, 'index']);
 
-    Route::get('/kbm', function () {
-        return view('pages.kbm');
-    });
+    Route::get('/kbm', [KBMController::class, 'index']);
 });
 
 Route::prefix('prestasi')->group(function () {

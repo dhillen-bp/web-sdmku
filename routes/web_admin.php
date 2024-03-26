@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\GuruStafController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\HomeFeaturedController;
 use App\Http\Controllers\Admin\HomeHeroController;
+use App\Http\Controllers\Admin\KBMController;
 use App\Http\Controllers\Admin\MissionController;
 use App\Http\Controllers\Admin\NavbarController;
 use App\Http\Controllers\Admin\NewsController;
@@ -81,6 +82,9 @@ Route::prefix('admin')->group(function () {
             Route::get('/event-terbaru/edit/{id}', [EventLatestController::class, 'edit'])->name('admin.event.edit');
             Route::put('/event-terbaru/update/{id}', [EventLatestController::class, 'update'])->name('admin.event.update');
             Route::delete('/event-terbaru/destroy/{id}', [EventLatestController::class, 'destroy'])->name('admin.event.destroy');
+
+            Route::get('/kbm', [KBMController::class, 'index'])->name('admin.kbm.index');
+            Route::put('/kbm/update', [KBMController::class, 'update'])->name('admin.kbm.update');
         });
 
         Route::prefix('prestasi')->group(function () {

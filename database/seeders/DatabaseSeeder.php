@@ -42,6 +42,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             NavbarSeeder::class,
             SchoolProfileSeeder::class,
+            KBMSeeder::class,
         ]);
     }
 }

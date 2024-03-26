@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\EventLatest;
-use App\Models\Navbar;
+use App\Http\Controllers\Controller;
+use App\Models\KBM;
 use Illuminate\Http\Request;
 
-class EventLatestController extends Controller
+class KBMController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,8 @@ class EventLatestController extends Controller
      */
     public function index()
     {
-        $events = EventLatest::paginate(9);
-        $navbar = Navbar::first();
-        return view('pages.event-terbaru', compact('events' , 'navbar'));
+        $kbm = KBM::first();
+        return view('admin.pages.kegiatan.kbm', compact('kbm'));
     }
 
     /**
@@ -44,10 +43,10 @@ class EventLatestController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\KBM  $kBM
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(KBM $kBM)
     {
         //
     }
@@ -55,10 +54,10 @@ class EventLatestController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\KBM  $kBM
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(KBM $kBM)
     {
         //
     }
@@ -67,10 +66,10 @@ class EventLatestController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\KBM  $kBM
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, KBM $kBM)
     {
         //
     }
@@ -78,10 +77,10 @@ class EventLatestController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\KBM  $kBM
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(KBM $kBM)
     {
         //
     }

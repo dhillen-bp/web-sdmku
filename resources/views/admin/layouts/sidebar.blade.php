@@ -157,6 +157,12 @@
                                                 :class="page === 'event' && '!text-white'">Event Terbaru
                                             </a>
                                         </li>
+                                        <li>
+                                            <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
+                                                href="/admin/kegiatan/kbm"
+                                                :class="page === 'kbm' && '!text-white'">KBM
+                                            </a>
+                                        </li>
                                     </ul>
                                 </div>
                                 <!-- Dropdown Menu End -->
@@ -215,19 +221,6 @@
                                     <span class="material-icons">newspaper</span>
 
                                     Berita
-                                </a>
-                            </li>
-
-                            <li>
-                                <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
-                                    href="/admin/galeri" @click="selected = (selected === 'Galeri' ? '':'Galeri')"
-                                    :class="{
-                                        'bg-graydark dark:bg-meta-4': (selected === 'Galeri') && (
-                                            page === 'Galeri')
-                                    }">
-                                    <span class="material-icons">image</span>
-
-                                    Galeri
                                 </a>
                             </li>
 
