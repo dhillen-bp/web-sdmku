@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 
 @section('xdata-page')
-    'guruStaf'
+    'Admin'
 @endsection
 
 @section('body')
@@ -10,24 +10,17 @@
             <!-- Breadcrumb Start -->
             <div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <h2 class="text-title-md2 font-bold text-black dark:text-white">
-                    Guru & Staf
+                    Admin
                 </h2>
 
                 <nav>
                     <ol class="flex items-center gap-2">
                         <li>
-                            <a class="font-medium" href="/admin">Home /</a>
+                            <a class="font-medium" href="index.html">Home /</a>
                         </li>
-                        <li class="font-medium text-primary">Tabel Guru & Staf</li>
+                        <li class="font-medium text-primary">Tabel Admin</li>
                     </ol>
                 </nav>
-            </div>
-
-            <div class="mb-6 mt-3 flex">
-                <a href="/profil/guru-staf"
-                    class="inline-flex w-full items-center justify-center gap-1 rounded-full bg-primary px-5 py-2 text-center font-medium text-white hover:bg-opacity-90 lg:px-5 xl:px-6">
-                    Lihat Guru & Staf
-                </a>
             </div>
 
             <!-- ====== Table Section Start -->
@@ -39,55 +32,49 @@
                         <h4 class="my-auto mb-6 text-xl font-bold text-black dark:text-white">
                             Tabel
                         </h4>
-                        <a href="/admin/profil/guru-staf/create"
+                        <a href="{{ route('admin.data_admin.create') }}"
                             class="inline-flex items-center justify-center rounded-full bg-primary px-6 py-2 text-center font-medium text-white hover:bg-opacity-90 lg:px-6 xl:px-6">
                             Tambah Data
                         </a>
                     </div>
 
                     <div class="flex flex-col">
-                        <div class="grid grid-cols-3 rounded-sm bg-gray-2 dark:bg-meta-4 sm:grid-cols-4">
+                        <div class="grid grid-cols-3 rounded-sm bg-gray-2 dark:bg-meta-4 sm:grid-cols-3">
                             <div class="p-2.5 xl:p-5">
                                 <h5 class="text-sm font-medium uppercase xsm:text-base">Name</h5>
                             </div>
                             <div class="p-2.5 text-center xl:p-5">
-                                <h5 class="text-sm font-medium uppercase xsm:text-base">Image</h5>
-                            </div>
-                            <div class="p-2.5 text-center xl:p-5">
-                                <h5 class="text-sm font-medium uppercase xsm:text-base">Position</h5>
+                                <h5 class="text-sm font-medium uppercase xsm:text-base">Email</h5>
                             </div>
                             <div class="p-2.5 text-center xl:p-5">
                                 <h5 class="text-sm font-medium uppercase xsm:text-base">Action</h5>
                             </div>
                         </div>
 
-                        @foreach ($teachers as $teacher)
-                            <div class="grid grid-cols-3 border-b border-stroke dark:border-strokedark sm:grid-cols-4">
+                        @foreach ($users as $user)
+                            <div class="grid grid-cols-3 border-b border-stroke dark:border-strokedark sm:grid-cols-3">
                                 <div class="flex items-center gap-3 p-2.5 xl:p-5">
                                     <p class="font-medium text-black dark:text-white sm:block">
-                                        {{ $teacher->name }}
+                                        {{ $user->name }}
                                     </p>
                                 </div>
 
-                                <div class="flex items-center justify-center rounded-md">
-                                    <img src="{{ Str::contains($teacher->image, 'drive') ? $teacher->image : asset('storage/images/guru_staf' . $teacher->image) }}"
-                                        alt="Product" class="mx-auto">
-                                </div>
-
                                 <div class="flex items-center justify-center p-2.5 xl:p-5">
-                                    <div class="badge badge-primary badge-outline dark:text-white">{{ $teacher->position }}
-                                    </div>
+                                    <p class="font-medium text-black dark:text-white sm:block">
+                                        {{ $user->email }}
+                                    </p>
                                 </div>
 
                                 <div class="flex items-center justify-center p-2.5 xl:p-5">
                                     <div class="flex gap-2">
-                                        <a href="{{ route('admin.guru.edit', $teacher->id) }}"
+                                        <a href="{{ route('admin.data_admin.edit', $user->id) }}"
                                             class="tooltip tooltip-warning cursor-pointer hover:text-warning"
                                             data-tip="Edit">
                                             <span class="material-icons">edit</span>
                                         </a>
                                         <button class="tooltip tooltip-error cursor-pointer hover:text-danger"
-                                            data-tip="Hapus" onclick="modal_delete_guru.showModal()">
+                                            data-tip="Hapus"
+                                            onclick="modal_delete_admin_{{ $loop->iteration }}.showModal()">
                                             <span class="material-icons">delete</span>
                                         </button>
                                     </div>
@@ -96,12 +83,12 @@
                             </div>
 
 
-                            <dialog id="modal_delete_guru" class="modal">
+                            <dialog id="modal_delete_admin_{{ $loop->iteration }}" class="modal">
                                 <div class="modal-box">
                                     <h3 class="text-lg font-bold">Hapus Hero Image!</h3>
-                                    <p class="py-4"></p>
+                                    <p class="py-4">Anda yakin menghapus data {{ $user->name }} ?</p>
                                     <div class="modal-action">
-                                        <form action="{{ route('admin.guru.destroy', $teacher->id) }}" method="POST">
+                                        <form action="{{ route('admin.guru.destroy', $user->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <!-- if there is a button in form, it will close the modal -->
@@ -117,7 +104,7 @@
                         @endforeach
 
                         <div class="my-2">
-                            {{ $teachers->links('vendor.pagination.tailwind') }}
+                            {{ $users->links('vendor.pagination.tailwind') }}
                         </div>
                     </div>
                 </div>

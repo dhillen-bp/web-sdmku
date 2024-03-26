@@ -134,5 +134,14 @@ Route::prefix('admin')->group(function () {
 
             Route::put('/update', [PPDBController::class, 'urlUpdate'])->name('admin.ppdb.url_update');
         });
+
+        Route::prefix('data_admin')->group(function () {
+            Route::get('/', [UserController::class, 'index'])->name('admin.data_admin.index');
+            Route::get('/create', [UserController::class, 'create'])->name('admin.data_admin.create');
+            Route::post('/store', [UserController::class, 'store'])->name('admin.data_admin.store');
+            Route::get('/edit/{id}', [UserController::class, 'edit'])->name('admin.data_admin.edit');
+            Route::put('/update/{id}', [UserController::class, 'update'])->name('admin.data_admin.update');
+            Route::delete('/destroy/{id}', [UserController::class, 'destroy'])->name('admin.data_admin.destroy');
+        });
     });
 });

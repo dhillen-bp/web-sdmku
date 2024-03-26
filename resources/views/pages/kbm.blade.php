@@ -8,8 +8,7 @@
         </div>
 
         <div class="px-6 py-16 lg:px-16">
-            <iframe
-                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkMH_2hFOcZmMUCHfPgOV5r0HPrIu3LaHlluSohQcGa4gae7Mgc071TBpwQhVNMM8WAEbr1KsfdmnV/pubhtml?widget=true&amp;headers=false"
+            <iframe src="https://drive.google.com/file/d/1Ka7NczMp6S3tCxhS-rfZzf-mI2P6gKzQ/preview"
                 class="min-h-screen w-full"></iframe>
         </div>
 

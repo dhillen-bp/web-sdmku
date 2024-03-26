@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\EventLatest;
+use App\Models\Navbar;
 use Illuminate\Http\Request;
 
 class EventLatestController extends Controller
@@ -15,7 +16,8 @@ class EventLatestController extends Controller
     public function index()
     {
         $events = EventLatest::paginate(9);
-        return view('pages.event-terbaru', compact('events'));
+        $navbar = Navbar::first();
+        return view('pages.event-terbaru', compact('events' . 'navbar'));
     }
 
     /**

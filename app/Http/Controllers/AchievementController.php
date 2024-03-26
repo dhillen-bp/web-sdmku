@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Achievement;
 use App\Models\AchievementCategories;
+use App\Models\Navbar;
 use Illuminate\Http\Request;
 
 class AchievementController extends Controller
@@ -17,8 +18,9 @@ class AchievementController extends Controller
     {
         $achievements = Achievement::paginate(9);
         $categories = AchievementCategories::get();
+        $navbar = Navbar::first();
 
-        return view('pages.prestasi', compact('achievements', 'categories'));
+        return view('pages.prestasi', compact('achievements', 'categories', 'navbar'));
     }
 
     /**
@@ -94,6 +96,8 @@ class AchievementController extends Controller
         })->paginate(9);
         $categories = AchievementCategories::get();
 
-        return view('pages.prestasi-based-category', compact('achievements', 'categories', 'slug'));
+        $navbar = Navbar::first();
+
+        return view('pages.prestasi-based-category', compact('achievements', 'categories', 'slug', 'navbar'));
     }
 }

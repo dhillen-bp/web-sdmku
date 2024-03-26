@@ -3,7 +3,7 @@
 @section('body')
     <section class="bg-base-200">
         <div class="h-24 bg-cover bg-no-repeat py-24 opacity-90"
-            style="background-image: url({{ asset('images/shapes/low-poly-grid-haikei.svg') }});">
+            style="background-image: url({{ asset('storage/images/navbar/' . $navbar->image) }});">
             <div class="flex flex-col items-center justify-center gap-2">
                 <h1 class="text-center text-3xl font-bold text-slate-100">Berita</h1>
                 <div class="breadcrumbs flex text-sm text-slate-100">

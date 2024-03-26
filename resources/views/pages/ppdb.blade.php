@@ -9,7 +9,7 @@
         </div>
         <div class="px-6 py-16 lg:px-16">
             <div class="flex items-center justify-center">
-                <div class="h-1/3 w-1/3 space-y-3">
+                <div class="h-full w-full space-y-3 lg:h-2/3 lg:w-2/3">
                     @foreach ($ppdb as $brosur)
                         <img src={{ Str::contains($brosur->image, 'drive') ? $brosur->image : asset('storage/images/ppdb/' . $brosur->image) }}
                             alt="" class="rounded-sm border border-slate-100 shadow">

@@ -3,7 +3,7 @@
 @section('body')
     <section class="bg-base-200">
         <div class="h-24 bg-cover bg-no-repeat py-24 opacity-90"
-            style="background-image: url({{ asset('images/shapes/low-poly-grid-haikei.svg') }});">
+            style="background-image: url({{ asset('storage/images/navbar/' . $navbar->image) }});">
             <h1 class="mt-4 text-center text-3xl font-bold text-slate-100">Event Terbaru</h1>
         </div>
 

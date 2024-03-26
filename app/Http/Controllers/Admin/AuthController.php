@@ -35,7 +35,7 @@ class AuthController extends Controller
         } else {
             // Session::flash('status', 'fail');
             // Session::flash('message', 'Login Invalid!');
-            return redirect('/login')->withErrors('Login Invalid');
+            return redirect('/admin/login')->withErrors('Login Invalid');
         }
     }
 

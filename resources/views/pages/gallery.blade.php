@@ -8,17 +8,7 @@
         </div>
 
         <div class="px-6 py-16 lg:px-16">
-            <div class="flex flex-wrap items-center justify-center gap-3 py-4 md:py-8">
-                <button type="button"
-                    class="dark:bg-gray-900 mb-3 me-3 rounded-full border border-primary bg-white px-5 py-2.5 text-center text-base font-medium text-primary hover:bg-primary hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300">All
-                    categories</button>
-                <button type="button"
-                    class="dark:bg-gray-900 mb-3 me-3 rounded-full border border-black bg-white px-5 py-2.5 text-center text-base font-medium text-black hover:bg-primary hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300">Prestasi</button>
-                <button type="button"
-                    class="dark:bg-gray-900 mb-3 me-3 rounded-full border border-black bg-white px-5 py-2.5 text-center text-base font-medium text-black hover:bg-primary hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300">Kegiatan</button>
-                <button type="button"
-                    class="dark:bg-gray-900 mb-3 me-3 rounded-full border border-black bg-white px-5 py-2.5 text-center text-base font-medium text-black hover:bg-primary hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300">Fasilitas</button>
-            </div>
+
             <iframe src="https://drive.google.com/embeddedfolderview?id=1WlNNuzMfiqmzD7nK45VBu1pLDzcYXwn4#grid"
                 style="width:100%; height:600px; border:0;"></iframe>
 

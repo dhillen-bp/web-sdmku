@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Vision\UpdateRequest;
 use App\Models\Mission;
+use App\Models\Navbar;
 use App\Models\Vision;
 use Illuminate\Http\Request;
 
@@ -19,8 +20,9 @@ class VisionController extends Controller
     {
         $vision = Vision::first();
         $mission = Mission::first();
+        $navbar = Navbar::first();
 
-        return view('admin.pages.profile.visi-misi', compact('mission', 'vision'));
+        return view('admin.pages.profile.visi-misi', compact('mission', 'vision', 'navbar'));
     }
 
     /**

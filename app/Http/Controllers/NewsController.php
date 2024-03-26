@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Navbar;
 use App\Models\News;
 use Illuminate\Http\Request;
 
@@ -15,8 +16,9 @@ class NewsController extends Controller
     public function index()
     {
         $news = News::paginate(8);
+        $navbar = Navbar::first();
 
-        return view('pages.berita', compact('news'));
+        return view('pages.berita', compact('news', 'navbar'));
     }
 
     /**
@@ -50,8 +52,9 @@ class NewsController extends Controller
     {
         $news = News::where('slug', $slug)->first();
         $newsLatests = News::latest()->take(3)->get();
+        $navbar = Navbar::first();
 
-        return view('pages.berita-detail', compact('news', 'newsLatests'));
+        return view('pages.berita-detail', compact('news', 'newsLatests', 'navbar'));
     }
 
     /**

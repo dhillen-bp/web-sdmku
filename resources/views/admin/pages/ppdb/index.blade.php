@@ -11,10 +11,6 @@
                 <h2 class="text-title-md2 font-bold text-black dark:text-white">
                     PPDB Form
                 </h2>
-                <a href="/home" target="_blank"
-                    class="inline-flex items-center justify-center gap-1 rounded-full bg-primary px-5 py-2 text-center font-medium text-white hover:bg-opacity-90 lg:px-5 xl:px-6">
-                    Lihat PPDB
-                </a>
                 <nav>
                     <ol class="flex items-center gap-2">
                         <li>
@@ -24,6 +20,14 @@
                     </ol>
                 </nav>
             </div>
+
+            <div class="mb-6 mt-3 flex">
+                <a href="/ppdb" target="_blank"
+                    class="inline-flex w-full items-center justify-center gap-1 rounded-full bg-success px-5 py-2 text-center font-medium text-white hover:bg-opacity-90 lg:px-5 xl:px-6">
+                    Lihat PPDB
+                </a>
+            </div>
+
             <div class="grid grid-cols-1 gap-4 md:grid-cols-1 md:gap-6 xl:grid-cols-1 2xl:gap-7.5">
                 <!-- Card Item Start -->
                 <div
@@ -76,11 +80,6 @@
                     </form>
                 </div>
 
-                @if ($errors->any())
-                    @foreach ($errors->all() as $error)
-                        <div>{{ $error }}</div>
-                    @endforeach
-                @endif
                 <!-- Card Item End -->
 
             </div>

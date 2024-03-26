@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Navbar;
 use App\Models\SchoolProfile;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,8 @@ class SchoolProfileController extends Controller
     public function index()
     {
         $profile = SchoolProfile::first();
-        return view('pages.tentang-kami', compact('profile'));
+        $navbar = Navbar::first();
+        return view('pages.tentang-kami', compact('profile', 'navbar'));
     }
 
     /**

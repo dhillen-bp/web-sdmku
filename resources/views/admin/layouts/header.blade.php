@@ -29,7 +29,7 @@
                 </span>
             </button>
             <!-- Hamburger Toggle BTN -->
-            <a class="block flex-shrink-0 lg:hidden" href="index.html">
+            <a class="block flex-shrink-0 lg:hidden" href="/admin">
                 {{-- <img src="{{ asset('images/logo/logo_sdmku_compress.png') }}" alt="Logo" /> --}}
             </a>
         </div>

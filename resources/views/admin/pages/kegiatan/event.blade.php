@@ -26,7 +26,7 @@
             </div>
 
             <div class="mb-6 mt-3 flex">
-                <a href="/galeri" target="_blank"
+                <a href="/kegiatan/event" target="_blank"
                     class="inline-flex w-full items-center justify-center gap-1 rounded-full bg-success px-5 py-2 text-center font-medium text-white hover:bg-opacity-90 lg:px-5 xl:px-6">
                     Lihat Event Terbaru
                 </a>
