@@ -98,8 +98,8 @@ class HomeFeaturedController extends Controller
         $validated['home_id'] = $home->id;
 
         $imageName = $featured->featured_image;
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
+        if ($request->hasFile('featured_image')) {
+            $image = $request->file('featured_image');
             $imageExtension = $image->getClientOriginalExtension();
             $imageName = Str::uuid() . '.' . $imageExtension;
             $image->storeAs("images/home/", $imageName);
