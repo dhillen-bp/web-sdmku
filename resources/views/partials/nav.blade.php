@@ -7,8 +7,8 @@
     </div>
     <div class="items-end justify-end lg:flex-[1.5]">
         {{-- MOBILE NAV --}}
-        <div class="dropdown dropdown-end dropdown-bottom lg:hidden">
-            <label class="btn btn-circle swap swap-rotate btn-sm">
+        <div class="dropdown-end dropdown-bottom dropdown lg:hidden">
+            <label class="swap-rotate btn btn-circle swap btn-sm">
                 <!-- this hidden checkbox controls the state -->
                 <input type="checkbox" />
 
@@ -74,6 +74,9 @@
                 <li><a href="/ppdb"
                         class="{{ Request::path() == 'ppdb' ? 'active' : '' }} font-bold text-slate-100">PPDB</a>
                 </li>
+                <li><a href="/admin" class="{{ Request::path() == 'admin' ? 'active' : '' }} text-slate-100">Login
+                        Admin</a>
+                </li>
             </ul>
         </div>
 
@@ -124,6 +127,9 @@
             </li>
             <li><a href="/ppdb"
                     class="{{ Request::path() == 'ppdb' ? 'active' : '' }} font-bold text-slate-100">PPDB</a></li>
+            <li><a href="/admin" class="{{ Request::path() == 'admin' ? 'active' : '' }} text-slate-100">Login
+                    Admin</a>
+            </li>
         </ul>
     </div>
 </nav>
