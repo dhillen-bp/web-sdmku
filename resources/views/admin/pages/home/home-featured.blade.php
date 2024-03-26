@@ -56,27 +56,29 @@
                                     <a href="{{ route('home.featured.edit', $featured->id) }}"
                                         class="btn btn-warning btn-sm">Edit</a>
                                     <button class="btn btn-error btn-sm text-white"
-                                        onclick="modal_delete_featured.showModal()">Hapus</button>
+                                        onclick="modal_delete_featured_{{ $loop->iteration }}.showModal()">Hapus</button>
                                 </div>
                             </div>
-                        @endforeach
-                        <dialog id="modal_delete_featured" class="modal">
-                            <div class="modal-box">
-                                <h3 class="text-lg font-bold">Hapus Hero Image!</h3>
-                                <p class="py-4"></p>
-                                <div class="modal-action">
-                                    <form action="{{ route('home.featured.destroy', $featured->id) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <!-- if there is a button in form, it will close the modal -->
-                                        <button class="btn btn-error text-white" type="submit">Ya</button>
-                                        <form method="dialog">
-                                            <button class="btn btn-ghost" type="button">Batal</button>
+
+                            <dialog id="modal_delete_featured_{{ $loop->iteration }}" class="modal">
+                                <div class="modal-box">
+                                    <h3 class="text-lg font-bold">Hapus Program Unggulan!</h3>
+                                    <p class="py-4"></p>
+                                    <div class="modal-action">
+                                        <form action="{{ route('home.featured.destroy', $featured->id) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <!-- if there is a button in form, it will close the modal -->
+                                            <button class="btn btn-error text-white" type="submit">Ya</button>
+                                            <form method="dialog">
+                                                <button class="btn btn-ghost" type="button">Batal</button>
+                                            </form>
                                         </form>
-                                    </form>
+                                    </div>
                                 </div>
-                            </div>
-                        </dialog>
+                            </dialog>
+                        @endforeach
+
                     </div>
 
                 </div>

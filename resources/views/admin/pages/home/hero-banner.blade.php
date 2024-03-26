@@ -78,12 +78,13 @@
                                     alt="">
                                 <button
                                     class="absolute right-2 top-2 rounded-full bg-red-500 p-1 text-white hover:bg-red-600 focus:outline-none"
-                                    aria-label="Hapus Gambar" onclick="modal_delete_hero.showModal()">
+                                    aria-label="Hapus Gambar"
+                                    onclick="modal_delete_hero_{{ $loop->iteration }}.showModal()">
                                     <span class="material-icons flex items-center justify-center">delete</span>
                                 </button>
                             </div>
 
-                            <dialog id="modal_delete_hero" class="modal">
+                            <dialog id="modal_delete_hero_{{ $loop->iteration }}" class="modal">
                                 <div class="modal-box">
                                     <h3 class="text-lg font-bold">Hapus Hero Image!</h3>
                                     <p class="py-4"></p>
