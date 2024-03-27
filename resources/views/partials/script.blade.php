@@ -58,6 +58,16 @@
     });
 
     $(document).ready(function() {
+        // Menangani klik di luar dropdown
+        $(document).on('click', function(event) {
+            // Periksa apakah yang diklik bukan bagian dari dropdown
+            if (!$(event.target).closest('.dropdown').length) {
+                // Sembunyikan dropdown jika yang diklik bukan bagian dari dropdown
+                $('.dropdown input[type="checkbox"]').prop('checked', false);
+            }
+        });
+
+        // Toggle Hamburger & Close
         $('#toggleMenu').change(function() {
             var isChecked = $(this).prop('checked');
             var menu = $('#menu');

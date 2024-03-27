@@ -2,7 +2,7 @@
 
 @section('body')
     {{-- HEADER & HERO --}}
-    <section class="relative">
+    <section class="relative overflow-x-hidden">
         <div class="min-h-90 carousel relative w-full object-cover md:h-[460px] lg:min-h-screen">
             @foreach ($homeHero as $index => $hero)
                 @php
@@ -10,7 +10,7 @@
                 @endphp
                 <div id="slide{{ $index }}" class="carousel-item relative w-full">
                     <img src="{{ $hero->image == 'hero_default.JPG' ? asset('images/home/' . $hero->image) : asset('storage/images/home/' . $hero->image) }}"
-                        class="w-full" />
+                        class="w-full max-w-full" />
                     <div
                         class="absolute left-6 right-6 top-1/2 flex -translate-y-1/2 transform justify-between lg:left-16 lg:right-16">
                         <a href="#slide{{ $index == 0 ? $jumlah : $index - 1 }}"
@@ -24,7 +24,7 @@
     </section>
 
     {{-- WELCOME SECTION --}}
-    <section class="-mt-[5px] bg-base-200 py-8 lg:px-16 lg:py-16">
+    <section class="-mt-[5px] overflow-x-hidden bg-base-200 py-8 lg:px-16 lg:py-16">
         <div class="hero-content flex-col lg:flex-row-reverse lg:px-0">
             {{-- <img src="https://source.unsplash.com/white-and-red-concrete-building-ZPkG0EdWQa8"
                 class="h-80 max-w-sm rounded-lg shadow-2xl lg:w-1/3" /> --}}
@@ -51,7 +51,7 @@
     </section>
 
     {{-- OUR SERVICE SECTION --}}
-    <section class="space-y-4 px-6 py-8 lg:space-y-8 lg:px-16 lg:py-16">
+    <section class="space-y-4 overflow-x-hidden px-6 py-8 lg:space-y-8 lg:px-16 lg:py-16">
         <h3 class="text-center text-xl font-bold lg:text-4xl">Program Unggulan</h3>
         <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-3 lg:gap-6">
             @foreach ($homeFeatured as $feature)
@@ -110,14 +110,17 @@
         </div>
         <div class="grid gap-4 md:grid-cols-3 lg:gap-8">
             @foreach ($events as $event)
-                <div class="taos:scale-[0.6] taos:opacity-0 relative delay-[300ms] duration-[500ms] [animation-iteration-count:infinite]"
+                <div class="taos:scale-[0.6] taos:opacity-0 group relative overflow-hidden delay-[300ms] duration-[500ms] [animation-iteration-count:infinite]"
                     data-taos-offset="100">
-                    <img class="h-56 w-full max-w-full rounded-lg object-cover"
+                    <img class="h-56 w-full max-w-full rounded-lg object-cover transition-transform group-hover:scale-105"
                         src="{{ Str::contains($event->image, 'drive') ? $event->image : asset('storage/images/event/' . $event->image) }}"
                         alt="">
                     <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-2 text-center text-white">
-                        <a href="/kegiatan/event/{{ $event->id }}"
-                            class="text-sm font-semibold hover:underline">{{ $event->name }}</a>
+                        <a href="/kegiatan/event/{{ $event->id }}" class="flex items-center justify-center text-sm">
+                            <span class="font-semibold hover:underline">{{ $event->name }}</span>
+                            <span
+                                class="material-icons-outlined ml-2 opacity-0 transition-opacity group-hover:no-underline group-hover:opacity-100">arrow_circle_right</span>
+                        </a>
                     </div>
                 </div>
             @endforeach

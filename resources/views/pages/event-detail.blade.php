@@ -27,7 +27,7 @@
 
             <!-- 1/4 Width for 3 Latest News List -->
             <div class="col-span-4 space-y-4 text-sm lg:col-span-1">
-                <h3 class="text-xl font-bold">Event Terbaru</h3>
+                <h3 class="text-xl font-bold">Event Terbaru Lain</h3>
                 @foreach ($eventLatests as $latest)
                     <div class="group overflow-hidden bg-white shadow">
                         <a href="/event/{{ $latest->slug }}">

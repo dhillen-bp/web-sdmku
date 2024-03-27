@@ -41,7 +41,7 @@
 
             <!-- 1/4 Width for 3 Latest News List -->
             <div class="col-span-4 space-y-4 text-sm lg:col-span-1">
-                <h3 class="text-xl font-bold">Berita Terbaru</h3>
+                <h3 class="text-xl font-bold">Berita Terbaru Lain</h3>
                 @foreach ($newsLatests as $latest)
                     <div class="group overflow-hidden bg-white shadow">
                         <a href="/berita/{{ $latest->slug }}">
@@ -65,7 +65,7 @@
 
                             <a href="/berita/{{ $latest->slug }}"
                                 class="text-lg font-semibold hover:underline">{{ $latest->title }}</a>
-                            <p class="text-gray-600">{!! strlen($latest->content) > 20 ? substr($latest->content, 0, 20) . '...' : $latest->content !!}
+                            <p class="text-gray-600 text-sm">{!! strlen($latest->content) > 20 ? substr($latest->content, 0, 20) . '...' : $latest->content !!}
                             </p>
                         </div>
                     </div>

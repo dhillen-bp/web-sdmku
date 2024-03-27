@@ -9,14 +9,18 @@
 
         <div class="grid grid-cols-2 gap-6 px-6 py-16 md:grid-cols-3 lg:px-16">
             @foreach ($events as $event)
-                <div class="shadow-xl">
+                <div class="group overflow-hidden shadow-xl">
                     <div class="relative">
-                        <img class="h-56 w-full max-w-full rounded-lg object-cover"
+                        <img class="h-56 w-full max-w-full rounded-lg object-cover transition-transform group-hover:scale-105"
                             src="{{ Str::contains($event->image, 'drive') ? $event->image : asset('storage/images/event/' . $event->image) }}"
                             alt="">
                         <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-2 text-center text-white">
                             <a href="/kegiatan/event/{{ $event->id }}"
-                                class="text-sm font-semibold hover:underline">{{ $event->name }}</a>
+                                class="flex items-center justify-center text-sm font-semibold">
+                                <span class="font-semibold hover:underline">{{ $event->name }}</span>
+                                <span
+                                    class="material-icons-outlined ml-2 opacity-0 transition-opacity group-hover:no-underline group-hover:opacity-100">arrow_circle_right</span>
+                            </a>
                         </div>
                     </div>
                     <div class="rounded-b-lg bg-white p-2 text-sm">

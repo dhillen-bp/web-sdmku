@@ -7,8 +7,8 @@
     </div>
     <div class="items-end justify-end lg:flex-[1.5]">
         {{-- MOBILE NAV --}}
-        <div class="dropdown-end dropdown-bottom dropdown lg:hidden">
-            <label for="toggleMenu" class="swap-rotate btn btn-circle swap btn-sm">
+        <div class="dropdown dropdown-end dropdown-bottom lg:hidden">
+            <label for="toggleMenu" class="btn btn-circle swap swap-rotate btn-sm">
                 <!-- this hidden checkbox controls the state -->
                 <input type="checkbox" id="toggleMenu" />
 
@@ -27,7 +27,7 @@
 
             </label>
 
-            <ul class="-x-8 menu dropdown-content relative right-0 z-[1] w-screen translate-x-6 bg-primary p-6 text-slate-100 sm:translate-x-8"
+            <ul class="-x-8 menu dropdown-content relative right-0 z-[999] w-screen translate-x-6 bg-primary p-6 text-slate-100 sm:translate-x-8"
                 id="menu">
                 <li><a href="/home" class="{{ Request::path() == 'home' ? 'active' : '' }}">Home</a></li>
                 <li>
