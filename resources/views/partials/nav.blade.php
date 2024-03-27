@@ -8,9 +8,9 @@
     <div class="items-end justify-end lg:flex-[1.5]">
         {{-- MOBILE NAV --}}
         <div class="dropdown-end dropdown-bottom dropdown lg:hidden">
-            <label class="swap-rotate btn btn-circle swap btn-sm">
+            <label for="toggleMenu" class="swap-rotate btn btn-circle swap btn-sm">
                 <!-- this hidden checkbox controls the state -->
-                <input type="checkbox" />
+                <input type="checkbox" id="toggleMenu" />
 
                 <!-- hamburger icon -->
                 <svg class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -27,12 +27,12 @@
 
             </label>
 
-            <ul
-                class="-x-8 menu dropdown-content relative right-0 z-[1] w-screen translate-x-6 bg-primary p-6 text-slate-100 sm:translate-x-8">
+            <ul class="-x-8 menu dropdown-content relative right-0 z-[1] w-screen translate-x-6 bg-primary p-6 text-slate-100 sm:translate-x-8"
+                id="menu">
                 <li><a href="/home" class="{{ Request::path() == 'home' ? 'active' : '' }}">Home</a></li>
                 <li>
                     <details id="profileDropdown" {{ Str::startsWith(Request::path(), 'profil/') ? 'open' : '' }}>
-                        <summary>
+                        <summary class="text-slate-100">
                             Profil
                         </summary>
                         <ul class="p-2">

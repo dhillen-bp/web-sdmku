@@ -58,23 +58,16 @@
     });
 
     $(document).ready(function() {
-        // Menggunakan jQuery untuk menangani peristiwa klik di luar dropdown
-        $(document).on('click', function(event) {
-            // Periksa apakah yang diklik bukan bagian dari dropdown
-            if (!$(event.target).closest('.dropdown').length) {
-                // Sembunyikan dropdown jika yang diklik bukan bagian dari dropdown
-                $('.dropdown input[type="checkbox"]').prop('checked', false);
+        $('#toggleMenu').change(function() {
+            var isChecked = $(this).prop('checked');
+            var menu = $('#menu');
+
+            if (isChecked) {
+                menu.removeClass('hidden').addClass('block');
+            } else {
+                menu.removeClass('block').addClass('hidden');
             }
         });
-
-        // Menangani klik pada label (hamburger icon)
-        $('.swap-rotate').on('click', function() {
-            // Toggle checkbox ketika label diklik
-            $(this).find('input[type="checkbox"]').prop('checked', function(i, value) {
-                return !value;
-            });
-        });
-
     });
 </script>
 
