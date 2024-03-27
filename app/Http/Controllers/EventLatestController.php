@@ -17,7 +17,7 @@ class EventLatestController extends Controller
     {
         $events = EventLatest::paginate(9);
         $navbar = Navbar::first();
-        return view('pages.event-terbaru', compact('events' , 'navbar'));
+        return view('pages.event-terbaru', compact('events', 'navbar'));
     }
 
     /**
@@ -49,7 +49,11 @@ class EventLatestController extends Controller
      */
     public function show($id)
     {
-        //
+        $event = EventLatest::findOrFail($id);
+        $eventLatests = EventLatest::latest()->take(3)->get();
+
+        $navbar = Navbar::first();
+        return view('pages.event-detail', compact('event', 'eventLatests', 'navbar'));
     }
 
     /**

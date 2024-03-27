@@ -44,6 +44,7 @@ Route::prefix('kegiatan')->group(function () {
     Route::get('/ekstrakurikuler', [ExtracurricularController::class, 'index']);
 
     Route::get('/event', [ControllersEventLatestController::class, 'index']);
+    Route::get('/event/{id}', [ControllersEventLatestController::class, 'show']);
 
     Route::get('/kbm', [KBMController::class, 'index']);
 });

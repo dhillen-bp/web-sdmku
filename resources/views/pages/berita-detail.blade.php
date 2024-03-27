@@ -8,7 +8,7 @@
                 <h1 class="text-center text-3xl font-bold text-slate-100">Berita</h1>
                 <div class="breadcrumbs flex text-sm text-slate-100">
                     <ul>
-                        <li><a>Berita</a></li>
+                        <li><a href="/berita">Berita</a></li>
                         <li class="font-semibold">Detail Berita</li>
                     </ul>
                 </div>

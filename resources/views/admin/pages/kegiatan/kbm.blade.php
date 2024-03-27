@@ -43,7 +43,7 @@
 
                                 <div class="mb-6">
                                     <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                        KBM URL
+                                        KBM URL <span class="text-xs text-danger">*</span>
                                         <span class="text-sx block text-danger lg:text-sm">* Link yang diberikan adalah
                                             link
                                             setelah "Open in New Window"</span>

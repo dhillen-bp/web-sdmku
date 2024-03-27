@@ -116,7 +116,8 @@
                         src="{{ Str::contains($event->image, 'drive') ? $event->image : asset('storage/images/event/' . $event->image) }}"
                         alt="">
                     <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-2 text-center text-white">
-                        <span class="text-sm font-semibold">{{ $event->name }}</span>
+                        <a href="/kegiatan/event/{{ $event->id }}"
+                            class="text-sm font-semibold hover:underline">{{ $event->name }}</a>
                     </div>
                 </div>
             @endforeach

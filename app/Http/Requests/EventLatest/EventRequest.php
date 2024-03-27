@@ -25,6 +25,7 @@ class EventRequest extends FormRequest
     {
         return [
             'name' => 'string|required|max:255',
+            'caption' => 'string|required',
             'image' => 'image|mimes:jpeg,png,jpg|max:2048|nullable',
             'image_gdrive' => 'string|nullable',
         ];

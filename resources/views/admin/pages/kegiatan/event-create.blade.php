@@ -40,10 +40,18 @@
 
                                 <div class="mb-6">
                                     <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                        Name
+                                        Name <span class="text-xs text-danger">*</span>
                                     </label>
                                     <input type="text" name="name" placeholder="Masukkan Name" required
                                         class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                </div>
+
+                                <div class="mb-6">
+                                    <label class="mb-3 block text-sm font-medium text-black dark:text-white">
+                                        Caption <span class="text-xs text-danger">*</span>
+                                    </label>
+                                    <textarea rows="6" name="caption" id="caption" required
+                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"></textarea>
                                 </div>
 
                                 <div class="mb-6">
@@ -76,4 +84,24 @@
 
         </div>
     </main>
+@endsection
+
+@section('after-script')
+    <script>
+        $('#caption').summernote({
+            placeholder: 'Ketik disini',
+            tabsize: 2,
+            height: 250,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['color', ['color']],
+                ['forecolor', ['forecolor']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['insert', ['link', 'picture', 'video']],
+                ['view', ['fullscreen', 'codeview', 'help']],
+            ]
+        });
+    </script>
 @endsection

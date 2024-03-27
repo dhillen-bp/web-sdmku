@@ -40,7 +40,7 @@
 
                                 <div class="mb-6">
                                     <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                        Title
+                                        Title <span class="text-xs text-danger">*</span>
                                     </label>
                                     <input type="text" name="title" placeholder="Masukkan Title"
                                         class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
@@ -48,7 +48,7 @@
 
                                 <div class="mb-6">
                                     <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                        Content
+                                        Content <span class="text-xs text-danger">*</span>
                                     </label>
                                     <textarea rows="6" name="content" id="content"
                                         class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"></textarea>
@@ -56,7 +56,7 @@
 
                                 <div class="mb-6">
                                     <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                        Author
+                                        Author <span class="text-xs text-danger">*</span>
                                     </label>
                                     <input type="text" name="author" placeholder="Masukkan Nama Author"
                                         class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
@@ -64,7 +64,7 @@
 
                                 <div class="mb-6">
                                     <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                        Image
+                                        Image <span class="text-xs text-danger">*</span>
                                     </label>
                                     <div class="my-3 flex flex-col items-center justify-center gap-2">
                                         {{-- <div class="skeleton flex h-[360px] w-[540px] items-center justify-center">360x540

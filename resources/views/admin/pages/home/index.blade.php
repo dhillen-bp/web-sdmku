@@ -61,7 +61,7 @@
 
                             <div class="mb-4.5">
                                 <label class="mb-3 block text-sm font-semibold text-black dark:text-white">
-                                    Nama Sekolah
+                                    Nama Sekolah <span class="text-xs text-danger">*</span>
                                 </label>
                                 <input type="text" name="school_name" value="{{ $home->school_name ?? '' }}"
                                     class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
@@ -69,7 +69,7 @@
 
                             <div class="mb-8">
                                 <label class="mb-3 block text-sm font-semibold text-black dark:text-white">
-                                    Binaan Sekolah
+                                    Binaan Sekolah <span class="text-xs text-danger">*</span>
                                 </label>
                                 <input type="text" name="school_affiliate" value="{{ $home->school_affiliate ?? '' }}"
                                     class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
@@ -77,7 +77,7 @@
 
                             <div class="mb-8">
                                 <label class="mb-3 block text-sm font-semibold text-black dark:text-white">
-                                    Motto
+                                    Motto <span class="text-xs text-danger">*</span>
                                 </label>
                                 <textarea id="motto" rows="3" name="motto" placeholder="Masukkan Subtitle"
                                     class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary">{!! $home->motto ?? '' !!}</textarea>
@@ -85,7 +85,7 @@
 
                             <div class="mb-8">
                                 <label class="mb-3 block text-sm font-semibold text-black dark:text-white">
-                                    Description
+                                    Description <span class="text-xs text-danger">*</span>
                                 </label>
                                 <textarea id="description" rows="3" name="description" placeholder="Masukkan Subtitle"
                                     class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary">{{ $home->description ?? '' }}</textarea>
@@ -93,7 +93,7 @@
 
                             <div class="mb-8">
                                 <label class="mb-3 block text-sm font-semibold text-black dark:text-white">
-                                    PPDB Banner
+                                    PPDB Banner <span class="text-xs text-danger">*</span>
                                 </label>
                                 <img id="imagePreview" src="{{ asset("images/home/$home->ppdb_banner") }}"
                                     alt="Image Preview">
@@ -104,7 +104,7 @@
 
                             <div class="mb-8">
                                 <label class="mb-3 block text-sm font-semibold text-black dark:text-white">
-                                    PPDB Description
+                                    PPDB Description <span class="text-xs text-danger">*</span>
                                 </label>
                                 <textarea id="ppdb_desc" rows="3" name="ppdb_desc" placeholder="Masukkan Subtitle"
                                     class="note-codeable w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary">{{ $home->ppdb_desc ?? '' }}</textarea>

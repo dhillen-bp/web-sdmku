@@ -34,7 +34,7 @@
             </a>
         </div>
         <div class="hidden sm:block">
-            <form action="https://formbold.com/s/unique_form_id" method="POST">
+            <form action="">
                 <div class="relative">
                     <button class="absolute left-0 top-1/2 -translate-y-1/2">
                         <svg class="fill-body hover:fill-primary dark:fill-bodydark dark:hover:fill-primary"

@@ -41,7 +41,7 @@
 
                                 <div class="mb-6">
                                     <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                        Name
+                                        Name <span class="text-xs text-danger">*</span>
                                     </label>
                                     <input type="text" name="name" placeholder="Masukkan Nama Kategori Prestasi"
                                         required

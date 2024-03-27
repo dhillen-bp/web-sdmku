@@ -42,7 +42,7 @@
 
                                 <div class="mb-6">
                                     <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                        Name
+                                        Name <span class="text-xs text-danger">*</span>
                                     </label>
                                     <input type="text" name="name" value="{{ $extra->name }}" required
                                         class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
@@ -50,7 +50,7 @@
 
                                 <div class="mb-6">
                                     <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                        Jabatan
+                                        Jabatan <span class="text-xs text-danger">*</span>
                                     </label>
                                     <input type="text" name="position" value="{{ $extra->desc }}" required
                                         class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />

@@ -46,7 +46,7 @@
 
                                 <div class="mb-6">
                                     <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                        Logo
+                                        Logo <span class="text-xs text-danger">*</span>
                                     </label>
                                     <div class="my-3 flex flex-col items-center justify-center gap-2">
                                         <img src="{{ Str::contains($school->logo, 'drive') ? $school->logo : asset('storage/images/school_profile/' . $school->logo) }}"
@@ -59,7 +59,7 @@
 
                                 <div class="mb-6">
                                     <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                        Label Logo
+                                        Label Logo <span class="text-xs text-danger">*</span>
                                     </label>
                                     <input type="text" name="logo_label" value="{{ $school->logo_label }}" required
                                         class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
@@ -80,7 +80,7 @@
 
                                 <div class="mb-6">
                                     <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                        Nama Kepala Sekolah
+                                        Nama Kepala Sekolah <span class="text-xs text-danger">*</span>
                                     </label>
                                     <input type="text" name="principal_name" value="{{ $school->principal_name }}"
                                         required
@@ -89,7 +89,7 @@
 
                                 <div class="mb-6">
                                     <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                        Kata Sambutan Kepala Sekolah
+                                        Kata Sambutan Kepala Sekolah <span class="text-xs text-danger">*</span>
                                     </label>
                                     <textarea id="summernote" name="principal_text" rows="6"
                                         class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary">{{ $school->principal_text }}</textarea>
@@ -97,7 +97,7 @@
 
                                 <div class="mb-6">
                                     <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                        Campus 1
+                                        Campus 1 <span class="text-xs text-danger">*</span>
                                     </label>
                                     <input type="text" name="campus1" value="{{ $school->campus1 }}" required
                                         class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
@@ -105,7 +105,7 @@
 
                                 <div class="mb-6">
                                     <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                        Campus 2
+                                        Campus 2 <span class="text-xs text-danger">*</span>
                                     </label>
                                     <input type="text" name="campus2" value="{{ $school->campus2 }}" required
                                         class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />

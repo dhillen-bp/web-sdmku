@@ -42,7 +42,7 @@
 
                                 <div class="mb-6">
                                     <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                        Name
+                                        Name <span class="text-xs text-danger">*</span>
                                     </label>
                                     <input type="text" name="name" value="{{ $teacher->name }}"
                                         placeholder="Masukkan Name" required
@@ -51,7 +51,7 @@
 
                                 <div class="mb-6">
                                     <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                        Jabatan
+                                        Jabatan <span class="text-xs text-danger">*</span>
                                     </label>
                                     <input type="text" name="position" value="{{ $teacher->position }}"
                                         placeholder="Masukkan Jabatan" required

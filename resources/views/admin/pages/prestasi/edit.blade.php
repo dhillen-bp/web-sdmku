@@ -44,7 +44,7 @@
                             <div class="p-6.5">
                                 <div class="mb-6">
                                     <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                        Kategori Prestasi
+                                        Kategori Prestasi <span class="text-xs text-danger">*</span>
                                     </label>
                                     <div x-data="{ isOptionSelected: false }" class="relative z-20 bg-white dark:bg-form-input">
                                         <select name="category_id"

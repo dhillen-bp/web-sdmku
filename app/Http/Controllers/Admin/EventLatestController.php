@@ -43,6 +43,7 @@ class EventLatestController extends Controller
         $validated = $request->validated();
 
         $name = $validated['name'];
+        $caption = $validated['caption'];
 
         if ($request->hasFile('image')) {
 
@@ -54,6 +55,7 @@ class EventLatestController extends Controller
             // Simpan path gambar ke dalam database
             $storeUploadFile = EventLatest::create([
                 'name' => $name,
+                'caption' => $caption,
                 'image' => $imageName,
             ]);
 
@@ -107,6 +109,7 @@ class EventLatestController extends Controller
         $validated = $request->validated();
 
         $name = $validated['name'];
+        $caption = $validated['caption'];
 
         if ($request->hasFile('image')) {
 
@@ -120,6 +123,7 @@ class EventLatestController extends Controller
             // Simpan path gambar ke dalam database
             $event->update([
                 'name' => $name,
+                'caption' => $caption,
                 'image' => $imageName,
             ]);
 
@@ -128,11 +132,13 @@ class EventLatestController extends Controller
             // Jika ada URL Google Drive yang disertakan
             $event->update([
                 'name' => $name,
+                'caption' => $caption,
                 'image' => $request->input('image_gdrive'),
             ]);
         } else {
             // Jika tidak ada perubahan pada gambar
             $event->update([
+                'caption' => $caption,
                 'name' => $name,
             ]);
         }
