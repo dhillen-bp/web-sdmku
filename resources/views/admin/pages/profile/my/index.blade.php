@@ -123,7 +123,7 @@
                                 </h4>
                                 <div class="flex items-center justify-center gap-1">
                                     <a href="https://www.instagram.com/kkn12_sdmku?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                                        target="_blank"
+                                        target="_blank" target="_blank"
                                         class="cursor-pointer rounded-full bg-gradient-to-tr p-2 hover:from-[#FF7806] hover:to-[#A20AD0] hover:text-slate-100">
                                         @include('partials.svg._instagram-svg')
                                     </a> <span class="">kkn12_sdmku</span>
