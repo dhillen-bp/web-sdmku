@@ -43,6 +43,7 @@ class DatabaseSeeder extends Seeder
             NavbarSeeder::class,
             SchoolProfileSeeder::class,
             KBMSeeder::class,
+            FooterSeeder::class,
         ]);
     }
 }

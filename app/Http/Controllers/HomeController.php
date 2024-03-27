@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\EventLatest;
+use App\Models\Footer;
 use App\Models\Home;
 use App\Models\HomeFeatured;
 use App\Models\HomeHero;
@@ -22,7 +23,9 @@ class HomeController extends Controller
         $homeFeatured = HomeFeatured::get();
         $events = EventLatest::take(6)->get();
 
-        return view('pages.home', compact('home', 'homeHero', 'homeFeatured', 'events'));
+        $footer = Footer::first();
+
+        return view('pages.home', compact('home', 'homeHero', 'homeFeatured', 'events', 'footer'));
     }
 
     /**

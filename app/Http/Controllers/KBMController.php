@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Footer;
 use App\Models\KBM;
 use App\Models\Navbar;
 use Illuminate\Http\Request;
@@ -17,8 +18,9 @@ class KBMController extends Controller
     {
         $kbm = KBM::first();
         $navbar = Navbar::first();
+        $footer = Footer::first();
 
-        return view('pages.kbm', compact('kbm', 'navbar'));
+        return view('pages.kbm', compact('kbm', 'navbar', 'footer'));
     }
 
     /**

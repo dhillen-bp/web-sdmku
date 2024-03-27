@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\EventLatestController;
 use App\Http\Controllers\Admin\ExtracurricularController as AdminExtracurricularController;
 use App\Http\Controllers\Admin\ExtracurricullarController;
+use App\Http\Controllers\Admin\FooterController;
 use App\Http\Controllers\Admin\GuruStafController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\HomeFeaturedController;
@@ -146,6 +147,11 @@ Route::prefix('admin')->group(function () {
             Route::get('/edit/{id}', [UserController::class, 'edit'])->name('admin.data_admin.edit');
             Route::put('/update/{id}', [UserController::class, 'update'])->name('admin.data_admin.update');
             Route::delete('/destroy/{id}', [UserController::class, 'destroy'])->name('admin.data_admin.destroy');
+        });
+
+        Route::prefix('footer')->group(function () {
+            Route::get('/', [FooterController::class, 'index'])->name('admin.footer.index');
+            Route::put('/update', [FooterController::class, 'update'])->name('admin.footer.update');
         });
     });
 });

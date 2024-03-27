@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Footer;
 use App\Models\Navbar;
 use App\Models\News;
 use Carbon\Carbon;
@@ -24,8 +25,9 @@ class NewsController extends Controller
         });
 
         $navbar = Navbar::first();
+        $footer = Footer::first();
 
-        return view('pages.berita', compact('news', 'navbar'));
+        return view('pages.berita', compact('news', 'navbar', 'footer'));
     }
 
     /**
@@ -67,8 +69,9 @@ class NewsController extends Controller
         });
 
         $navbar = Navbar::first();
+        $footer = Footer::first();
 
-        return view('pages.berita-detail', compact('news', 'newsTanggal', 'newsLatests', 'navbar'));
+        return view('pages.berita-detail', compact('news', 'newsTanggal', 'newsLatests', 'navbar', 'footer'));
     }
 
     /**

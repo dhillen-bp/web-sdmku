@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\EventLatest;
+use App\Models\Footer;
 use App\Models\Navbar;
 use Illuminate\Http\Request;
 
@@ -16,8 +17,10 @@ class EventLatestController extends Controller
     public function index()
     {
         $events = EventLatest::paginate(9);
+
         $navbar = Navbar::first();
-        return view('pages.event-terbaru', compact('events', 'navbar'));
+        $footer = Footer::first();
+        return view('pages.event-terbaru', compact('events', 'navbar', 'footer'));
     }
 
     /**
@@ -53,7 +56,8 @@ class EventLatestController extends Controller
         $eventLatests = EventLatest::latest()->take(3)->get();
 
         $navbar = Navbar::first();
-        return view('pages.event-detail', compact('event', 'eventLatests', 'navbar'));
+        $footer = Footer::first();
+        return view('pages.event-detail', compact('event', 'eventLatests', 'navbar', 'footer'));
     }
 
     /**

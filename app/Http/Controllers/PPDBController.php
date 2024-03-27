@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Footer;
 use App\Models\Navbar;
 use App\Models\PPDB;
 use Illuminate\Http\Request;
@@ -17,9 +18,11 @@ class PPDBController extends Controller
     {
         $ppdb = PPDB::get();
         $ppdb_url = PPDB::first();
-        $navbar = Navbar::first();
 
-        return view('pages.ppdb', compact('ppdb', 'ppdb_url', 'navbar'));
+        $navbar = Navbar::first();
+        $footer = Footer::first();
+
+        return view('pages.ppdb', compact('ppdb', 'ppdb_url', 'navbar', 'footer'));
     }
 
     /**

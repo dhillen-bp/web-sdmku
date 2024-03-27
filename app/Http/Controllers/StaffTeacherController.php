@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Footer;
 use App\Models\Navbar;
 use App\Models\StaffTeacher;
 use Illuminate\Http\Request;
@@ -17,8 +18,9 @@ class StaffTeacherController extends Controller
     {
         $teachers = StaffTeacher::paginate(10);
         $navbar = Navbar::first();
+        $footer = Footer::first();
 
-        return view('pages.guru-staf', compact('teachers', 'navbar'));
+        return view('pages.guru-staf', compact('teachers', 'navbar', 'footer'));
     }
 
     /**

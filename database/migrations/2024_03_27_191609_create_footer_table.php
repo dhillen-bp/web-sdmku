@@ -13,12 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('gallery', function (Blueprint $table) {
+        Schema::create('footer', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->text('image');
-            $table->string('label');
-            $table->uuid('gallery_category_id');
-            $table->foreign('gallery_category_id')->references('id')->on('gallery_categories')->onUpdate('cascade')->onDelete('cascade');
+            $table->text('no_telp');
+            $table->text('no_wa');
+            $table->text('wa_jam_kerja');
+            $table->text('alamat_kampus_1');
+            $table->text('alamat_kampus_2');
+            $table->text('social_facebook');
+            $table->text('social_instagram');
+            $table->text('social_tiktok');
+            $table->text('social_youtube');
 
             $table->timestamps();
         });
@@ -31,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('gallery');
+        Schema::dropIfExists('footer');
     }
 };

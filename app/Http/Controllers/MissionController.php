@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Footer;
 use App\Models\Mission;
 use App\Models\Navbar;
 use App\Models\Vision;
@@ -18,8 +19,10 @@ class MissionController extends Controller
     {
         $vision = Vision::get()->first();
         $mission = Mission::get()->first();
+
         $navbar = Navbar::first();
-        return view('pages.visi-misi', compact('vision', 'mission', 'navbar'));
+        $footer = Footer::first();
+        return view('pages.visi-misi', compact('vision', 'mission', 'navbar', 'footer'));
     }
 
     /**
