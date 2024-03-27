@@ -39,13 +39,14 @@
                             Main Section Edit
                         </h3>
                         <div class="tooltip tooltip-warning"
-                            data-tip="Hero Image adalah Gambar Slider yang bisa geser kanan dan kiri">
+                            data-tip="Hero Image adalah Gambar Slider yang bisa geser kanan dan kiri pada bagian paling atas">
                             <a href="/admin/home/hero-banner" target="_blank"
                                 class="btn-sm inline-flex items-center justify-center gap-1 rounded-full bg-warning px-5 py-2 text-center font-medium text-white hover:bg-opacity-90 lg:px-5 xl:px-6">
                                 Ubah Hero Image
                             </a>
                         </div>
-                        <div class="tooltip tooltip-warning" data-tip="Program Unggulan adalah 3 Card">
+                        <div class="tooltip tooltip-warning"
+                            data-tip="Program Unggulan adalah Card pada Home dibawah Keterangan Sekolah dan Video Profil Sekolah">
                             <a href="/admin/home/program-unggulan" target="_blank"
                                 class="btn-sm inline-flex items-center justify-center gap-1 rounded-full bg-warning px-5 py-2 text-center font-medium text-white hover:bg-opacity-90 lg:px-5 xl:px-6">
                                 Ubah Program Unggulan

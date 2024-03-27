@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Navbar;
 use App\Models\News;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class NewsController extends Controller
@@ -16,6 +17,12 @@ class NewsController extends Controller
     public function index()
     {
         $news = News::paginate(8);
+
+        $news->transform(function ($item) {
+            $item->tanggal = Carbon::parse($item->created_at)->isoFormat('D MMMM YYYY');
+            return $item;
+        });
+
         $navbar = Navbar::first();
 
         return view('pages.berita', compact('news', 'navbar'));
@@ -51,10 +58,17 @@ class NewsController extends Controller
     public function show($slug)
     {
         $news = News::where('slug', $slug)->first();
+        $newsTanggal = Carbon::parse($news->created_at)->isoFormat('D MMMM YYYY');
+
         $newsLatests = News::latest()->take(3)->get();
+        $newsLatests->transform(function ($item) {
+            $item->tanggal = Carbon::parse($item->created_at)->isoFormat('D MMMM YYYY');
+            return $item;
+        });
+
         $navbar = Navbar::first();
 
-        return view('pages.berita-detail', compact('news', 'newsLatests', 'navbar'));
+        return view('pages.berita-detail', compact('news', 'newsTanggal', 'newsLatests', 'navbar'));
     }
 
     /**

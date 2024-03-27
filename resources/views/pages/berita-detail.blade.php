@@ -16,10 +16,10 @@
         </div>
 
         <div class="grid grid-cols-1 justify-center gap-6 px-6 py-16 lg:grid-cols-4 lg:px-16">
-            <div class="col-span-4 space-y-4 rounded bg-white p-4 shadow lg:col-span-3">
+            <div class="col-span-4 space-y-4 rounded bg-white p-4 shadow-xl lg:col-span-3">
                 <h4 class="mb-4 text-2xl font-bold">{{ $news->title }}</h4>
-                <img src="{{ Str::contains($news->image, 'drive') ? $news->image : asset('storage/images/berit/a' . $news->image) }}"
-                    alt="News Image" class="h-[400px] w-full object-cover object-top">
+                <img src="{{ Str::contains($news->image, 'drive') ? $news->image : asset('storage/images/berita/' . $news->image) }}"
+                    alt="News Image" class="h-[400px] w-full object-cover object-top shadow-lg">
                 <div class="flex items-center text-sm text-slate-500"><span
                         class="material-icons mr-2 text-sm">person_outline</span>
                     {{ $news->author }} </div>
@@ -33,7 +33,7 @@
                         <path
                             d="M73.898,47.08H52.066V20.83c0-2.209-1.791-4-4-4c-2.209,0-4,1.791-4,4v30.25c0,2.209,1.791,4,4,4h25.832    c2.209,0,4-1.791,4-4S76.107,47.08,73.898,47.08z" />
                     </svg>
-                    <p class="leading-none text-slate-500">{{ $news->created_at }}</p>
+                    <p class="leading-none text-slate-500">{{ $newsTanggal }}</p>
                 </div>
                 <p class="text-gray-600 text-wrap mb-6 break-words">{!! $news->content !!}</p>
                 <!-- Add your main news content here -->
@@ -43,25 +43,31 @@
             <div class="col-span-4 space-y-4 text-sm lg:col-span-1">
                 <h3 class="text-xl font-bold">Berita Terbaru</h3>
                 @foreach ($newsLatests as $latest)
-                    <div class="bg-white p-2 shadow">
-                        <img src="{{ Str::contains($latest->image, 'drive') ? $latest->image : asset('storage/images/berita/' . $latest->image) }}"
-                            alt="" class="h-[180px] w-full">
-                        <div class="flex items-center text-sm">
-                            <svg class="mr-2 opacity-75" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
-                                width="12" height="12" viewBox="0 0 97.16 97.16"
-                                style="enable-background:new 0 0 97.16 97.16;" xml:space="preserve">
-                                <path
-                                    d="M48.58,0C21.793,0,0,21.793,0,48.58s21.793,48.58,48.58,48.58s48.58-21.793,48.58-48.58S75.367,0,48.58,0z M48.58,86.823    c-21.087,0-38.244-17.155-38.244-38.243S27.493,10.337,48.58,10.337S86.824,27.492,86.824,48.58S69.667,86.823,48.58,86.823z" />
-                                <path
-                                    d="M73.898,47.08H52.066V20.83c0-2.209-1.791-4-4-4c-2.209,0-4,1.791-4,4v30.25c0,2.209,1.791,4,4,4h25.832    c2.209,0,4-1.791,4-4S76.107,47.08,73.898,47.08z" />
-                            </svg>
-                            <p class="leading-none">{{ $latest->created_at }}</p>
-                        </div>
+                    <div class="group overflow-hidden bg-white shadow">
+                        <a href="/berita/{{ $latest->slug }}">
+                            <img src="{{ Str::contains($latest->image, 'drive') ? $latest->image : asset('storage/images/berita/' . $latest->image) }}"
+                                alt="" class="h-[180px] w-full transition-transform group-hover:scale-105">
+                        </a>
+                        <div class="p-2">
+                            <div class="flex items-center text-sm">
+                                <svg class="mr-2 opacity-75" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
+                                    width="12" height="12" viewBox="0 0 97.16 97.16"
+                                    style="enable-background:new 0 0 97.16 97.16;" xml:space="preserve">
+                                    <path
+                                        d="M48.58,0C21.793,0,0,21.793,0,48.58s21.793,48.58,48.58,48.58s48.58-21.793,48.58-48.58S75.367,0,48.58,0z M48.58,86.823    c-21.087,0-38.244-17.155-38.244-38.243S27.493,10.337,48.58,10.337S86.824,27.492,86.824,48.58S69.667,86.823,48.58,86.823z" />
+                                    <path
+                                        d="M73.898,47.08H52.066V20.83c0-2.209-1.791-4-4-4c-2.209,0-4,1.791-4,4v30.25c0,2.209,1.791,4,4,4h25.832    c2.209,0,4-1.791,4-4S76.107,47.08,73.898,47.08z" />
+                                </svg>
+                                <p class="text-xs leading-none text-slate-700 transition-transform">
+                                    {{ $latest->author }} - {{ $latest->tanggal }}</p>
+                            </div>
 
-                        <a href="/berita/{{ $latest->slug }}" class="text-lg font-semibold">{{ $latest->title }}</a>
-                        <p class="text-gray-600">{!! strlen($latest->content) > 20 ? substr($latest->content, 0, 20) . '...' : $latest->content !!}
-                        </p>
+                            <a href="/berita/{{ $latest->slug }}"
+                                class="text-lg font-semibold hover:underline">{{ $latest->title }}</a>
+                            <p class="text-gray-600">{!! strlen($latest->content) > 20 ? substr($latest->content, 0, 20) . '...' : $latest->content !!}
+                            </p>
+                        </div>
                     </div>
                 @endforeach
             </div>

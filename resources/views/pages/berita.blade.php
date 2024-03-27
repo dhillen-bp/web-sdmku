@@ -10,9 +10,11 @@
         <div class="grid grid-cols-2 justify-center gap-6 px-6 py-16 lg:grid-cols-4 lg:px-16">
             <!-- component -->
             @foreach ($news as $berita)
-                <div class="w-full overflow-hidden border-b-4 border-blue-500 bg-white">
-                    <img src="{{ Str::contains($berita->image, 'drive') ? $berita->image : asset('storage/images/berita/' . $berita->image) }}"
-                        alt="News Img" class="h-32 w-full object-cover sm:h-48 md:h-64">
+                <div class="group w-full overflow-hidden border-b-4 border-blue-500 bg-white">
+                    <a href="/berita/{{ $berita->slug }}">
+                        <img src="{{ Str::contains($berita->image, 'drive') ? $berita->image : asset('storage/images/berita/' . $berita->image) }}"
+                            alt="News Img"
+                            class="h-32 w-full object-cover transition-transform group-hover:scale-105 sm:h-48 md:h-64"></a>
                     <div class="space-y-4 md:p-6">
                         <a href="/berita/{{ $berita->slug }}"
                             class="font-semibold leading-tight hover:underline sm:leading-normal">{{ $berita->title }}
@@ -30,7 +32,7 @@
                                 <path
                                     d="M73.898,47.08H52.066V20.83c0-2.209-1.791-4-4-4c-2.209,0-4,1.791-4,4v30.25c0,2.209,1.791,4,4,4h25.832    c2.209,0,4-1.791,4-4S76.107,47.08,73.898,47.08z" />
                             </svg>
-                            <p class="leading-none">{{ $berita->created_at }}</p>
+                            <p class="text-sm leading-none text-slate-700">{{ $berita->tanggal }}</p>
                         </div>
                     </div>
                 </div>
