@@ -62,7 +62,7 @@ class GuruStafController extends Controller
             ]);
 
             // return dd($storeUploadFile);
-        } else {
+        } elseif ($request->filled('image_gdrive')) {
             // Jika input adalah URL Google Drive, langsung simpan URL ke dalam database
             $storeWithGDrive = StaffTeacher::create([
                 'name' => $name,
@@ -70,6 +70,8 @@ class GuruStafController extends Controller
                 'image' => $request->input('image_gdrive'),
             ]);
             // return dd($storeWithGDrive);
+        } else {
+            return redirect()->back()->withErrors('Anda harus mengupload gambar atau menyediakan URL Google Drive.')->withInput();
         }
 
         return redirect()->route('admin.guru.index')->with('success', 'Data Guru berhasil disimpan!');
@@ -112,7 +114,6 @@ class GuruStafController extends Controller
 
         $name = $validated['name'];
         $position = $validated['position'];
-
 
         if ($request->hasFile('image')) {
 

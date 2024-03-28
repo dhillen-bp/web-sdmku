@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Guru & Staf
+@endsection
+
 @section('body')
     <section class="bg-base-200">
         <div class="h-24 bg-cover bg-no-repeat py-24 opacity-90"
@@ -20,7 +24,12 @@
 
                     </figure>
                     <div class="card-body items-center">
-                        <h2 class="card-title text-center text-base">{{ $loop->iteration }}. {{ $teacher->name }}</h2>
+
+                        @php
+                            $iterationNumber = ($teachers->currentPage() - 1) * $teachers->perPage() + $loop->iteration;
+                        @endphp
+
+                        <h2 class="card-title text-center text-base">{{ $iterationNumber }}. {{ $teacher->name }}</h2>
                         <div
                             class="text-nowrap badge badge-primary badge-outline mb-1 cursor-default text-xs shadow-sm md:text-sm">
                             {{ $teacher->position }}</div>

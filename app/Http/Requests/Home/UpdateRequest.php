@@ -32,4 +32,17 @@ class UpdateRequest extends FormRequest
             'ppdb_desc' => 'required|string',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'school_name.required' => 'Nama Sekolah harus di isi!',
+            'school_affiliate.required' => 'Binaan Sekolah harus di isi!',
+            'description.required' => 'Deskripsi Sekolah harus di isi!',
+            'ppdb_desc.required' => 'Deskripsi PPDB harus di isi!',
+            'ppdb_banner.image' => 'File yang diunggah harus berupa gambar!',
+            'ppdb_banner.mimes' => 'Format gambar yang diizinkan adalah jpeg, png, dan jpg!',
+            'ppdb_banner.max' => 'Ukuran gambar tidak boleh melebihi 2 MB!',
+        ];
+    }
 }

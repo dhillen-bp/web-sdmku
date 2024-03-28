@@ -31,4 +31,16 @@ class NewsRequest extends FormRequest
             'image_gdrive' => 'string|nullable',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'Judul Berita harus di isi!',
+            'content.required' => 'Konten Berita harus di isi!',
+            'author.required' => 'Pengarang / Penulis Berita harus di isi!',
+            'image.image' => 'File yang diunggah harus berupa gambar!',
+            'image.mimes' => 'Format gambar yang diizinkan adalah jpeg, png, dan jpg!',
+            'image.max' => 'Ukuran gambar tidak boleh melebihi 2 MB!',
+        ];
+    }
 }

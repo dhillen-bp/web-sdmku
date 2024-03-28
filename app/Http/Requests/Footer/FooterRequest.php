@@ -35,4 +35,19 @@ class FooterRequest extends FormRequest
             'social_youtube' => 'string|required',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'no_telp.required' => 'Nomor Telepon harus di isi!',
+            'no_wa.required' => 'Nomor Whatsapp harus di isi!',
+            'wa_jam_kerja.required' => 'Keterangan Jam Kerja harus di isi!',
+            'alamat_kampus_1.required' => 'Alamat Kampus 1 harus di isi!',
+            'alamat_kampus_2.required' => 'Alamat Kampus 2 harus di isi!',
+            'social_facebook.required' => 'Media Sosial Facebook harus di isi!',
+            'social_instagram.required' => 'Media Sosial Instagram harus di isi!',
+            'social_tiktok.required' => 'Media Sosial Tiktok harus di isi!',
+            'social_youtube.required' => 'Media Sosial Youtube harus di isi!',
+        ];
+    }
 }

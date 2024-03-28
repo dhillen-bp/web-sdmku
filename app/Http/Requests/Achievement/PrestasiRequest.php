@@ -29,4 +29,14 @@ class PrestasiRequest extends FormRequest
             'image_gdrive' => 'string|nullable',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'category_id.required' => 'Kolom kategori prestasi harus di isi!',
+            'image.image' => 'File yang diunggah harus berupa gambar!',
+            'image.mimes' => 'Format gambar yang diizinkan adalah jpeg, png, dan jpg!',
+            'image.max' => 'Ukuran gambar tidak boleh melebihi 2 MB!',
+        ];
+    }
 }

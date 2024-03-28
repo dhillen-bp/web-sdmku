@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    PPDB
+@endsection
+
 @section('body')
     <section class="bg-base-200">
 

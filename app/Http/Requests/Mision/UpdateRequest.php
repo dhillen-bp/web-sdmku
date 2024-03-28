@@ -27,4 +27,12 @@ class UpdateRequest extends FormRequest
             'content' => 'required|string',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'content.required' => 'Konten Misi harus di isi!',
+
+        ];
+    }
 }

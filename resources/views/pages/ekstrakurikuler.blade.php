@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Ekstrakurikuler
+@endsection
+
 @section('body')
     <section class="bg-base-200">
         <div class="h-24 bg-cover bg-no-repeat py-24 opacity-90"

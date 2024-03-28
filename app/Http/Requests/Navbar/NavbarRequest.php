@@ -27,4 +27,13 @@ class NavbarRequest extends FormRequest
             'image' => 'image|mimes:jpeg,png,jpg|max:2048',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'image.image' => 'File yang diunggah harus berupa gambar!',
+            'image.mimes' => 'Format gambar yang diizinkan adalah jpeg, png, dan jpg!',
+            'image.max' => 'Ukuran gambar tidak boleh melebihi 2 MB!',
+        ];
+    }
 }

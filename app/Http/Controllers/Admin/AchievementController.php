@@ -61,13 +61,15 @@ class AchievementController extends Controller
             ]);
 
             // return dd($storeUploadFile);
-        } else {
+        } elseif ($request->filled('image_gdrive')) {
             // Jika input adalah URL Google Drive, langsung simpan URL ke dalam database
             $storeWithGDrive = Achievement::create([
                 'category_id' => $categoryId,
                 'image' => $request->input('image_gdrive'),
             ]);
             // return dd($storeWithGDrive);
+        } else {
+            return redirect()->back()->withErrors('Anda harus mengupload gambar atau menyediakan URL Google Drive.');
         }
 
         return redirect()->route('admin.achievement.index')->with('success', 'Data Prestasi berhasil disimpan!');
@@ -116,7 +118,6 @@ class AchievementController extends Controller
             $imageExtension = $image->getClientOriginalExtension();
             $imageName = Str::uuid() . '.' . $imageExtension;
 
-
             $deleteImage = Storage::disk('public')->delete('images/prestasi/' . $prestasi->image);
 
             $image->storeAs("images/prestasi", $imageName);
@@ -136,8 +137,9 @@ class AchievementController extends Controller
             ]);
         } else {
             // Jika tidak ada perubahan pada gambar
-            return redirect()->route('admin.achievement.index')->with('success', 'Data Prestasi tidak ada perubahan!');
+            return redirect()->route('admin.achievement.index')->with('success', 'Data Prestasi tidak ada perubahan!')->withInput();
         }
+
         return redirect()->route('admin.achievement.index')->with('success', 'Data Prestasi berhasil diperbarui!');
     }
 

@@ -2,7 +2,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>
-    Admin | SD MKU
+    Admin | SD Muhammadiyah Klaten Utara
 </title>
 <link rel="icon" href="favicon.ico">
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

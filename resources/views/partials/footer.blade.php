@@ -79,7 +79,7 @@
     </div>
 </footer>
 <hr>
-<footer class="flex items-center justify-center space-x-2 bg-slate-950 py-2 text-xs text-slate-400 lg:py-4 lg:text-sm">
+<footer class="flex items-center justify-center space-x-2 bg-slate-950 py-3 text-xs text-slate-400 lg:py-4 lg:text-sm">
     <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
         clip-rule="evenodd" class="hidden fill-current lg:block">
         <path

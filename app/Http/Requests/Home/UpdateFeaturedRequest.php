@@ -29,4 +29,15 @@ class UpdateFeaturedRequest extends FormRequest
             'featured_image' => 'image|mimes:jpeg,png,jpg|max:2048',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'featured_title.required' => 'Judul Program Unggulan harus di isi!',
+            'featured_subtitle.required' => 'Keterangan Program Unggulan harus di isi!',
+            'featured_image.image' => 'File yang diunggah harus berupa gambar!',
+            'featured_image.mimes' => 'Format gambar yang diizinkan adalah jpeg, png, dan jpg!',
+            'featured_image.max' => 'Ukuran gambar tidak boleh melebihi 2 MB!',
+        ];
+    }
 }

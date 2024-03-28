@@ -88,7 +88,7 @@
                     <summary class="text-slate-100">
                         Profil
                     </summary>
-                    <ul class="z-[2] w-max rounded-t-none bg-slate-100 p-2">
+                    <ul class="z-[999] w-max rounded-t-none bg-slate-100 p-2">
                         <li><a href="/profil/sekolah"
                                 class="{{ Request::path() == 'profil/sekolah' ? 'active' : '' }}">Profil Sekolah</a>
                         </li>
@@ -107,7 +107,7 @@
                     <summary class="text-slate-100">
                         Kegiatan
                     </summary>
-                    <ul class="z-[2] w-max rounded-t-none bg-slate-100 p-2">
+                    <ul class="z-[999] w-max rounded-t-none bg-slate-100 p-2">
                         <li><a href="/kegiatan/ekstrakurikuler"
                                 class="{{ Request::path() == 'kegiatan/ekstrakurikuler' ? 'active' : '' }}">
                                 Ekstrakurikuler</a>

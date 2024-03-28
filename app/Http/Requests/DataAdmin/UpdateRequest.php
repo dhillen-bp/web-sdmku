@@ -29,4 +29,13 @@ class UpdateRequest extends FormRequest
             'password' => 'string|nullable',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'Nama Admin harus di isi!',
+            'email.required' => 'Email Admin harus di isi!',
+            'email.email' => 'Format email tidak valid!',,
+        ];
+    }
 }

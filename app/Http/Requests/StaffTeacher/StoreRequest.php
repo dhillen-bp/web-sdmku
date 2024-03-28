@@ -30,4 +30,15 @@ class StoreRequest extends FormRequest
             'image_gdrive' => 'string|nullable',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'Nama harus di isi!',
+            'position.required' => 'Jabatan harus di isi!',
+            'image.image' => 'File yang diunggah harus berupa gambar!',
+            'image.mimes' => 'Format gambar yang diizinkan adalah jpeg, png, dan jpg!',
+            'image.max' => 'Ukuran gambar tidak boleh melebihi 2 MB!',
+        ];
+    }
 }

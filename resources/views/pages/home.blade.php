@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Home
+@endsection
+
 @section('body')
     {{-- HEADER & HERO --}}
     <section class="relative overflow-x-hidden">
@@ -13,7 +17,7 @@
                     <img src="{{ $hero->image == 'hero_default.JPG' ? asset('images/home/' . $hero->image) : asset('storage/images/home/' . $hero->image) }}"
                         class="w-full max-w-full" />
                     <div
-                        class="absolute left-6 right-6 top-1/2 z-[999] flex -translate-y-1/2 transform justify-between lg:left-16 lg:right-16">
+                        class="absolute left-6 right-6 top-1/2 z-1 flex -translate-y-1/2 transform justify-between lg:left-16 lg:right-16">
                         <a href="#slide{{ $index == 0 ? $jumlah : $index - 1 }}" class="btn btn-circle btn-sm opacity-90"
                             id="prevBtn">❮</a>
                         <a href="#slide{{ $index == $jumlah ? $jumlah - $jumlah : $index + 1 }}"

@@ -60,13 +60,16 @@ class EventLatestController extends Controller
             ]);
 
             // return dd($storeUploadFile);
-        } else {
+        } elseif ($request->filled('image_gdrive')) {
             // Jika input adalah URL Google Drive, langsung simpan URL ke dalam database
             $storeWithGDrive = EventLatest::create([
                 'name' => $name,
+                'caption' => $caption,
                 'image' => $request->input('image_gdrive'),
             ]);
             // return dd($storeWithGDrive);
+        } else {
+            return redirect()->back()->withErrors('Anda harus mengupload gambar atau menyediakan URL Google Drive.')->withInput();
         }
 
         return redirect()->route('admin.event.index')->with('success', 'Data Event Terbaru berhasil disimpan!');

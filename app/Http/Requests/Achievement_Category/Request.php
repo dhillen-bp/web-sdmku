@@ -27,4 +27,11 @@ class Request extends FormRequest
             'name' => 'required|string',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'Nama kategori prestasi harus di isi!',
+        ];
+    }
 }
