@@ -2,13 +2,13 @@
     <div class="flex-1 lg:flex-[0.5]">
         <a class="inline-flex cursor-pointer items-center text-xl font-bold text-slate-100">
             <img src="{{ asset('images/logo/logo_sdmku_compress.png') }}" alt="School Logo" class="mr-3 h-8 w-8">
-            <p class="font-lobster">SD MKU</p>
+            <p class="text-nowrap font-lobster">SD Muhammadiyah Klaten Utara</p>
         </a>
     </div>
     <div class="items-end justify-end lg:flex-[1.5]">
         {{-- MOBILE NAV --}}
-        <div class="dropdown dropdown-end dropdown-bottom lg:hidden">
-            <label for="toggleMenu" class="btn btn-circle swap swap-rotate btn-sm">
+        <div class="dropdown-end dropdown-bottom dropdown lg:hidden">
+            <label for="toggleMenu" class="swap-rotate btn btn-circle swap btn-sm">
                 <!-- this hidden checkbox controls the state -->
                 <input type="checkbox" id="toggleMenu" />
 

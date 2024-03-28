@@ -78,6 +78,7 @@
                 menu.removeClass('block').addClass('hidden');
             }
         });
+
     });
 </script>
 

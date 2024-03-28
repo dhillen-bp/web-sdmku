@@ -3,7 +3,8 @@
 @section('body')
     {{-- HEADER & HERO --}}
     <section class="relative overflow-x-hidden">
-        <div class="min-h-90 carousel relative w-full object-cover md:h-[460px] lg:min-h-screen">
+        <div id="homeCarousel" class="min-h-90 carousel relative w-full object-cover md:h-[460px] lg:min-h-screen"
+            data-slide-interval="5000">
             @foreach ($homeHero as $index => $hero)
                 @php
                     $jumlah = count($homeHero) - 1;
@@ -12,11 +13,11 @@
                     <img src="{{ $hero->image == 'hero_default.JPG' ? asset('images/home/' . $hero->image) : asset('storage/images/home/' . $hero->image) }}"
                         class="w-full max-w-full" />
                     <div
-                        class="absolute left-6 right-6 top-1/2 flex -translate-y-1/2 transform justify-between lg:left-16 lg:right-16">
-                        <a href="#slide{{ $index == 0 ? $jumlah : $index - 1 }}"
-                            class="btn btn-circle btn-sm opacity-90">❮</a>
+                        class="absolute left-6 right-6 top-1/2 z-[999] flex -translate-y-1/2 transform justify-between lg:left-16 lg:right-16">
+                        <a href="#slide{{ $index == 0 ? $jumlah : $index - 1 }}" class="btn btn-circle btn-sm opacity-90"
+                            id="prevBtn">❮</a>
                         <a href="#slide{{ $index == $jumlah ? $jumlah - $jumlah : $index + 1 }}"
-                            class="btn btn-circle btn-sm opacity-90">❯</a>
+                            class="btn btn-circle btn-sm opacity-90" id="nextBtn">❯</a>
                     </div>
                 </div>
             @endforeach
@@ -51,7 +52,7 @@
     </section>
 
     {{-- OUR SERVICE SECTION --}}
-    <section class="space-y-4 overflow-x-hidden px-6 py-8 lg:space-y-8 lg:px-16 lg:py-16">
+    <section class="space-y-4 overflow-hidden px-6 py-8 lg:space-y-8 lg:px-16 lg:py-16">
         <h3 class="text-center text-xl font-bold lg:text-4xl">Program Unggulan</h3>
         <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-3 lg:gap-6">
             @foreach ($homeFeatured as $feature)
@@ -99,7 +100,7 @@
 
 
 
-    {{-- NEWS SECTION --}}
+    {{-- EVENT SECTION --}}
     <section class="px-6 py-8 lg:px-16 lg:py-16">
         <div class="mb-8 flex items-center justify-between">
             <h3 class="text-xl font-bold lg:text-4xl">Event Terbaru</h3>
@@ -126,4 +127,30 @@
             @endforeach
         </div>
     </section>
+@endsection
+
+@section('after-script')
+    <script type="module">
+        // AUTO SLIDE
+        setInterval(function() {
+                // Cari elemen carousel dan geser ke elemen berikutnya
+                $('#homeCarousel .carousel-item:first-child').fadeOut('slow').next('.carousel-item').fadeIn('slow')
+                    .end().appendTo('#homeCarousel');
+            },
+            5000
+        );
+
+        $('#prevBtn').click(function() {
+            clearInterval(interval);
+            $('#homeCarousel .carousel-item:last-child').prependTo('#homeCarousel').fadeOut('slow');
+            $('#homeCarousel .carousel-item:first-child').fadeIn('slow');
+        });
+
+        // NEXT BUTTON
+        $('#nextBtn').click(function() {
+            clearInterval(interval);
+            $('#homeCarousel .carousel-item:first-child').fadeOut('slow').next('.carousel-item').fadeIn('slow')
+                .end().appendTo('#homeCarousel');
+        });
+    </script>
 @endsection
