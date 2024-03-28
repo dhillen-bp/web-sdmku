@@ -53,7 +53,7 @@ class EventLatestController extends Controller
     public function show($id)
     {
         $event = EventLatest::findOrFail($id);
-        $eventLatests = EventLatest::latest()->take(3)->get();
+        $eventLatests = EventLatest::where('id', '!=', $id)->latest()->take(3)->get();
 
         $navbar = Navbar::first();
         $footer = Footer::first();

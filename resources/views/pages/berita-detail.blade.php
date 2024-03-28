@@ -23,7 +23,7 @@
             <div class="col-span-4 space-y-4 rounded bg-white p-4 shadow-xl lg:col-span-3">
                 <h4 class="mb-4 text-2xl font-bold">{{ $news->title }}</h4>
                 <img src="{{ Str::contains($news->image, 'drive') ? $news->image : asset('storage/images/berita/' . $news->image) }}"
-                    alt="News Image" class="h-[400px] w-full object-cover object-top shadow-lg">
+                    alt="News Image" class="h-auto w-full object-cover object-top shadow-lg">
                 <div class="flex items-center text-sm text-slate-500"><span
                         class="material-icons mr-2 text-sm">person_outline</span>
                     {{ $news->author }} </div>

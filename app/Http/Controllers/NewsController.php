@@ -62,7 +62,7 @@ class NewsController extends Controller
         $news = News::where('slug', $slug)->first();
         $newsTanggal = Carbon::parse($news->created_at)->isoFormat('D MMMM YYYY');
 
-        $newsLatests = News::latest()->take(3)->get();
+        $newsLatests = News::latest()->where('slug', '!=', $slug)->take(3)->get();
         $newsLatests->transform(function ($item) {
             $item->tanggal = Carbon::parse($item->created_at)->isoFormat('D MMMM YYYY');
             return $item;

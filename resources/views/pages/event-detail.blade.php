@@ -23,7 +23,7 @@
             <div class="col-span-4 space-y-4 rounded bg-white p-4 shadow-xl lg:col-span-3">
                 <h4 class="mb-4 text-2xl font-bold">{{ $event->name }}</h4>
                 <img src="{{ Str::contains($event->image, 'drive') ? $event->image : asset('storage/images/event/' . $event->image) }}"
-                    alt="News Image" class="h-[400px] w-full object-cover object-top shadow-lg">
+                    alt="News Image" class="h-auto w-full object-cover object-top shadow-lg">
 
                 <p class="text-gray-600 text-wrap mb-6 break-words">{!! $event->caption !!}</p>
                 <!-- Add your main news content here -->
@@ -34,13 +34,13 @@
                 <h3 class="text-xl font-bold">Event Terbaru Lain</h3>
                 @foreach ($eventLatests as $latest)
                     <div class="group overflow-hidden bg-white shadow">
-                        <a href="/event/{{ $latest->slug }}">
+                        <a href="/kegiatan/event/{{ $latest->id }}">
                             <img src="{{ Str::contains($latest->image, 'drive') ? $latest->image : asset('storage/images/event/' . $latest->image) }}"
                                 alt="" class="h-[180px] w-full transition-transform group-hover:scale-105">
                         </a>
                         <div class="p-2">
 
-                            <a href="/event/{{ $latest->id }}"
+                            <a href="/kegiatan/event/{{ $latest->id }}"
                                 class="text-lg font-semibold hover:underline">{{ $latest->name }}</a>
                             <p class="text-gray-600">{!! strlen($latest->caption) > 50 ? substr($latest->caption, 0, 50) . '...' : $latest->caption !!}
                             </p>
