@@ -60,6 +60,11 @@
                                     </label>
                                     <input type="password" name="password" placeholder="Masukkan Password" required
                                         class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                    <div class="flex gap-1">
+                                        <input type="checkbox" id="show-password" class="cursor-pointer">
+                                        <label for="show-password" class="cursor-pointer">Show
+                                            Password</label>
+                                    </div>
                                 </div>
 
                                 <button type="submit"
@@ -85,4 +90,20 @@
 
         </div>
     </main>
+@endsection
+
+@section('after-script')
+    <script type="module">
+        $(document).ready(function() {
+            $('#show-password').click(function() {
+                var passwordField = $('input[name="password"]');
+
+                if ($(this).prop('checked')) {
+                    passwordField.attr('type', 'text');
+                } else {
+                    passwordField.attr('type', 'password');
+                }
+            });
+        });
+    </script>
 @endsection
