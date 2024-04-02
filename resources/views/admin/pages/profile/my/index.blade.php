@@ -118,6 +118,20 @@
                                     </a> <span class="font-poppins">@kkn12_sdmku</span>
                                 </div>
                             </div>
+
+                            <div class="divider"></div>
+
+                            <div class="">
+                                <h4 class="mb-3.5 font-medium text-black dark:text-white">
+                                    Hosting Support
+                                </h4>
+                                <div class="flex items-center justify-center gap-1">
+                                    <a href="https://wa.me/6282123455823" target="_blank" target="_blank"
+                                        class="cursor-pointer rounded-full p-2 hover:bg-green-500 hover:text-slate-100">
+                                        @include('partials.svg._whatsapp-svg')
+                                    </a> <span class="font-poppins">6282123455823 (Akun Tech)</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- ====== Profile Section End -->
